@@ -61,6 +61,11 @@ $("#sidebar-hide-btn").click(function() {
   map.invalidateSize();
 });
 
+
+$("#chart-btn").click(function() {
+  alert("Charts coming soon, I promise")
+});
+
 function sizeLayerControl() {
   $(".leaflet-control-layers").css("max-height", $("#map").height() - 50);
 }
