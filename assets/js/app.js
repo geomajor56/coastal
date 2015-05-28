@@ -325,43 +325,43 @@ $.getJSON('assets/php/get_stations.php', function (data) {
 //});
 
 /* Empty layer placeholder to add to layer control for listening when to add/remove museums to markerClusters layer */
-var museumLayer = L.geoJson(null);
-var museums = L.geoJson(null, {
-  pointToLayer: function (feature, latlng) {
-    return L.marker(latlng, {
-      icon: L.icon({
-        iconUrl: "assets/img/museum.png",
-        iconSize: [24, 28],
-        iconAnchor: [12, 28],
-        popupAnchor: [0, -25]
-      }),
-      title: feature.properties.station_name,
-      riseOnHover: true
-    });
-  },
-  onEachFeature: function (feature, layer) {
-    if (feature.properties) {
-      var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>Name</th><td>" + feature.properties.station_name + "</td></tr>" + "<tr><th>Phone</th><td>" + feature.properties.TEL + "</td></tr>" + "<tr><th>Address</th><td>" + feature.properties.ADRESS1 + "</td></tr>" + "<tr><th>Website</th><td><a class='url-break' href='" + feature.properties.URL + "' target='_blank'>" + feature.properties.URL + "</a></td></tr>" + "<table>";
-      layer.on({
-        click: function (e) {
-          $("#feature-title").html(feature.properties.station_name);
-          $("#feature-info").html(content);
-          $("#featureModal").modal("show");
-          highlight.clearLayers().addLayer(L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], highlightStyle));
-        }
-      });
-      $("#feature-list tbody").append('<tr class="feature-row" id="' + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/museum.png"></td><td class="feature-name">' + layer.feature.properties.station_name + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
-      museumSearch.push({
-        name: layer.feature.properties.station_name,
-        address: layer.feature.properties.ADRESS1,
-        source: "Museums",
-        id: L.stamp(layer),
-        lat: layer.feature.geometry.coordinates[1],
-        lng: layer.feature.geometry.coordinates[0]
-      });
-    }
-  }
-});
+//var museumLayer = L.geoJson(null);
+//var museums = L.geoJson(null, {
+//  pointToLayer: function (feature, latlng) {
+//    return L.marker(latlng, {
+//      icon: L.icon({
+//        iconUrl: "assets/img/museum.png",
+//        iconSize: [24, 28],
+//        iconAnchor: [12, 28],
+//        popupAnchor: [0, -25]
+//      }),
+//      title: feature.properties.station_name,
+//      riseOnHover: true
+//    });
+//  },
+//  onEachFeature: function (feature, layer) {
+//    if (feature.properties) {
+//      var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>Name</th><td>" + feature.properties.station_name + "</td></tr>" + "<tr><th>Phone</th><td>" + feature.properties.TEL + "</td></tr>" + "<tr><th>Address</th><td>" + feature.properties.ADRESS1 + "</td></tr>" + "<tr><th>Website</th><td><a class='url-break' href='" + feature.properties.URL + "' target='_blank'>" + feature.properties.URL + "</a></td></tr>" + "<table>";
+//      layer.on({
+//        click: function (e) {
+//          $("#feature-title").html(feature.properties.station_name);
+//          $("#feature-info").html(content);
+//          $("#featureModal").modal("show");
+//          highlight.clearLayers().addLayer(L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], highlightStyle));
+//        }
+//      });
+//      $("#feature-list tbody").append('<tr class="feature-row" id="' + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/museum.png"></td><td class="feature-name">' + layer.feature.properties.station_name + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
+//      museumSearch.push({
+//        name: layer.feature.properties.station_name,
+//        address: layer.feature.properties.ADRESS1,
+//        source: "Museums",
+//        id: L.stamp(layer),
+//        lat: layer.feature.geometry.coordinates[1],
+//        lng: layer.feature.geometry.coordinates[0]
+//      });
+//    }
+//  }
+//});
 //$.getJSON("data/DOITT_MUSEUM_01_13SEPT2010.geojson", function (data) {
 //  museums.addData(data);
 //});
