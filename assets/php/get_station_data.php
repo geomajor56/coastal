@@ -4,20 +4,12 @@ $user = 'michael';
 $pass = 'huskies1975';
 $db = 'ccs';
 
-
 $connection = pg_connect("host=$host dbname=$db user=$user password=$pass") or die('Could not connect: ' .pg_last_error());
 
-
 $this_station = $_POST['station_num_id'];
-print_r($this_station);
-print_r(gettype($this_station));
-print_r(strlen($this_station));
+//print_r($this_station);
+
 $chart_data = pg_query($connection, "SELECT cruise, cruise_date, depth_class, temp, salinity, dissolved_o, ph, chl, pheo, turb, no, nh, po, si, tn, tp FROM     monitor_sampleparameters WHERE station_id = '".$this_station."' ORDER BY cruise_date ASC ");
-
-//$station_num_id = $_POST['station_num_id'];
-//$this_station = strval($station_num_id);
-
-//$chart_data = pg_query($connection, "SELECT cruise, cruise_date, depth_class, temp, salinity, dissolved_o, ph, chl, pheo, turb, no, nh, po, si, tn, tp FROM monitor_sampleparameters WHERE station_id = '22' ORDER BY cruise_date ASC ");
 
 $row_1 = array();
 

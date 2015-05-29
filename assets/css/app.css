@@ -26,6 +26,16 @@ td.feature-name{
     font-size: 12px;
 }
 
+.modal{
+    overflow-y: auto;
+}
+
+.charts{
+    margin: 1px;
+    min-width: 850px;
+    height: 150px;
+}
+
 #map {
     width: auto;
     height: 100%;
