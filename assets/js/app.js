@@ -158,7 +158,17 @@ $("#chart-btn").click(function () {
                         id: "myPlotLineId"
                     });
 
-                    var xAxis4 = chart3.xAxis[0];
+                    var xAxis4 = chart4.xAxis[0];
+                    xAxis4.removePlotLine("myPlotLineId");
+                    xAxis4.addPlotLine({
+                        value: chart.xAxis[0].translate(x, true),
+                        width: 1,
+                        color: 'red',
+                        //dashStyle: 'dash',
+                        id: "myPlotLineId"
+                    });
+
+                    var xAxis5 = chart5.xAxis[0];
                     xAxis4.removePlotLine("myPlotLineId");
                     xAxis4.addPlotLine({
                         value: chart.xAxis[0].translate(x, true),
@@ -207,10 +217,16 @@ $("#chart-btn").click(function () {
                 chart2.xAxis[0].isDirty = true;
                 chart3.xAxis[0].options.tickInterval = defaultTickInterval;
                 chart3.xAxis[0].isDirty = true;
+                chart4.xAxis[0].options.tickInterval = defaultTickInterval;
+                chart4.xAxis[0].isDirty = true;
+                chart5.xAxis[0].options.tickInterval = defaultTickInterval;
+                chart5.xAxis[0].isDirty = true;
 
                 chart1.xAxis[0].setExtremes(null, null);
                 chart2.xAxis[0].setExtremes(null, null);
                 chart3.xAxis[0].setExtremes(null, null);
+                chart4.xAxis[0].setExtremes(null, null);
+                chart5.xAxis[0].setExtremes(null, null);
             }
 
             $('#btn').click(function () {
@@ -257,6 +273,8 @@ $("#chart-btn").click(function () {
                                 chart3.xAxis[0].isDirty = true;
                                 chart4.xAxis[0].options.tickInterval = zmRange;
                                 chart4.xAxis[0].isDirty = true;
+                                chart5.xAxis[0].options.tickInterval = zmRange;
+                                chart5.xAxis[0].isDirty = true;
 
                                 chart2.options.chart.isZoomed = true;
                                 chart3.options.chart.isZoomed = true;
@@ -378,206 +396,220 @@ $("#chart-btn").click(function () {
                     }
                 ]
             };
+            //var chart2_options = {
+            //
+            //    chart: {
+            //        height: 150,
+            //        renderTo: 'container2',
+            //        type: 'spline',
+            //        zoomType: 'x'
+            //    },
+            //
+            //    legend: {
+            //        enabled: false
+            //    },
+            //
+            //    title: {
+            //        text: 'Nitrates/Nitrites, Ammonium for Station: ' + this_station
+            //    },
+            //
+            //    xAxis: {
+            //        type: 'datetime',
+            //        dateTimeLabelFormats: {
+            //            year: '%Y'
+            //        },
+            //        events: {
+            //            afterSetExtremes: function () {
+            //
+            //                if (!this.chart.options.chart.isZoomed) {
+            //                    var xMin = this.chart.xAxis[0].min;
+            //                    var xMax = this.chart.xAxis[0].max;
+            //
+            //                    var zmRange = computeTickInterval(xMin, xMax);
+            //                    chart1.xAxis[0].options.tickInterval = zmRange;
+            //                    chart1.xAxis[0].isDirty = true;
+            //                    chart2.xAxis[0].options.tickInterval = zmRange;
+            //                    chart2.xAxis[0].isDirty = true;
+            //                    chart3.xAxis[0].options.tickInterval = zmRange;
+            //                    chart3.xAxis[0].isDirty = true;
+            //                    chart4.xAxis[0].options.tickInterval = zmRange;
+            //                    chart4.xAxis[0].isDirty = true;
+            //                    chart5.xAxis[0].options.tickInterval = zmRange;
+            //                    chart5.xAxis[0].isDirty = true;
+            //
+            //                    chart2.options.chart.isZoomed = true;
+            //                    chart3.options.chart.isZoomed = true;
+            //                    chart4.options.chart.isZoomed = true;
+            //                    chart5.options.chart.isZoomed = true;
+            //                    chart2.xAxis[0].setExtremes(xMin, xMax, true);
+            //
+            //                    chart3.xAxis[0].setExtremes(xMin, xMax, true);
+            //                    chart2.options.chart.isZoomed = false;
+            //                    chart3.options.chart.isZoomed = false;
+            //                }
+            //            }
+            //        }
+            //    },
+            //    yAxis: [
+            //        {// Primary yAxis
+            //            labels: {
+            //                formatter: function () {
+            //                    return this.value + 'um';
+            //                },
+            //                style: {
+            //                    color: '#89A54E'
+            //                }
+            //            },
+            //            title: {
+            //                text: 'Nitrates/Nitrites',
+            //                style: {
+            //                    color: '#89A54E'
+            //                }
+            //            }
+            //        },
+            //        {// Secondary yAxis
+            //            gridLineWidth: 0,
+            //            title: {
+            //                text: 'Ammonium',
+            //                style: {
+            //                    color: '#AA4643'
+            //                }
+            //            },
+            //            labels: {
+            //                formatter: function () {
+            //                    return this.value + ' um';
+            //                },
+            //                style: {
+            //                    color: '#AA4643'
+            //                }
+            //            },
+            //            opposite: true
+            //        }
+            //    ],
+            //    tooltip: {
+            //        shared: true
+            //    },
+            //
+            //    series: [
+            //        {
+            //            name: 'Nitrates/Nitrites',
+            //            color: '#89A54E',
+            //            type: 'line',
+            //            data: nitrogen,
+            //            tooltip: {
+            //                valueSuffix: ' um'
+            //            },
+            //            marker: {
+            //                enabled: true
+            //            }
+            //            //dashStyle: 'shortdot'
+            //        },
+            //
+            //        {
+            //            name: 'Ammonium',
+            //            color: '#AA4643',
+            //            type: 'line',
+            //            data: ammonium,
+            //            tooltip: {
+            //                valueSuffix: ' um'
+            //            },
+            //            yAxis: 2,
+            //            marker: {
+            //                enabled: true
+            //            }
+            //
+            //        }
+            //    ]
+            //};
             var chart2_options = {
 
-                chart: {
-                    height: 150,
-                    renderTo: 'container2',
-                    type: 'spline',
-                    zoomType: 'x'
-                },
-
-                legend: {
-                    enabled: false
-                },
-
-                title: {
-                    text: 'Nitrates/Nitrites, Ortho-Phosphates, Ammonium, and Silicates for Station: ' + this_station
-                },
-
-                xAxis: {
-                    type: 'datetime',
-                    dateTimeLabelFormats: {
-                        year: '%Y'
+                    chart: {
+                        height: 150,
+                        type: 'spline',
+                        renderTo: 'container2',
+                        zoomType: 'x'
                     },
-                    events: {
 
-                        afterSetExtremes: function () {
+                    legend: {
+                        enabled: false
+                    },
 
-                            if (!this.chart.options.chart.isZoomed) {
-                                var xMin = this.chart.xAxis[0].min;
-                                var xMax = this.chart.xAxis[0].max;
+                    title: {
+                       text: 'Nitrates/Nitrites, Ammonium for Station: ' + this_station
+                    },
 
-                                var zmRange = computeTickInterval(xMin, xMax);
-                                chart1.xAxis[0].options.tickInterval = zmRange;
-                                chart1.xAxis[0].isDirty = true;
-                                chart2.xAxis[0].options.tickInterval = zmRange;
-                                chart2.xAxis[0].isDirty = true;
-                                chart3.xAxis[0].options.tickInterval = zmRange;
-                                chart3.xAxis[0].isDirty = true;
-                                chart4.xAxis[0].options.tickInterval = zmRange;
-                                chart4.xAxis[0].isDirty = true;
-
-                                chart2.options.chart.isZoomed = true;
-                                chart3.options.chart.isZoomed = true;
-                                chart2.xAxis[0].setExtremes(xMin, xMax, true);
-
-                                chart3.xAxis[0].setExtremes(xMin, xMax, true);
-                                chart2.options.chart.isZoomed = false;
-                                chart3.options.chart.isZoomed = false;
+                    xAxis: [
+                        {
+                            type: 'datetime',
+                            dateTimeLabelFormats: {
+                                year: '%Y'
                             }
                         }
-
-
-                    }
-
-                },
-                yAxis: [
-                    {// Primary yAxis
-                        labels: {
-                            formatter: function () {
-                                return this.value + 'um';
+                    ],
+                    yAxis: [
+                        {// Primary yAxis
+                            labels: {
+                                format: '{value}um',
+                                style: {
+                                    color: '#89A54E'
+                                }
                             },
-                            style: {
-                                color: '#89A54E'
+                            title: {
+                                text: 'Nitrates/Nitrites',
+                                style: {
+                                    color: '#89A54E'
+                                }
                             }
                         },
-                        title: {
-                            text: 'Nitrates/Nitrites',
-                            style: {
-                                color: '#89A54E'
-                            }
-                        },
-                        opposite: true
-
-                    },
-                    {// Secondary yAxis
-                        //gridLineWidth: 0,
-                        title: {
-                            text: 'Ortho-Phosphates',
-                            style: {
-                                color: '#4572A7'
-                            }
-                        },
-                        labels: {
-                            formatter: function () {
-                                return this.value + ' um';
+                        {// Secondary yAxis
+                            title: {
+                                text: 'Ammonium',
+                                style: {
+                                    color: '#4572A7'
+                                }
                             },
-                            style: {
-                                color: '#4572A7'
-                            }
-                        }
-
-                    },
-                    {// Tertiary yAxis
-                        gridLineWidth: 0,
-                        title: {
-                            text: 'Ammonium',
-                            style: {
-                                color: '#AA4643'
-                            }
-                        },
-                        labels: {
-                            formatter: function () {
-                                return this.value + ' um';
+                            labels: {
+                                format: '{value} um',
+                                style: {
+                                    color: '#4572A7'
+                                }
                             },
-                            style: {
-                                color: '#AA4643'
-                            }
-                        },
-                        opposite: true
+                            opposite: true
+                        }
+                    ],
+                    tooltip: {
+                        shared: true
                     },
-                //],
 
+                    series: [
+                        {
+                            name: 'Total Nitrogen',
+                            color: '#4572A7',
 
-                {// Fourth yAxis
-                        gridLineWidth: 0,
-                        title: {
-                            text: 'Silicates',
-                            style: {
-                                color: 'black'
-                            }
-                        },
-                        labels: {
-                            formatter: function () {
-                                return this.value + ' um';
+                            yAxis: 1,
+                            data: nitrogen,
+                            tooltip: {
+                                valueSuffix: ' um'
                             },
-                            style: {
-                                color: 'black'
+                            marker: {
+                                enabled: true
                             }
+
                         },
-                        opposite: false
-                    }
-                ],
-                //tooltip: {
-                //    shared: true
-                //}
+                        {
+                            name: 'Ammonium',
+                            color: '#89A54E',
 
-
-
-
-
-
-                series: [
-                    {
-                        name: 'Nitrates/Nitrites',
-                        color: '#89A54E',
-                        type: 'line',
-                        data: nitrogen,
-                        tooltip: {
-                            valueSuffix: ' um'
-                        },
-                        marker: {
-                            enabled: true
+                            data: ammonium,
+                            tooltip: {
+                                valueSuffix: ' um'
+                            },
+                            marker: {
+                                enabled: true
+                            }
                         }
-                        //dashStyle: 'shortdot'
-                    },
-                    {
-                        name: 'Ortho-Phosphates',
-                        type: 'line',
-                        color: '',
-                        yAxis: 1,
-                        data: phosphates,
-                        tooltip: {
-                            valueSuffix: ' um'
-                        },
-                        marker: {
-                            enabled: true
-                        }
-
-                    },
-                    {
-                        name: 'Ammonium',
-                        color: '#AA4643',
-                        type: 'line',
-                        data: ammonium,
-                        tooltip: {
-                            valueSuffix: ' um'
-                        },
-                        yAxis: 2,
-                        marker: {
-                            enabled: true
-                        }
-
-                    },
-
-                    {
-                        name: 'Silicates',
-                        color: 'black',
-                        type: 'line',
-                        data: silicates,
-                        tooltip: {
-                            valueSuffix: ' um'
-                        },
-                        yAxis: 2,
-                        marker: {
-                            enabled: true
-                        }
-
-                    }
-
-                ]
-            };
+                    ]
+                };
             var chart3_options = {
 
                 chart: {
@@ -601,34 +633,34 @@ $("#chart-btn").click(function () {
                         dateTimeLabelFormats: {
                             year: '%Y'
                         },
-                    events: {
+                        events: {
 
-                        afterSetExtremes: function () {
+                            afterSetExtremes: function () {
 
-                            if (!this.chart.options.chart.isZoomed) {
-                                var xMin = this.chart.xAxis[0].min;
-                                var xMax = this.chart.xAxis[0].max;
+                                if (!this.chart.options.chart.isZoomed) {
+                                    var xMin = this.chart.xAxis[0].min;
+                                    var xMax = this.chart.xAxis[0].max;
 
-                                var zmRange = computeTickInterval(xMin, xMax);
-                                chart1.xAxis[0].options.tickInterval = zmRange;
-                                chart1.xAxis[0].isDirty = true;
-                                chart2.xAxis[0].options.tickInterval = zmRange;
-                                chart2.xAxis[0].isDirty = true;
-                                chart3.xAxis[0].options.tickInterval = zmRange;
-                                chart3.xAxis[0].isDirty = true;
+                                    var zmRange = computeTickInterval(xMin, xMax);
+                                    chart1.xAxis[0].options.tickInterval = zmRange;
+                                    chart1.xAxis[0].isDirty = true;
+                                    chart2.xAxis[0].options.tickInterval = zmRange;
+                                    chart2.xAxis[0].isDirty = true;
+                                    chart3.xAxis[0].options.tickInterval = zmRange;
+                                    chart3.xAxis[0].isDirty = true;
 
-                                chart2.options.chart.isZoomed = true;
-                                chart3.options.chart.isZoomed = true;
-                                chart2.xAxis[0].setExtremes(xMin, xMax, true);
+                                    chart2.options.chart.isZoomed = true;
+                                    chart3.options.chart.isZoomed = true;
+                                    chart2.xAxis[0].setExtremes(xMin, xMax, true);
 
-                                chart3.xAxis[0].setExtremes(xMin, xMax, true);
-                                chart2.options.chart.isZoomed = false;
-                                chart3.options.chart.isZoomed = false;
+                                    chart3.xAxis[0].setExtremes(xMin, xMax, true);
+                                    chart2.options.chart.isZoomed = false;
+                                    chart3.options.chart.isZoomed = false;
+                                }
                             }
+
+
                         }
-
-
-                    }
                     }
                 ],
                 yAxis: [
@@ -850,11 +882,133 @@ $("#chart-btn").click(function () {
                     }
                 ]
             };
+            var chart5_options = {
+
+                chart: {
+                    height: 150,
+                    type: 'spline',
+                    renderTo: 'container5',
+                    zoomType: 'x'
+                },
+
+                legend: {
+                    enabled: false
+                },
+
+                title: {
+                    text: 'Ortho-Phosphates and Silicates for : ' + this_station
+                },
+
+                xAxis: [
+                    {
+                        type: 'datetime',
+                        dateTimeLabelFormats: {
+                            year: '%Y'
+                        },
+                        events: {
+
+                            afterSetExtremes: function () {
+
+                                if (!this.chart.options.chart.isZoomed) {
+                                    var xMin = this.chart.xAxis[0].min;
+                                    var xMax = this.chart.xAxis[0].max;
+
+                                    var zmRange = computeTickInterval(xMin, xMax);
+                                    chart1.xAxis[0].options.tickInterval = zmRange;
+                                    chart1.xAxis[0].isDirty = true;
+                                    chart2.xAxis[0].options.tickInterval = zmRange;
+                                    chart2.xAxis[0].isDirty = true;
+                                    chart3.xAxis[0].options.tickInterval = zmRange;
+                                    chart3.xAxis[0].isDirty = true;
+                                    chart4.xAxis[0].options.tickInterval = zmRange;
+                                    chart4.xAxis[0].isDirty = true;
+                                    chart5.xAxis[0].options.tickInterval = zmRange;
+                                    chart5.xAxis[0].isDirty = true;
+
+                                    chart2.options.chart.isZoomed = true;
+                                    chart3.options.chart.isZoomed = true;
+                                    chart2.xAxis[0].setExtremes(xMin, xMax, true);
+
+                                    chart3.xAxis[0].setExtremes(xMin, xMax, true);
+                                    chart2.options.chart.isZoomed = false;
+                                    chart3.options.chart.isZoomed = false;
+                                }
+                            }
+
+
+                        }
+                    }
+                ],
+                yAxis: [
+                    {// Primary yAxis
+                        labels: {
+                            format: '{value}um',
+                            style: {
+                                color: '#89A54E'
+                            }
+                        },
+                        title: {
+                            text: 'Ortho-Phosphates',
+                            style: {
+                                color: '#89A54E'
+                            }
+                        }
+                    },
+                    {// Secondary yAxis
+                        title: {
+                            text: 'Silicates',
+                            style: {
+                                color: '#4572A7'
+                            }
+                        },
+                        labels: {
+                            format: '{value} um',
+                            style: {
+                                color: '#4572A7'
+                            }
+                        },
+                        opposite: true
+                    }
+                ],
+                tooltip: {
+                    shared: true
+                },
+
+                series: [
+                    {
+                        name: 'Ortho-Phosphates',
+                        color: '#4572A7',
+
+                        yAxis: 1,
+                        data: phosphates,
+                        tooltip: {
+                            valueSuffix: ' um'
+                        },
+                        marker: {
+                            enabled: true
+                        }
+
+                    },
+                    {
+                        name: 'Total Phosphorus',
+                        color: '#89A54E',
+
+                        data: silicates,
+                        tooltip: {
+                            valueSuffix: ' um'
+                        },
+                        marker: {
+                            enabled: true
+                        }
+                    }
+                ]
+            };
 
             var chart1 = new Highcharts.Chart(chart1_options);
             var chart2 = new Highcharts.Chart(chart2_options);
             var chart3 = new Highcharts.Chart(chart3_options);
             var chart4 = new Highcharts.Chart(chart4_options);
+            var chart5 = new Highcharts.Chart(chart5_options);
         }
 
 
@@ -977,52 +1131,6 @@ $.getJSON('assets/php/get_stations.php', function (data) {
     map.addLayer(stations);
 });
 
-//$.getJSON("data/DOITT_THEATER_01_13SEPT2010.geojson", function (data) {
-//  stations.addData(data);
-//  map.addLayer(stationLayer);
-//});
-
-/* Empty layer placeholder to add to layer control for listening when to add/remove museums to markerClusters layer */
-//var museumLayer = L.geoJson(null);
-//var museums = L.geoJson(null, {
-//  pointToLayer: function (feature, latlng) {
-//    return L.marker(latlng, {
-//      icon: L.icon({
-//        iconUrl: "assets/img/museum.png",
-//        iconSize: [24, 28],
-//        iconAnchor: [12, 28],
-//        popupAnchor: [0, -25]
-//      }),
-//      title: feature.properties.station_name,
-//      riseOnHover: true
-//    });
-//  },
-//  onEachFeature: function (feature, layer) {
-//    if (feature.properties) {
-//      var content = "<table class='table table-striped table-bordered table-condensed'>" + "<tr><th>Name</th><td>" + feature.properties.station_name + "</td></tr>" + "<tr><th>Phone</th><td>" + feature.properties.TEL + "</td></tr>" + "<tr><th>Address</th><td>" + feature.properties.ADRESS1 + "</td></tr>" + "<tr><th>Website</th><td><a class='url-break' href='" + feature.properties.URL + "' target='_blank'>" + feature.properties.URL + "</a></td></tr>" + "<table>";
-//      layer.on({
-//        click: function (e) {
-//          $("#feature-title").html(feature.properties.station_name);
-//          $("#feature-info").html(content);
-//          $("#featureModal").modal("show");
-//          highlight.clearLayers().addLayer(L.circleMarker([feature.geometry.coordinates[1], feature.geometry.coordinates[0]], highlightStyle));
-//        }
-//      });
-//      $("#feature-list tbody").append('<tr class="feature-row" id="' + L.stamp(layer) + '" lat="' + layer.getLatLng().lat + '" lng="' + layer.getLatLng().lng + '"><td style="vertical-align: middle;"><img width="16" height="18" src="assets/img/museum.png"></td><td class="feature-name">' + layer.feature.properties.station_name + '</td><td style="vertical-align: middle;"><i class="fa fa-chevron-right pull-right"></i></td></tr>');
-//      museumSearch.push({
-//        name: layer.feature.properties.station_name,
-//        address: layer.feature.properties.ADRESS1,
-//        source: "Museums",
-//        id: L.stamp(layer),
-//        lat: layer.feature.geometry.coordinates[1],
-//        lng: layer.feature.geometry.coordinates[0]
-//      });
-//    }
-//  }
-//});
-//$.getJSON("data/DOITT_MUSEUM_01_13SEPT2010.geojson", function (data) {
-//  museums.addData(data);
-//});
 
 map = L.map("map", {
     zoom: 10,
@@ -1087,41 +1195,6 @@ attributionControl.onAdd = function (map) {
 };
 map.addControl(attributionControl);
 
-//var zoomControl = L.control.zoom({
-//  position: "bottomright"
-//}).addTo(map);
-
-/* GPS enabled geolocation control set to follow the user's location */
-//var locateControl = L.control.locate({
-//  position: "bottomright",
-//  drawCircle: true,
-//  follow: true,
-//  setView: true,
-//  keepCurrentZoomLevel: true,
-//  markerStyle: {
-//    weight: 1,
-//    opacity: 0.8,
-//    fillOpacity: 0.8
-//  },
-//  circleStyle: {
-//    weight: 1,
-//    clickable: false
-//  },
-//  icon: "icon-direction",
-//  metric: false,
-//  strings: {
-//    title: "My location",
-//    popup: "You are within {distance} {unit} from this point",
-//    outsideMapBoundsMsg: "You seem located outside the boundaries of the map"
-//  },
-//  locateOptions: {
-//    maxZoom: 18,
-//    watch: true,
-//    enableHighAccuracy: true,
-//    maximumAge: 10000,
-//    timeout: 10000
-//  }
-//}).addTo(map);
 
 /* Larger screens get expanded layer control and visible sidebar */
 if (document.body.clientWidth <= 767) {
@@ -1130,26 +1203,6 @@ if (document.body.clientWidth <= 767) {
     var isCollapsed = false;
 }
 
-//var baseLayers = {
-//  "Street Map": mapquestOSM,
-//  "Aerial Imagery": mapquestOAM,
-//  "Imagery with Streets": mapquestHYB
-//};
-
-//var groupedOverlays = {
-//  "Points of Interest": {
-//    "<img src='assets/img/station.png' width='24' height='28'>&nbsp;Theaters": stationLayer,
-//    "<img src='assets/img/museum.png' width='24' height='28'>&nbsp;Museums": museumLayer
-//  },
-//  "Reference": {
-//    "Boroughs": boroughs,
-//    "Subway Lines": subwayLines
-//  }
-//};
-
-//var layerControl = L.control.groupedLayers(baseLayers, groupedOverlays, {
-//  collapsed: isCollapsed
-//}).addTo(map);
 
 /* Highlight search box text on click */
 $("#searchbox").click(function () {
@@ -1176,15 +1229,6 @@ $(document).one("ajaxStop", function () {
     featureList = new List("features", {valueNames: ["feature-name"]});
     featureList.sort("feature-name", {order: "asc"});
 
-    //var boroughsBH = new Bloodhound({
-    //  name: "Boroughs",
-    //  datumTokenizer: function (d) {
-    //    return Bloodhound.tokenizers.whitespace(d.name);
-    //  },
-    //  queryTokenizer: Bloodhound.tokenizers.whitespace,
-    //  local: boroughSearch,
-    //  limit: 10
-    //});
 
     var stationsBH = new Bloodhound({
         name: "Theaters",
@@ -1196,50 +1240,8 @@ $(document).one("ajaxStop", function () {
         limit: 10
     });
 
-    //var museumsBH = new Bloodhound({
-    //  name: "Museums",
-    //  datumTokenizer: function (d) {
-    //    return Bloodhound.tokenizers.whitespace(d.name);
-    //  },
-    //  queryTokenizer: Bloodhound.tokenizers.whitespace,
-    //  local: museumSearch,
-    //  limit: 10
-    //});
 
-    //var geonamesBH = new Bloodhound({
-    //  name: "GeoNames",
-    //  datumTokenizer: function (d) {
-    //    return Bloodhound.tokenizers.whitespace(d.name);
-    //  },
-    //  queryTokenizer: Bloodhound.tokenizers.whitespace,
-    //  remote: {
-    //    url: "http://api.geonames.org/searchJSON?username=bootleaf&featureClass=P&maxRows=5&countryCode=US&name_startsWith=%QUERY",
-    //    filter: function (data) {
-    //      return $.map(data.geonames, function (result) {
-    //        return {
-    //          name: result.name + ", " + result.adminCode1,
-    //          lat: result.lat,
-    //          lng: result.lng,
-    //          source: "GeoNames"
-    //        };
-    //      });
-    //    },
-    //    ajax: {
-    //      beforeSend: function (jqXhr, settings) {
-    //        settings.url += "&east=" + map.getBounds().getEast() + "&west=" + map.getBounds().getWest() + "&north=" + map.getBounds().getNorth() + "&south=" + map.getBounds().getSouth();
-    //        $("#searchicon").removeClass("fa-search").addClass("fa-refresh fa-spin");
-    //      },
-    //      complete: function (jqXHR, status) {
-    //        $('#searchicon').removeClass("fa-refresh fa-spin").addClass("fa-search");
-    //      }
-    //    }
-    //  },
-    //  limit: 10
-    //});
-    //boroughsBH.initialize();
     stationsBH.initialize();
-    //museumsBH.initialize();
-    //geonamesBH.initialize();
 
     /* instantiate the typeahead UI */
     $("#searchbox").typeahead({
