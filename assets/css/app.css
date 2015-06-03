@@ -8,6 +8,13 @@ body {
     padding-top: 51px;
 }
 
+@media (min-width: 768px) {
+  .modal-xl {
+    width: 90%;
+   max-width:900px;
+  }
+}
+
 input[type="radio"], input[type="checkbox"] {
     margin: 0;
 }
@@ -22,9 +29,7 @@ input[type="radio"], input[type="checkbox"] {
     transition: all 0.25s ease-out;
 }
 
-.highcharts-title{
-    font-size: 12px;
-}
+
 
 td.feature-name{
     font-size: 12px;
@@ -37,7 +42,7 @@ td.feature-name{
 .charts{
     margin: 1px;
     min-width: 850px;
-    height: 150px;
+    /*height: 250px;*/
 }
 
 #map {
