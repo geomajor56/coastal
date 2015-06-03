@@ -260,7 +260,7 @@ $("#chart-btn").click(function () {
                         var myPlotLineId = "myPlotLine";
                         chart1 = new Highcharts.Chart({
                             chart: {
-                                height: 175,
+                                height: 250,
                                 renderTo: 'container1',
                                 type: 'line',
                                 zoomType: 'x',
@@ -443,7 +443,7 @@ $("#chart-btn").click(function () {
 
                         chart2 = new Highcharts.Chart({
                             chart: {
-                                height: 175,
+                                height: 250,
                                 renderTo: 'container2',
                                 type: 'line',
                                 zoomType: 'x',
@@ -582,7 +582,7 @@ $("#chart-btn").click(function () {
 
                         chart3 = new Highcharts.Chart({
                             chart: {
-                                height: 175,
+                                height: 250,
                                 renderTo: 'container3',
                                 type: 'line',
                                 zoomType: 'x',
@@ -719,7 +719,7 @@ $("#chart-btn").click(function () {
 
                         chart4 = new Highcharts.Chart({
                             chart: {
-                                height: 175,
+                                height: 250,
                                 renderTo: 'container4',
                                 type: 'line',
                                 zoomType: 'x',
@@ -892,7 +892,7 @@ $("#chart-btn").click(function () {
 
                         chart5 = new Highcharts.Chart({
                             chart: {
-                                height: 175,
+                                height: 250,
                                 renderTo: 'container5',
                                 type: 'line',
                                 zoomType: 'x',
