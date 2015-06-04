@@ -253,7 +253,7 @@ $("#chart-btn").click(function () {
                     $(document).ready(function () {
 
 
-                        $('#btn').click(function () {
+                        $('#unzoom').click(function () {
                             unzoom();
                         });
 
