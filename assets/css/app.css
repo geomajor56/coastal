@@ -29,7 +29,9 @@ input[type="radio"], input[type="checkbox"] {
     transition: all 0.25s ease-out;
 }
 
-
+.highcharts-title{
+    font-size: 14px;
+}
 
 td.feature-name{
     font-size: 12px;

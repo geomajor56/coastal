@@ -106,314 +106,42 @@ $("#chart-btn").click(function () {
             }
 
 
-            $(function () {
+            var chart1, chart2, chart3, chart4, chart5;
 
-                var chart1 = $('#container1').highcharts('StockChart', {
+            $('#container1').highcharts('StockChart', {
 
-
-                    chart: {
-                        height: 300,
-                        width: 1100
-                    },
-
-                    rangeSelector: {
-                        allButtonsEnabled: true,
-                        selected: 1
-                    },
-                    legend: {
-                        enabled: false
-                    },
-
-                    title: {
-                        text: 'Temperature, Salinity, Dissolved Oxygen for Station: ' + this_station,
-                        style: {
-                            fontSize: 12
-                        }
-                    },
-
-                    xAxis: {
-                        type: 'datetime',
-                        dateTimeLabelFormats: {
-                            year: '%Y'
-                        },
-                        events: {
-                            afterSetExtremes: function (e) {
-                                thisMin = Highcharts.dateFormat(null, e.min)
-                                thisMax = Highcharts.dateFormat(null, e.max)
-                                chart2.xAxis[0].setExtremes(thisMin, thisMax);
-                            }
-                        }
-
-                    },
-                    yAxis: [
-                        {// Primary yAxis
-                            labels: {
-                                formatter: function () {
-                                    return this.value + '°C';
-                                },
-                                style: {
-                                    color: '#89A54E'
-
-                                }
-                            },
-                            title: {
-                                text: 'Temperature',
-                                style: {
-                                    color: '#89A54E',
-                                    align: 'right'
-                                }
-                            },
-                            opposite: false
-
-                        },
-                        {// Secondary yAxis
-                            gridLineWidth: 0,
-                            title: {
-                                text: 'Dissolved Oxygen',
-                                style: {
-                                    color: '#4572A7',
-                                    align: 'right'
-                                }
-                            },
-                            labels: {
-                                formatter: function () {
-                                    return this.value + ' mg/L';
-                                },
-                                style: {
-                                    color: '#4572A7'
-                                },
-                                opposite: true
-                            }
-
-                        },
-                        {// Tertiary yAxis
-                            gridLineWidth: 0,
-                            title: {
-                                text: 'Salinity',
-                                style: {
-                                    color: '#AA4643',
-                                    align: 'left'
-                                }
-                            },
-                            labels: {
-                                formatter: function () {
-                                    return this.value + ' ppt';
-                                },
-                                style: {
-                                    color: '#AA4643'
-                                }
-                            },
-                            opposite: true
-                        }
-                    ],
-                    tooltip: {
-                        shared: true
-                    },
-                    series: [
-                        {
-                            name: 'Temperature',
-                            color: '#89A54E',
-                            type: 'area',
-                            data: temperature,
-                            tooltip: {
-                                valueSuffix: ' °C'
-                            },
-                            marker: {
-                                enabled: false
-                            }
-
-                        },
-                        {
-
-                            name: 'Dissolved Oxygen',
-                            color: '#4572A7',
-                            type: 'spline',
-                            yAxis: 1,
-
-                            data: dissolved_oxygen,
-                            tooltip: {
-                                valueSuffix: ' mg/L'
-                            },
-                            marker: {
-                                enabled: true
-                            }
-
-                        },
-                        {
-                            name: 'Salinity',
-                            type: 'spline',
-                            color: '#AA4643',
-                            yAxis: 2,
-                            data: salinity,
-                            tooltip: {
-                                valueSuffix: ' ppt'
-                            },
-
-                            marker: {
-                                enabled: true
-                            }
-
-                        }
-                    ]
-                });
-                var chart2 = $('#container2').highcharts({
-
-                    chart: {
-                        height: 300,
-                        width: 1100
-                    },
-
-                    title: {
-                        text: 'Nitrates/Nitrites, Ammonium for Station: ' + this_station
-                    },
-
-                    xAxis: {
-
-                        events: {
-                            setExtremes: function(e) {
-                                chart.xAxis[0].setExtremes(thisMin, thisMax);
-                            }
-                        },
-                        scrollbar: {
-                            liveRedraw: false
-                        },
-
-                        type: 'datetime',
-                        dateTimeLabelFormats: {
-                            year: '%Y'
-                        }
-                    }
-                    ,
-                    yAxis: [
-                        {// Primary yAxis
-                            labels: {
-                                format: '{value}um',
-                                style: {
-                                    color: '#89A54E'
-                                }
-                            },
-                            title: {
-                                text: 'Nitrates/Nitrites',
-                                style: {
-                                    color: '#89A54E'
-                                }
-                            }
-                        },
-                        {// Secondary yAxis
-                            title: {
-                                text: 'Ammonium',
-                                style: {
-                                    color: '#4572A7'
-                                }
-                            },
-                            labels: {
-                                format: '{value} um',
-                                style: {
-                                    color: '#4572A7'
-                                }
-                            },
-                            opposite: true
-                        }
-                    ],
-                    tooltip: {
-                        shared: true
-                    },
-
-                    series: [
-                        {
-                            name: 'Total Nitrogen',
-                            color: '#4572A7',
-
-                            yAxis: 1,
-                            data: nitrogen,
-                            tooltip: {
-                                valueSuffix: ' um'
-                            },
-                            marker: {
-                                enabled: true
-                            }
-
-                        },
-                        {
-                            name: 'Ammonium',
-                            color: '#89A54E',
-
-                            data: ammonium,
-                            tooltip: {
-                                valueSuffix: ' um'
-                            },
-                            marker: {
-                                enabled: true
-                            }
-                        }
-                    ]
-                });
-
-            });
-
-
-            var chart1_options = {
-
-                chart: {
-                    height: 200,
-                    renderTo: 'container1',
-                    zoomType: 'x'
+                title: {
+                    text: 'Temperature, Salinity, Dissolved Oxygen for Station: ' + this_station_name
                 },
 
-                //rangeSelector: {
-                //    allButtonsEnabled: true,
-                //    buttons: [{
-                //        type: 'month',
-                //        count: 3,
-                //        text: 'Day',
-                //        dataGrouping: {
-                //            forced: true,
-                //            units: [['day', [1]]]
-                //        }
-                //    }, {
-                //        type: 'year',
-                //        count: 1,
-                //        text: 'Week',
-                //        dataGrouping: {
-                //            forced: true,
-                //            units: [['week', [1]]]
-                //        }
-                //    }, {
-                //        type: 'all',
-                //        text: 'Month',
-                //        dataGrouping: {
-                //            forced: true,
-                //            units: [['month', [1]]]
-                //        }
-                //    }],
-                //    buttonTheme: {
-                //        width: 60
-                //    },
-                //    selected: 23454
-                //},
+                chart: {
+                    height: 275,
+                },
 
                 legend: {
                     enabled: false
                 },
-
-                title: {
-                    text: 'Temperature, Salinity, Dissolved Oxygen for Station: ' + this_station
-                },
-
                 xAxis: {
                     type: 'datetime',
                     dateTimeLabelFormats: {
                         year: '%Y'
                     },
+
                     events: {
+                        setExtremes: function (e) {
+                            var thisMin = e.min,
+                                thisMax = e.max,
+                                chart2 = $('#container2').highcharts();
+                                chart3 = $('#container3').highcharts();
+                                chart4 = $('#container4').highcharts();
+                                chart5 = $('#container5').highcharts();
 
-                        afterSetExtremes: function () {
-
+                               chart2.xAxis[0].setExtremes(thisMin, thisMax);
+                               chart3.xAxis[0].setExtremes(thisMin, thisMax);
+                               chart4.xAxis[0].setExtremes(thisMin, thisMax);
+                               chart5.xAxis[0].setExtremes(thisMin, thisMax);
                         }
-
-
                     }
-
                 },
                 yAxis: [
                     {// Primary yAxis
@@ -431,7 +159,7 @@ $("#chart-btn").click(function () {
                                 color: '#89A54E'
                             }
                         },
-                        opposite: true
+                        opposite: false
 
                     },
                     {// Secondary yAxis
@@ -474,6 +202,7 @@ $("#chart-btn").click(function () {
                 tooltip: {
                     shared: true
                 },
+
                 series: [
                     {
                         name: 'Temperature',
@@ -520,32 +249,24 @@ $("#chart-btn").click(function () {
 
                     }
                 ]
-            };
-            var chart2_options = {
-
+            });
+            $('#container2').highcharts({
                 chart: {
-                    height: 150,
-                    type: 'spline',
-                    renderTo: 'container2',
-                    zoomType: 'x'
+                    height: 150
                 },
-
+                title: {
+                    text: 'Nitrate + Nitrite, Ammonium for Station: ' + this_station_name
+                },
                 legend: {
                     enabled: false
                 },
-
-                title: {
-                    text: 'Nitrates/Nitrites, Ammonium for Station: ' + this_station
+                xAxis: {
+                    type: 'datetime',
+                    dateTimeLabelFormats: {
+                        year: '%Y'
+                    },
+                    events: {}
                 },
-
-                xAxis: [
-                    {
-                        type: 'datetime',
-                        dateTimeLabelFormats: {
-                            year: '%Y'
-                        }
-                    }
-                ],
                 yAxis: [
                     {// Primary yAxis
                         labels: {
@@ -581,9 +302,10 @@ $("#chart-btn").click(function () {
                     shared: true
                 },
 
+
                 series: [
                     {
-                        name: 'Total Nitrogen',
+                        name: 'Nitrate+Nitrite',
                         color: '#4572A7',
 
                         yAxis: 1,
@@ -609,41 +331,109 @@ $("#chart-btn").click(function () {
                         }
                     }
                 ]
-            };
-            var chart3_options = {
 
+            });
+            $('#container3').highcharts({
                 chart: {
-                    height: 150,
-                    type: 'spline',
-                    renderTo: 'container3',
-                    zoomType: 'x'
+                    height: 150
                 },
-
                 legend: {
                     enabled: false
                 },
-
                 title: {
-                    text: 'Total Nitrogen and Phosphorus for Station: ' + this_station
+                    text: 'Ortho-Phosphates and Silicates for : ' + this_station_name
                 },
 
-                xAxis: [
-                    {
-                        type: 'datetime',
-                        dateTimeLabelFormats: {
-                            year: '%Y'
-                        },
-                        events: {
-
-                            afterSetExtremes: function () {
-
-
+                xAxis: {
+                    type: 'datetime',
+                    dateTimeLabelFormats: {
+                        year: '%Y'
+                    },
+                    events: {}
+                },
+                yAxis: [
+                    {// Primary yAxis
+                        labels: {
+                            format: '{value}um',
+                            style: {
+                                color: '#89A54E'
                             }
-
-
+                        },
+                        title: {
+                            text: 'Ortho-Phosphates',
+                            style: {
+                                color: '#89A54E'
+                            }
                         }
+                    },
+                    {// Secondary yAxis
+                        title: {
+                            text: 'Silicates',
+                            style: {
+                                color: '#4572A7'
+                            }
+                        },
+                        labels: {
+                            format: '{value} um',
+                            style: {
+                                color: '#4572A7'
+                            }
+                        },
+                        opposite: true
                     }
                 ],
+                tooltip: {
+                    shared: true
+                },
+
+
+                series: [
+                    {
+                        name: 'Ortho-Phosphates',
+                        color: '#4572A7',
+
+                        yAxis: 1,
+                        data: phosphates,
+                        tooltip: {
+                            valueSuffix: ' um'
+                        },
+                        marker: {
+                            enabled: true
+                        }
+
+                    },
+                    {
+                        name: 'Silicates Phosphorus',
+                        color: '#89A54E',
+
+                        data: silicates,
+                        tooltip: {
+                            valueSuffix: ' um'
+                        },
+                        marker: {
+                            enabled: true
+                        }
+                    }
+                ]
+            });
+            $('#container4').highcharts({
+                chart: {
+                    height: 150
+                },
+                legend: {
+                    enabled: false
+                },
+                title: {
+                    text: 'Total Nitrogen and Total Phosphorus for Station: ' + this_station_name
+                },
+
+                xAxis: {
+                    type: 'datetime',
+                    dateTimeLabelFormats: {
+                        year: '%Y'
+                    },
+                    events: {}
+                },
                 yAxis: [
                     {// Primary yAxis
                         labels: {
@@ -679,6 +469,7 @@ $("#chart-btn").click(function () {
                     shared: true
                 },
 
+
                 series: [
                     {
                         name: 'Total Nitrogen',
@@ -707,22 +498,16 @@ $("#chart-btn").click(function () {
                         }
                     }
                 ]
-            };
-            var chart4_options = {
-
+            });
+            $('#container5').highcharts({
                 chart: {
-                    height: 150,
-                    type: 'line',
-                    renderTo: 'container4',
-                    zoomType: 'x'
+                    height: 150
                 },
-
                 legend: {
                     enabled: false
                 },
-
                 title: {
-                    text: 'Chlorophyll, Pheophytin, and Turbidity for Station: ' + this_station
+                    text: 'Chlorophyll, Pheophytin, and Turbidity for Station: ' + this_station_name
                 },
 
                 xAxis: {
@@ -730,16 +515,7 @@ $("#chart-btn").click(function () {
                     dateTimeLabelFormats: {
                         year: '%Y'
                     },
-                    events: {
-
-                        afterSetExtremes: function () {
-
-
-                        }
-
-
-                    }
-
+                    events: {}
                 },
                 yAxis: [
                     {// Primary yAxis
@@ -801,6 +577,7 @@ $("#chart-btn").click(function () {
                     shared: true
                 },
 
+
                 series: [
                     {
                         name: 'Turbidity',
@@ -841,112 +618,13 @@ $("#chart-btn").click(function () {
                         }
                     }
                 ]
-            };
-            var chart5_options = {
-
-                chart: {
-                    height: 150,
-                    type: 'spline',
-                    renderTo: 'container5',
-                    zoomType: 'x'
-                },
+            });
 
 
-                legend: {
-                    enabled: false
-                },
 
-                title: {
-                    text: 'Ortho-Phosphates and Silicates for : ' + this_station
-                },
-
-                xAxis: [
-                    {
-                        type: 'datetime',
-                        dateTimeLabelFormats: {
-                            year: '%Y'
-                        },
-                        events: {
-
-                            afterSetExtremes: function () {
+//88888888888888888888888888888  from sebastion
 
 
-                            }
-
-
-                        }
-                    }
-                ],
-                yAxis: [
-                    {// Primary yAxis
-                        labels: {
-                            format: '{value}um',
-                            style: {
-                                color: '#89A54E'
-                            }
-                        },
-                        title: {
-                            text: 'Ortho-Phosphates',
-                            style: {
-                                color: '#89A54E'
-                            }
-                        }
-                    },
-                    {// Secondary yAxis
-                        title: {
-                            text: 'Silicates',
-                            style: {
-                                color: '#4572A7'
-                            }
-                        },
-                        labels: {
-                            format: '{value} um',
-                            style: {
-                                color: '#4572A7'
-                            }
-                        },
-                        opposite: true
-                    }
-                ],
-                tooltip: {
-                    shared: true
-                },
-
-                series: [
-                    {
-                        name: 'Ortho-Phosphates',
-                        color: '#4572A7',
-
-                        yAxis: 1,
-                        data: phosphates,
-                        tooltip: {
-                            valueSuffix: ' um'
-                        },
-                        marker: {
-                            enabled: true
-                        }
-
-                    },
-                    {
-                        name: 'Total Phosphorus',
-                        color: '#89A54E',
-
-                        data: silicates,
-                        tooltip: {
-                            valueSuffix: ' um'
-                        },
-                        marker: {
-                            enabled: true
-                        }
-                    }
-                ]
-            };
-
-            //var chart1 = Highcharts.Chart(chart1_options);
-            //var chart2 = new Highcharts.Chart(chart2_options);
-            //var chart3 = new Highcharts.Chart(chart3_options);
-            //var chart4 = new Highcharts.Chart(chart4_options);
-            //var chart5 = new Highcharts.Chart(chart5_options);
         }
 
 
@@ -966,7 +644,8 @@ function clearHighlight() {
 function sidebarClick(id) {
     var layer = stations.getLayer(id);
     this_station = layer.feature.properties.station_id;
-    //console.log("from sideBarClick: ", this_station);
+    this_station_name = layer.feature.properties.station_name;
+
     map.setView([layer.getLatLng().lat, layer.getLatLng().lng], 17);
     layer.fire("click");
     /* Hide sidebar and go to the map on small screens */
