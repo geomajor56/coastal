@@ -168,6 +168,7 @@ $("#chart-btn").click(function () {
                         gridLineWidth: 0,
                         title: {
                             text: 'Dissolved Oxygen',
+                            align: 'middle',
                             style: {
                                 color: '#4572A7'
                             }
