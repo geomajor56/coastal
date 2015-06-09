@@ -4,6 +4,11 @@ $user = 'michael';
 $pass = 'huskies1975';
 $db = 'ccs';
 
+//$host = 'web482.webfaction.com';
+//$user = 'ccs';
+//$pass = 'huskies1975';
+//$db = 'capecodbay';
+
 $connection = pg_connect("host=$host dbname=$db user=$user password=$pass") or die('Could not connect: ' .pg_last_error());
 
 $this_station = $_POST['station_num_id'];
