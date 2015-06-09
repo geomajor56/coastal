@@ -105,17 +105,19 @@ $("#chart-btn").click(function () {
 
             }
 
-
             var chart1, chart2, chart3, chart4, chart5;
 
             $('#container1').highcharts('StockChart', {
 
                 title: {
-                    text: 'Temperature, Salinity, Dissolved Oxygen for Station: ' + this_station_name
+                    text: 'Temperature, Salinity, Dissolved Oxygen for Station: ' + this_station_name,
+                    style: {
+                        fontSize: '14px'
+                    }
                 },
 
                 chart: {
-                    height: 275,
+                    height: 300,
                 },
 
                 legend: {
@@ -132,14 +134,14 @@ $("#chart-btn").click(function () {
                             var thisMin = e.min,
                                 thisMax = e.max,
                                 chart2 = $('#container2').highcharts();
-                                chart3 = $('#container3').highcharts();
-                                chart4 = $('#container4').highcharts();
-                                chart5 = $('#container5').highcharts();
+                            chart3 = $('#container3').highcharts();
+                            chart4 = $('#container4').highcharts();
+                            chart5 = $('#container5').highcharts();
 
-                               chart2.xAxis[0].setExtremes(thisMin, thisMax);
-                               chart3.xAxis[0].setExtremes(thisMin, thisMax);
-                               chart4.xAxis[0].setExtremes(thisMin, thisMax);
-                               chart5.xAxis[0].setExtremes(thisMin, thisMax);
+                            chart2.xAxis[0].setExtremes(thisMin, thisMax);
+                            chart3.xAxis[0].setExtremes(thisMin, thisMax);
+                            chart4.xAxis[0].setExtremes(thisMin, thisMax);
+                            chart5.xAxis[0].setExtremes(thisMin, thisMax);
                         }
                     }
                 },
@@ -255,7 +257,10 @@ $("#chart-btn").click(function () {
                     height: 150
                 },
                 title: {
-                    text: 'Nitrate + Nitrite, Ammonium for Station: ' + this_station_name
+                    text: 'Nitrate + Nitrite, Ammonium for Station: ' + this_station_name,
+                    style: {
+                        fontSize: '14px'
+                    }
                 },
                 legend: {
                     enabled: false
@@ -341,7 +346,10 @@ $("#chart-btn").click(function () {
                     enabled: false
                 },
                 title: {
-                    text: 'Ortho-Phosphates and Silicates for : ' + this_station_name
+                    text: 'Ortho-Phosphates and Silicates for : ' + this_station_name,
+                    style: {
+                        fontSize: '14px'
+                    }
                 },
 
                 xAxis: {
@@ -424,7 +432,10 @@ $("#chart-btn").click(function () {
                     enabled: false
                 },
                 title: {
-                    text: 'Total Nitrogen and Total Phosphorus for Station: ' + this_station_name
+                    text: 'Total Nitrogen and Total Phosphorus for Station: ' + this_station_name,
+                    style: {
+                        fontSize: '14px'
+                    }
                 },
 
                 xAxis: {
@@ -507,7 +518,10 @@ $("#chart-btn").click(function () {
                     enabled: false
                 },
                 title: {
-                    text: 'Chlorophyll, Pheophytin, and Turbidity for Station: ' + this_station_name
+                    text: 'Chlorophyll, Pheophytin, and Turbidity for Station: ' + this_station_name,
+                    style: {
+                        fontSize: '14px'
+                    }
                 },
 
                 xAxis: {
@@ -619,15 +633,7 @@ $("#chart-btn").click(function () {
                     }
                 ]
             });
-
-
-
-//88888888888888888888888888888  from sebastion
-
-
         }
-
-
     });
 
     $('#charts-container').modal("show");

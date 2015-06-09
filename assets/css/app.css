@@ -28,10 +28,9 @@ input[type="radio"], input[type="checkbox"] {
     -moz-transition: all 0.25s ease-out;
     transition: all 0.25s ease-out;
 }
-
-.highcharts-title{
-    font-size: 14px;
-}
+/*#charts-modal-container{*/
+    /*overflow: auto;*/
+/*}*/
 
 td.feature-name{
     font-size: 12px;
@@ -42,7 +41,7 @@ td.feature-name{
 }
 
 .charts{
-    margin: 1px;
+    margin: 2px;
     min-width: 850px;
     /*height: 250px;*/
 }
