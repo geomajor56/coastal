@@ -1,7 +1,7 @@
 /**
  * Created by michael on 5/31/15.
  */
-var map, featureList, stationSearch = [], this_station, chart2, thisMin, thisMax;
+var map, featureList, stationSearch = [], this_station, this_station_name, chart2, thisMin, thisMax;
 
 $(window).resize(function () {
     sizeLayerControl();
@@ -224,9 +224,8 @@ $("#chart-btn").click(function () {
 
                         name: 'Dissolved Oxygen',
                         color: '#4572A7',
-                        type: 'spline',
+                        //type: 'spline',
                         yAxis: 1,
-
                         data: dissolved_oxygen,
                         tooltip: {
                             valueSuffix: ' mg/L'
@@ -278,13 +277,13 @@ $("#chart-btn").click(function () {
                         labels: {
                             format: '{value}um',
                             style: {
-                                color: '#89A54E'
+                                color: '#a1d76a'
                             }
                         },
                         title: {
                             text: 'Nitrates/Nitrites',
                             style: {
-                                color: '#89A54E'
+                                color: '#a1d76a'
                             }
                         }
                     },
@@ -292,13 +291,13 @@ $("#chart-btn").click(function () {
                         title: {
                             text: 'Ammonium',
                             style: {
-                                color: '#4572A7'
+                                color: '#fc8d59'
                             }
                         },
                         labels: {
                             format: '{value} um',
                             style: {
-                                color: '#4572A7'
+                                color: '#fc8d59'
                             }
                         },
                         opposite: true
@@ -312,10 +311,10 @@ $("#chart-btn").click(function () {
                 series: [
                     {
                         name: 'Nitrate+Nitrite',
-                        color: '#4572A7',
-
+                        color: '#a1d76a',
                         yAxis: 1,
                         data: nitrogen,
+                        //type: 'spline',
                         tooltip: {
                             valueSuffix: ' um'
                         },
@@ -326,9 +325,9 @@ $("#chart-btn").click(function () {
                     },
                     {
                         name: 'Ammonium',
-                        color: '#89A54E',
-
+                        color: '#fc8d59',
                         data: ammonium,
+                        //type: 'spline',
                         tooltip: {
                             valueSuffix: ' um'
                         },
@@ -365,13 +364,13 @@ $("#chart-btn").click(function () {
                         labels: {
                             format: '{value}um',
                             style: {
-                                color: '#89A54E'
+                                color: '#f46d43'
                             }
                         },
                         title: {
                             text: 'Ortho-Phosphates',
                             style: {
-                                color: '#89A54E'
+                                color: '#f46d43'
                             }
                         }
                     },
@@ -379,13 +378,13 @@ $("#chart-btn").click(function () {
                         title: {
                             text: 'Silicates',
                             style: {
-                                color: '#4572A7'
+                                color: '#abd9e9'
                             }
                         },
                         labels: {
                             format: '{value} um',
                             style: {
-                                color: '#4572A7'
+                                color: '#abd9e9'
                             }
                         },
                         opposite: true
@@ -399,7 +398,7 @@ $("#chart-btn").click(function () {
                 series: [
                     {
                         name: 'Ortho-Phosphates',
-                        color: '#4572A7',
+                        color: '#f46d43',
 
                         yAxis: 1,
                         data: phosphates,
@@ -412,8 +411,8 @@ $("#chart-btn").click(function () {
 
                     },
                     {
-                        name: 'Silicates Phosphorus',
-                        color: '#89A54E',
+                        name: 'Silicates',
+                        color: '#abd9e9',
 
                         data: silicates,
                         tooltip: {
@@ -451,13 +450,13 @@ $("#chart-btn").click(function () {
                         labels: {
                             format: '{value}um',
                             style: {
-                                color: '#89A54E'
+                                color: '#33a02c'
                             }
                         },
                         title: {
                             text: 'Total Nitrogen',
                             style: {
-                                color: '#89A54E'
+                                color: '#33a02c'
                             }
                         }
                     },
@@ -465,13 +464,13 @@ $("#chart-btn").click(function () {
                         title: {
                             text: 'Total Phosphorus',
                             style: {
-                                color: '#4572A7'
+                                color: '#ff7f00'
                             }
                         },
                         labels: {
                             format: '{value} um',
                             style: {
-                                color: '#4572A7'
+                                color: '#ff7f00'
                             }
                         },
                         opposite: true
@@ -485,7 +484,7 @@ $("#chart-btn").click(function () {
                 series: [
                     {
                         name: 'Total Nitrogen',
-                        color: '#4572A7',
+                        color: '#33a02c',
 
                         yAxis: 1,
                         data: total_nitrogen,
@@ -499,7 +498,7 @@ $("#chart-btn").click(function () {
                     },
                     {
                         name: 'Total Phosphorus',
-                        color: '#89A54E',
+                        color: '#ff7f00',
 
                         data: total_phosphorus,
                         tooltip: {
@@ -555,7 +554,7 @@ $("#chart-btn").click(function () {
                         title: {
                             text: 'Chlorophyll',
                             style: {
-                                color: '#556b2f'
+                                color: '#fed976'
                             }
                         },
                         labels: {
@@ -563,7 +562,7 @@ $("#chart-btn").click(function () {
                                 return this.value + ' ug/L';
                             },
                             style: {
-                                color: '#556b2f'
+                                color: '#fed976'
                             }
                         },
                         opposite: true
@@ -622,7 +621,7 @@ $("#chart-btn").click(function () {
                     },
                     {
                         name: 'Chlorophyll',
-                        color: '#556b2f',
+                        color: '#fed976',
                         yaxis: 2,
                         data: chlorophyll,
                         marker: {
@@ -922,12 +921,12 @@ $(document).one("ajaxStop", function () {
 });
 
 // Leaflet patch to make layer control scrollable on touch browsers
-var container = $(".leaflet-control-layers")[0];
-if (!L.Browser.touch) {
-    L.DomEvent
-        .disableClickPropagation(container)
-        .disableScrollPropagation(container);
-} else {
-    L.DomEvent.disableClickPropagation(container);
-}
+//var container = $(".leaflet-control-layers")[0];
+//if (!L.Browser.touch) {
+//    L.DomEvent
+//        .disableClickPropagation(container)
+//        .disableScrollPropagation(container);
+//} else {
+//    L.DomEvent.disableClickPropagation(container);
+//}
 
