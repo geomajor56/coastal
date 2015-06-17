@@ -8,10 +8,25 @@ body {
     padding-top: 51px;
 }
 
+
+
+/*.modal-dialog {*/
+  /*width: 100%;*/
+  /*height: 100%;*/
+  /*padding: 0;*/
+/*}*/
+
+/*.modal-content {*/
+  /*height: 100%;*/
+  /*border-radius: 0;*/
+/*}*/
+
+
 @media (min-width: 768px) {
   .modal-xl {
-    width: 90%;
-   max-width:900px;
+    width: 100%;
+      height: 100%;
+   max-width:1300px;
   }
 }
 
@@ -20,6 +35,16 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 #sidebar {
+    width: 225px;
+    height: 100%;
+    max-width: 100%;
+    float: left;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+}
+
+#chart-sidebar {
     width: 225px;
     height: 100%;
     max-width: 100%;
@@ -42,7 +67,7 @@ td.feature-name{
 
 .charts{
     margin: 2px;
-    min-width: 850px;
+    /*min-width: 750px;*/
     /*height: 250px;*/
 }
 
@@ -52,7 +77,9 @@ td.feature-name{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-
+th{
+    color: black;
+}
 
 
 #loading {
