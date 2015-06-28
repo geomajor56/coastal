@@ -67,18 +67,19 @@ $("#sidebar-hide-btn").click(function () {
     map.invalidateSize();
 });
 
-$("#graphs").click(function () {
+$("#graphs-button").click(function () {
     $('#table-container').hide();
     $('#chart-container').show();
 });
 
-$("#table").click(function () {
+$("#table-button").click(function () {
     $('#chart-container').hide();
-    //$('#table-data').dataTable({
-    //    "data": data
-    //
-    //});
     $('#table-container').show();
+});
+
+$("back-to-map").click(function () {
+    $('#chart-container').hide();
+    $('#table-container').hide();
 });
 
 
@@ -98,35 +99,20 @@ $("#chart-btn").click(function () {
             alert(thrownError);
         },
         success: function chartParser(data) {
+            var tableData = JSON.stringify(data)
+            console.log(data);
+            $('#table').bootstrapTable({
 
-            $('#table-data').dataTable({
-                "data": data,
-                "destroy": true,
-                "scrollX": true,
-                "columnDefs": [
-                    {"name": "Cruise", "targets": 0, "visible": false},
-                    {"name": "Date", "targets": 1},
-                    {"name": "Temp", "targets": 3},
-                    {"name": "Salinity", "targets": 4},
-                    {"name": "DO", "targets": 5},
-                    {"name": "grade", "targets": 6},
-                    {"name": "engine", "targets": 7},
-                    {"name": "browser", "targets": 8},
-                    {"name": "platform", "targets": 9},
-                    {"name": "version", "targets": 10},
-                    {"name": "grade", "targets": 11}
-
-                ]
+                data: tableData
             });
 
-            //console.log(data);
             var sampleDate, d, sampleYear;
-            //$('#map-content').hide();
-            //$('#chart-content').show();
+
             for (var i = 0; i < data.length; i++) {
                 sampleDate = data[i][1];   // in milliseconds for Highcharts
                 d = new Date(data[i][1]);
                 //console.log(moment(sampleDate));
+                //console.log(d);
                 sampleYear = d.getFullYear();
                 temperature.push([sampleDate, data[i][3]]);
                 salinity.push([sampleDate, data[i][4]]);
