@@ -5,7 +5,8 @@
 
 // Load the fonts
 Highcharts.createElement('link', {
-	href: '//fonts.googleapis.com/css?family=Unica+One',
+	href: '//fonts.googleapis.com/css?family=Inconsolata',
+	//href: '//fonts.googleapis.com/css?family=Unica+One',
 	rel: 'stylesheet',
 	type: 'text/css'
 }, null, document.getElementsByTagName('head')[0]);
@@ -22,14 +23,15 @@ Highcharts.theme = {
 			]
 		},
 		style: {
-			fontFamily: "'Unica One', sans-serif"
+			//fontFamily: "'Unica One', sans-serif"
+			fontFamily: "'Inconsolata', sans-serif"
 		},
 		plotBorderColor: '#606063'
 	},
 	title: {
 		style: {
 			color: '#E0E0E3',
-			textTransform: 'uppercase',
+			//textTransform: 'uppercase',
 			fontSize: '20px'
 		}
 	},

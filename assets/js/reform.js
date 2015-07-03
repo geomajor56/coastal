@@ -170,7 +170,7 @@ $(function () {
                     },
 
                 title: {
-                        text: 'Temperature, Salinity, Dissolved Oxygen for Station: ' + thisStation
+                        text: 'Temperature, Salinity, Dissolved Oxygen for Station: '
                     },
 
                 xAxis: {

@@ -100,7 +100,7 @@ $("#chart-btn").click(function () {
         },
         success: function chartParser(data) {
             var tableData = JSON.stringify(data)
-            console.log(data);
+            console.log(tableData);
             $('#table').bootstrapTable({
 
                 data: tableData
