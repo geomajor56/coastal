@@ -48,7 +48,6 @@ with open('surface_data_5_12_2015.csv', 'rb') as csvfile:
             pheophytin = float_for_db(float(row[15]))
             turbidity = float_for_db(float(row[16]))
 
-
             cur.execute(
                 "INSERT INTO monitor_sampleparameters(cruise, cruise_date, depth_class, temp, salinity, dissolved_o, ph, chl, pheo,"
                 " turb, no, nh, po, si, tn, tp, station_id)"

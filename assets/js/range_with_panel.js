@@ -1,9 +1,7 @@
 /**
  * Created by michael on 6/13/15.
  */
-/**
- * Created by michael on 5/31/15.
- */
+
 var map, featureList, stationSearch = [], this_station, this_station_name, chart2, thisMin, thisMax;
 
 $(window).resize(function () {
@@ -69,16 +67,16 @@ $("#sidebar-hide-btn").click(function () {
 
 $("#graphs-button").click(function () {
     $('#table-container').hide();
-    $('#chart-container').show();
+    $('.charts').show();
 });
 
 $("#table-button").click(function () {
-    $('#chart-container').hide();
+    $('.charts').hide();
     $('#table-container').show();
 });
 
 $("back-to-map").click(function () {
-    $('#chart-container').hide();
+    $('.charts').hide();
     $('#table-container').hide();
 });
 
@@ -99,12 +97,7 @@ $("#chart-btn").click(function () {
             alert(thrownError);
         },
         success: function chartParser(data) {
-            var tableData = JSON.stringify(data)
-            console.log(tableData);
-            $('#table').bootstrapTable({
-
-                data: tableData
-            });
+           console.log(data);
 
             var sampleDate, d, sampleYear;
 
@@ -135,6 +128,14 @@ $("#chart-btn").click(function () {
 
             $('#container1').highcharts('StockChart', {
 
+                navigator: {
+            height: 20
+        },
+
+                scrollbar: {
+                    liveRedraw: false
+                },
+
                 title: {
                     text: 'Temperature, Salinity, Dissolved Oxygen for Station: ' + this_station_name,
                     align: 'left',
@@ -152,12 +153,11 @@ $("#chart-btn").click(function () {
                 },
 
                 chart: {
-                    height: 300,
+                    //width: 1200,
+                    height: 250,
+
                 },
 
-                //legend: {
-                //    enabled: false
-                //},
                 xAxis: {
                     type: 'datetime',
                     dateTimeLabelFormats: {
@@ -181,8 +181,13 @@ $("#chart-btn").click(function () {
                     }
                 },
                 yAxis: [
+
+
                     {// Primary yAxis
                         labels: {
+
+                            enabled: true,
+
                             formatter: function () {
                                 return this.value + '°C';
                             },
@@ -209,6 +214,7 @@ $("#chart-btn").click(function () {
                             }
                         },
                         labels: {
+
                             formatter: function () {
                                 return this.value + ' mg/L';
                             },
@@ -221,12 +227,13 @@ $("#chart-btn").click(function () {
                     {// Tertiary yAxis
                         gridLineWidth: 0,
                         title: {
-                            text: 'Salinity',
+                            text: null,
                             style: {
                                 color: '#E83631'
                             }
                         },
                         labels: {
+                            enabled: false,
                             formatter: function () {
                                 return this.value + ' ppt';
                             },
@@ -243,9 +250,11 @@ $("#chart-btn").click(function () {
 
                 series: [
                     {
+                        connectNulls: false,
                         name: 'Temperature',
                         color: '#89A54E',
                         type: 'area',
+                        //type: 'line',
                         data: temperature,
                         tooltip: {
                             valueSuffix: ' °C'
@@ -260,9 +269,10 @@ $("#chart-btn").click(function () {
                     },
                     {
 
+                        connectNulls: false,
                         name: 'Dissolved Oxygen',
                         color: '#529CF2',
-                        //type: 'spline',
+                        // type: 'area',
                         yAxis: 1,
                         data: dissolved_oxygen,
                         tooltip: {
@@ -277,8 +287,9 @@ $("#chart-btn").click(function () {
 
                     },
                     {
-                        name: 'Salinity',
-                        //type: 'spline',
+                        connectNulls: false,
+                        name: 'Salsdfdinity',
+                        //  type: 'area',
                         color: '#E83631',
                         yAxis: 2,
                         data: salinity,
@@ -297,7 +308,8 @@ $("#chart-btn").click(function () {
             });
             $('#container2').highcharts({
                 chart: {
-                    height: 150
+                    height: 150,
+                    //width: 1200
                 },
                 title: {
                     text: 'Nitrate + Nitrite, Ammonium for Station: ' + this_station_name,
@@ -361,6 +373,7 @@ $("#chart-btn").click(function () {
 
                 series: [
                     {
+                        connectNulls: false,
                         name: 'Nitrate+Nitrite',
                         color: '#a1d76a',
                         yAxis: 1,
@@ -375,6 +388,7 @@ $("#chart-btn").click(function () {
 
                     },
                     {
+                        connectNulls: false,
                         name: 'Ammonium',
                         color: '#fc8d59',
                         data: ammonium,
@@ -391,7 +405,8 @@ $("#chart-btn").click(function () {
             });
             $('#container3').highcharts({
                 chart: {
-                    height: 150
+                    height: 150,
+                    //width: 1200
                 },
                 //legend: {
                 //    enabled: false
@@ -456,6 +471,7 @@ $("#chart-btn").click(function () {
 
                 series: [
                     {
+                        connectNulls: false,
                         name: 'Ortho-Phosphates',
                         color: '#f46d43',
 
@@ -470,9 +486,9 @@ $("#chart-btn").click(function () {
 
                     },
                     {
+                        connectNulls: false,
                         name: 'Silicates',
                         color: '#abd9e9',
-
                         data: silicates,
                         tooltip: {
                             valueSuffix: ' um'
@@ -485,7 +501,8 @@ $("#chart-btn").click(function () {
             });
             $('#container4').highcharts({
                 chart: {
-                    height: 150
+                    height: 150,
+                    //width: 1200
                 },
                 //legend: {
                 //    enabled: false
@@ -550,6 +567,7 @@ $("#chart-btn").click(function () {
 
                 series: [
                     {
+                        connectNulls: false,
                         name: 'Total Nitrogen',
                         color: '#33a02c',
 
@@ -564,6 +582,7 @@ $("#chart-btn").click(function () {
 
                     },
                     {
+                        connectNulls: false,
                         name: 'Total Phosphorus',
                         color: '#ff7f00',
 
@@ -580,7 +599,7 @@ $("#chart-btn").click(function () {
             $('#container5').highcharts({
                 chart: {
                     height: 150
-                },
+                                    },
                 //legend: {
                 //    enabled: false
                 //},
@@ -669,6 +688,7 @@ $("#chart-btn").click(function () {
 
                 series: [
                     {
+                        connectNulls: false,
                         name: 'Turbidity',
                         color: '#A0522D ',
                         data: turbidity,
@@ -682,6 +702,7 @@ $("#chart-btn").click(function () {
                         }
                     },
                     {
+                        connectNulls: false,
                         name: 'Pheophytin',
                         color: '#8fbc8f',
                         yAxis: 2,
@@ -695,6 +716,7 @@ $("#chart-btn").click(function () {
 
                     },
                     {
+                        connectNulls: false,
                         name: 'Chlorophyll',
                         color: '#fed976',
                         yaxis: 2,
@@ -804,6 +826,7 @@ var stations = L.geoJson(null, {
             layer.on({
                 click: function (e) {
                     this_station = feature.properties.station_id;
+                    this_station_name = layer.feature.properties.station_name;
                     //console.log("from onEachFeature:", this_station);
                     $("#feature-title").html(feature.properties.station_name);
                     $("#feature-info").html(content);

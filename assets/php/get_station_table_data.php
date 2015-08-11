@@ -14,7 +14,6 @@ $connection = pg_connect("host=$host dbname=$db user=$user password=$pass") or d
 $this_station = $_POST['station_num_id'];
 
 $chart_data = pg_query($connection, "SELECT cruise, cruise_date, depth_class, temp, salinity, dissolved_o, ph, chl, pheo, turb, no, nh, po, si, tn, tp FROM     monitor_sampleparameters WHERE station_id = '".$this_station."' ORDER BY cruise_date ASC ");
-//$chart_data = pg_query($connection, "SELECT * FROM  monitor_sampleparameters WHERE station_id = '".$this_station."' ORDER BY cruise_date ASC ");
 
 $row_1 = array();
 

@@ -9,25 +9,28 @@ body {
 }
 
 
+.modal .modal-body {
+   height: 80%;
+   width: 100%;
+   overflow-y: auto;
+}
+#chart-container {
+    /*width:80%;*/
+    height:80%;
+    overflow-y: auto;
+}
 
-/*.modal-dialog {*/
-  /*width: 100%;*/
-  /*height: 100%;*/
-  /*padding: 0;*/
-/*}*/
-
-/*.modal-content {*/
-  /*height: 100%;*/
-  /*border-radius: 0;*/
-/*}*/
-
-
-@media (min-width: 768px) {
-  .modal-xl {
+#table-container {
+    /*width:80%;*/
+    height:100%;
+    /*overflow-y: auto;*/
+}
+.modal-content {
+    height: 100%;
     width: 100%;
-      height: 100%;
-   max-width:1300px;
-  }
+    margin: 2px;
+   padding: 2px;
+    /*overflow: auto;*/
 }
 
 input[type="radio"], input[type="checkbox"] {
@@ -53,7 +56,7 @@ input[type="radio"], input[type="checkbox"] {
     -moz-transition: all 0.25s ease-out;
     transition: all 0.25s ease-out;
 }
-/*#charts-modal-container{*/
+/*#charts-modal-content{*/
     /*overflow: auto;*/
 /*}*/
 
@@ -61,13 +64,13 @@ td.feature-name{
     font-size: 12px;
 }
 
-.modal{
-    overflow-y: auto;
-}
+/*.modal{*/
+    /*overflow-y: auto;*/
+/*}*/
 
 .charts{
     margin: 2px;
-    /*min-width: 750px;*/
+        /*min-width: 80%;*/
     /*height: 250px;*/
 }
 

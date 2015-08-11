@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Cape Cod Bay</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.4/paper/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="//cdn.leafletjs.com/leaflet-0.7.3/leaflet.css">-->
+    <link rel="stylesheet" href="assets/leaflet/leaflet.css">
+    <link rel="stylesheet" href="assets/leaflet-plugins/Leaflet-NavBar/Leaflet.NavBar.css">
+    <!--<link rel="stylesheet" href="https://cdn.datatables.net/1.10.7/css/jquery.dataTables.css">-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.css">
+
+    <!--<link rel="stylesheet"-->
+    <!--href="//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.24.0/L.Control.Locate.css">-->
+
+    <link rel="stylesheet" href="assets/css/app.css">
+
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicon-76.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicon-120.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/img/favicon-152.png">
+    <link rel="icon" sizes="196x196" href="assets/img/favicon-196.png">
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+</head>
+
+<body>
+
+
+<div class="modal fade " id="charts-container" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <!--<div class="modal-dialog">-->
+    <div class="modal-content">
+        <!--<div class="container">-->
+        <div class="modal-body">
+            <div class="charts" id="container1"></div>
+            <div class="charts" id="container2"></div>
+            <div class="charts" id="container3"></div>
+            <div class="charts" id="container4"></div>
+            <div class="charts" id="container5"></div>
+            <!--</div>-->
+            <!--<div id="table-container" class="container-fluid" style="display:none;">-->
+            <div id="table-container" style="display:none;">
+                <table data-toggle="table" data-show-header="true" data-url="assets/js/data1.json">
+                    <thead>
+                    <tr>
+                        <th data-field="cruise_date" data-sortable="true">Date</th>
+                        <th data-field="temperature" data-sortable="true">Temperature</th>
+                        <th data-field="salinity" data-sortable="true">Salinity</th>
+                        <th data-field="dissolved_oxygen" data-sortable="true">DO</th>
+                        <th data-field="chlorophyll" data-sortable="true">Chlorophyll</th>
+                        <th data-field="pheophytin" data-sortable="true">Pheophytin</th>
+                        <th data-field="turbidity" data-sortable="true">Turbidity</th>
+                        <th data-field="nitrates" data-sortable="true">NO<sub>2</sub>/NO<sub>3</sub></th>
+                        <th data-field="ammonium" data-sortable="true">NH<sub>4</sub></th>
+                        <th data-field="phosphate>" data-sortable="true">PO<sub>4</sub></th>
+                        <th data-field="silicates" data-sortable="true">SiO<sub>4</sub></th>
+                        <th data-field="total_nitrogen" data-sortable="true">Total Nitrogen</th>
+                        <th data-field="total_phosphates" data-sortable="true">Total Phosphates</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="btn-group" role="group">
+                <button id="graphs-button" type="button" class="btn btn-info">Graphs</button>
+                <button id="back-to-map" type="button" class="btn btn-primary" data-dismiss="modal">Map</button>
+                <button id="table-button" type="button" class="btn btn-info">Table</button>
+            </div>
+        </div>
+        <!--</div>-->
+        <!--</div>-->
+    </div>
+</div>
+
+
+<div class="modal fade" id="featureModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title text-primary" id="feature-title"></h4>
+            </div>
+            <div class="modal-body" id="feature-info"></div>
+            <div class="modal-footer">
+                <a>
+                    <button type="button" id="chart-btn" class="btn btn-info" data-dismiss="modal">Data and Charts
+                    </button>
+                </a>
+                <button type="button" class="btn btn-default" role="button" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="navbar-icon-container">
+                <a href="#" class="navbar-icon pull-right visible-xs" id="nav-btn"><i
+                        class="fa fa-bars fa-lg white"></i></a>
+                <a href="#" class="navbar-icon pull-right visible-xs" id="sidebar-toggle-btn"><i
+                        class="fa fa-search fa-lg white"></i></a>
+            </div>
+            <a class="navbar-brand" href="#">Center For Coastal Studies</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="about-btn"><i
+                        class="fa fa-question-circle white"></i>&nbsp;&nbsp;About</a></li>
+
+                <li class="hidden-xs"><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in"
+                                         id="list-btn"><i class="fa fa-list white"></i>&nbsp;&nbsp;Station List</a>
+                </li>
+            </ul>
+
+        </div>
+        <!--/.navbar-collapse -->
+    </div>
+</div>
+
+<div id="container">
+    <div id="sidebar">
+        <div class="sidebar-wrapper">
+            <div class="panel panel-default" id="features">
+                <!--<div class="panel-heading">-->
+                <!--<h3 class="panel-title">Stations-->
+                <!--<button type="button" class="btn btn-xs btn-default pull-right" id="sidebar-hide-btn"><i class="fa fa-chevron-left"></i></button></h3>-->
+                <!--</div>-->
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-xs-10 col-md-10">
+                            <input type="text" class="form-control search" placeholder="Type Something"/>
+                        </div>
+                        <!--<div class="col-xs-4 col-md-4">-->
+                        <!--<button type="button" class="btn btn-primary pull-right sort" data-sort="feature-name" id="sort-btn"><i class="fa fa-sort"></i>&nbsp;&nbsp;Sort</button>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+                <div class="sidebar-table">
+                    <table class="table table-hover" id="feature-list">
+                        <thead class="hidden">
+                        <tr>
+                            <th>Icon</th>
+                        <tr>
+                        <tr>
+                            <th>Name</th>
+                        <tr>
+                        <tr>
+                            <th>Chevron</th>
+                        <tr>
+                        </thead>
+                        <tbody class="list"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="map"></div>
+</div>
+<div id="loading">
+    <div class="loading-indicator">
+        <div class="progress progress-striped active">
+            <div class="progress-bar progress-bar-info progress-bar-full"></div>
+        </div>
+    </div>
+</div>
+
+
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.js"></script>
+<!--<script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>-->
+<!--<script src="//cdn.datatables.net/plug-ins/1.10.7/sorting/datetime-moment.js"></script>-->
+<script src="//cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.5/typeahead.bundle.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.0/handlebars.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.1.1/list.min.js"></script>
+<!--<script src="//cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>-->
+<script src="assets/leaflet/leaflet.js"></script>
+<script src="assets/leaflet-plugins/Leaflet-NavBar/Leaflet.NavBar.js"></script>
+<script src="assets/leaflet-plugins/Leaflet.MakiMarkers.js"></script>
+
+<script src="http://code.highcharts.com/stock/highstock.js"></script>
+<script src="http://code.highcharts.com/stock/highcharts-more.js"></script>
+<script src="http://code.highcharts.com/stock/modules/exporting.js"></script>
+<!--<script src="assets/js/dark-unica.js"></script>-->
+
+<!--<script src="assets/js/app.js"></script>-->
+<script src="assets/js/range_with_panel.js"></script>
+</body>
+</html>
