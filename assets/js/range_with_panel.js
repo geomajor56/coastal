@@ -77,7 +77,8 @@ $("#table-button").click(function () {
 
 $("back-to-map").click(function () {
     $('.charts').hide();
-    $('#table-container').hide();
+    $('#table-container').bootstrapTable('destroy');
+    //$('#table-container').hide();
 });
 
 
@@ -261,10 +262,8 @@ $("#chart-btn").click(function () {
                         },
                         marker: {
                             enabled: false
-                        },
-                        animation: {
-                            duration: 2000
                         }
+
 
                     },
                     {
@@ -280,15 +279,12 @@ $("#chart-btn").click(function () {
                         },
                         marker: {
                             enabled: true
-                        },
-                        animation: {
-                            duration: 2000
                         }
 
                     },
                     {
                         connectNulls: false,
-                        name: 'Salsdfdinity',
+                        name: 'Salinity',
                         //  type: 'area',
                         color: '#E83631',
                         yAxis: 2,
@@ -300,9 +296,7 @@ $("#chart-btn").click(function () {
                         marker: {
                             enabled: true
                         },
-                        animation: {
-                            duration: 2000
-                        }
+
                     }
                 ]
             });
