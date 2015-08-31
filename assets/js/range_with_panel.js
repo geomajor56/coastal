@@ -54,13 +54,14 @@ $("#graphs-button").click(function () {
 
 $("#table-button").click(function () {
     $('.charts').hide();
-    $('#table-container').show();
+    $('#data-table').show();
 });
 
 $("back-to-map").click(function () {
+    $('#table-container').hide();
     $('.charts').hide();
-    $('#table-container').bootstrapTable('destroy');
-    //$('#table-container').hide();
+    $('#data-table').bootstrapTable('destroy');
+
 });
 
 
