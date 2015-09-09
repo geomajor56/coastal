@@ -12,20 +12,9 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.4/yeti/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <!--<link rel="stylesheet" href="//cdn.leafletjs.com/leaflet-0.7.3/leaflet.css">-->
-
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-1.0.0-b1/leaflet.css"/>
-
-    <!--<link rel="stylesheet" href="assets/leaflet/leaflet.css">-->
-
-
     <link rel="stylesheet" href="assets/leaflet-plugins/Leaflet-NavBar/Leaflet.NavBar.css">
-    <!--<link rel="stylesheet" href="https://cdn.datatables.net/1.10.7/css/jquery.dataTables.css">-->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.css">
-
-    <!--<link rel="stylesheet"-->
-    <!--href="//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.24.0/L.Control.Locate.css">-->
-
     <link rel="stylesheet" href="assets/css/app.css">
 
     <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicon-76.png">
@@ -34,61 +23,58 @@
     <link rel="icon" sizes="196x196" href="assets/img/favicon-196.png">
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
 </head>
-
 <body>
 
 
-<div class="modal fade " id="charts-container" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true">
-    <!--<div class="modal-dialog">-->
-    <div class="modal-content">
-        <!--<div class="container">-->
-        <div class="modal-body">
-            <div class="charts" id="container1"></div>
-            <div class="charts" id="container2"></div>
-            <div class="charts" id="container3"></div>
-            <div class="charts" id="container4"></div>
-            <div class="charts" id="container5"></div>
+<div id="dataModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 
-            <table id="data-table">
+    <!-- dialog -->
+    <div id="dataModalDialog" class="modal-dialog">
 
-            </table>
+        <!-- content -->
+        <div id="dataModalContent" class="modal-content">
+
+            <!-- header -->
+            <!--<div id="dataModalHeader" class="modal-header">-->
+                <!--<h1 id="myModalLabel"-->
+                    <!--class="modal-title">-->
+          <!--Data Grid-->
+                <!--</h1>-->
             <!--</div>-->
-            <!--<div id="table-container" class="container-fluid" style="display:none;">-->
-            <!--<div id="table-container" style="display:none;">-->
-            <!--<table id="data-table" style="display:none; "data-toggle="table" data-show-header="true" data-url="assets/php/station_data_table.json">-->
-            <!--<thead>-->
-            <!--<tr>-->
-            <!--<th data-field="cruise_date" data-sortable="true">Date</th>-->
-            <!--<th data-field="temperature" data-sortable="true">Temperature</th>-->
-            <!--<th data-field="salinity" data-sortable="true">Salinity</th>-->
-            <!--<th data-field="dissolved_oxygen" data-sortable="true">DO</th>-->
-            <!--<th data-field="chlorophyll" data-sortable="true">Chlorophyll</th>-->
-            <!--<th data-field="pheophytin" data-sortable="true">Pheophytin</th>-->
-            <!--<th data-field="turbidity" data-sortable="true">Turbidity</th>-->
-            <!--<th data-field="nitrates" data-sortable="true">NO<sub>2</sub>/NO<sub>3</sub></th>-->
-            <!--<th data-field="ammonium" data-sortable="true">NH<sub>4</sub></th>-->
-            <!--<th data-field="phosphate>" data-sortable="true">PO<sub>4</sub></th>-->
-            <!--<th data-field="silicates" data-sortable="true">SiO<sub>4</sub></th>-->
-            <!--<th data-field="total_nitrogen" data-sortable="true">Total Nitrogen</th>-->
-            <!--<th data-field="total_phosphates" data-sortable="true">Total Phosphates</th>-->
-            <!--</tr>-->
-            <!--</thead>-->
-            <!--</table>-->
-            <!--</div>-->
-        </div>
-        <div class="modal-footer">
-            <div class="btn-group" role="group">
-                <button id="graphs-button" type="button" class="btn btn-info">Graphs</button>
-                <button id="back-to-map" type="button" class="btn btn-primary" data-dismiss="modal">Map</button>
-                <button id="table-button" type="button" class="btn btn-info">Table</button>
+            <!-- header -->
+
+            <!-- body -->
+            <div id="dataModalBody" class="modal-body">
+                <div id="cc" class="container">
+                    <div class="charts" id="container1"></div>
+                    <div class="charts" id="container2"></div>
+                    <div class="charts" id="container3"></div>
+                    <div class="charts" id="container4"></div>
+                    <div class="charts" id="container5"></div>
+                </div>
+                <div id="tc" class="container">
+                    <table id="data-table"></table>
+                </div>
             </div>
-        </div>
-        <!--</div>-->
-        <!--</div>-->
-    </div>
-</div>
+            <!-- body -->
 
+
+            <div id="dataModalFooter" class="modal-footer">
+                <div class="btn-group" role="group">
+                    <button id="graphs-button" type="button" class="btn btn-info">Graphs</button>
+                    <button id="back-to-map" type="button" class="btn btn-primary" data-dismiss="modal">Map</button>
+                    <button id="table-button" type="button" class="btn btn-info">Table</button>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- content -->
+
+    </div>
+    <!-- dialog -->
+
+</div>
 
 <div class="modal fade" id="featureModal" tabindex="-1" role="dialog">
     <div class="modal-dialog">
