@@ -1,0 +1,2334 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.453,
+          41.851
+        ]
+      },
+      "properties": {
+        "station_id": 44,
+        "station_name": "F01",
+        "station_alt_name": "F01",
+        "station_type": null,
+        "geom": "0101000020E6100000A245B6F3FD9C51C0B0726891EDEC4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.29,
+          42.117
+        ]
+      },
+      "properties": {
+        "station_id": 46,
+        "station_name": "F29",
+        "station_alt_name": "F29",
+        "station_type": null,
+        "geom": "0101000020E6100000C3F5285C8F9251C0E5D022DBF90E4540"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.228,
+          41.908
+        ]
+      },
+      "properties": {
+        "station_id": 45,
+        "station_name": "F02",
+        "station_alt_name": "F02",
+        "station_type": null,
+        "geom": "0101000020E61000003BDF4F8D978E51C04E62105839F44440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.962,
+          41.671
+        ]
+      },
+      "properties": {
+        "station_id": 508,
+        "station_name": "Mitchel River",
+        "station_alt_name": "CM-5A",
+        "station_type": null,
+        "geom": "0101000020E610000021B07268917D51C0D9CEF753E3D54440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.977,
+          41.679
+        ]
+      },
+      "properties": {
+        "station_id": 507,
+        "station_name": "Oyster Pond-Chatham",
+        "station_alt_name": "CM-1A",
+        "station_type": null,
+        "geom": "0101000020E61000004A0C022B877E51C0F4FDD478E9D64440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.996,
+          41.807
+        ]
+      },
+      "properties": {
+        "station_id": 102,
+        "station_name": "Inner Boat Meadow",
+        "station_alt_name": "Boat Meadow",
+        "station_type": null,
+        "geom": "0101000020E610000039B4C876BE7F51C09EEFA7C64BE74440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.002,
+          41.674
+        ]
+      },
+      "properties": {
+        "station_id": 509,
+        "station_name": "Sulfur Spring",
+        "station_alt_name": "CM-8",
+        "station_type": null,
+        "geom": "0101000020E6100000E3A59BC4208051C083C0CAA145D64440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.003,
+          41.83
+        ]
+      },
+      "properties": {
+        "station_id": 129,
+        "station_name": "Cole Road Brook",
+        "station_alt_name": "Cole Road Brook",
+        "station_type": null,
+        "geom": "0101000020E6100000D578E926318051C00AD7A3703DEA4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.003,
+          41.83
+        ]
+      },
+      "properties": {
+        "station_id": 103,
+        "station_name": "Cole Road",
+        "station_alt_name": "Cole Road",
+        "station_type": null,
+        "geom": "0101000020E6100000D578E926318051C00AD7A3703DEA4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.006,
+          41.877
+        ]
+      },
+      "properties": {
+        "station_id": 109,
+        "station_name": "North Sunken Meadow",
+        "station_alt_name": "North Sunken Meadow",
+        "station_type": null,
+        "geom": "0101000020E6100000AAF1D24D628051C0C74B378941F04440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.006,
+          41.815
+        ]
+      },
+      "properties": {
+        "station_id": 21,
+        "station_name": "First Encounter",
+        "station_alt_name": "First Encounter",
+        "station_type": null,
+        "geom": "0101000020E6100000AAF1D24D628051C0B81E85EB51E84440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.006,
+          41.8
+        ]
+      },
+      "properties": {
+        "station_id": 26,
+        "station_name": "Inner Rock Harbor",
+        "station_alt_name": "Inner Rock Harbor",
+        "station_type": null,
+        "geom": "0101000020E6100000AAF1D24D628051C06666666666E64440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.006,
+          41.807
+        ]
+      },
+      "properties": {
+        "station_id": 11,
+        "station_name": "Boat Meadow",
+        "station_alt_name": "Boat Meadow",
+        "station_type": null,
+        "geom": "0101000020E6100000AAF1D24D628051C09EEFA7C64BE74440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.01,
+          41.801
+        ]
+      },
+      "properties": {
+        "station_id": 39,
+        "station_name": "Rock Harbor",
+        "station_alt_name": "Rock Harbor",
+        "station_type": null,
+        "geom": "0101000020E6100000713D0AD7A38051C04A0C022B87E64440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.011,
+          41.781
+        ]
+      },
+      "properties": {
+        "station_id": 115,
+        "station_name": "Upper Namskaket",
+        "station_alt_name": "Upper Namskaket",
+        "station_type": null,
+        "geom": "0101000020E610000062105839B48051C08716D9CEF7E34440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.013,
+          41.886
+        ]
+      },
+      "properties": {
+        "station_id": 42,
+        "station_name": "Sunken Meadow",
+        "station_alt_name": "Sunken Meadow",
+        "station_type": null,
+        "geom": "0101000020E610000046B6F3FDD48051C0C520B07268F14440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.014,
+          41.797
+        ]
+      },
+      "properties": {
+        "station_id": 107,
+        "station_name": "Little Namskaket",
+        "station_alt_name": "Little Namskaket",
+        "station_type": null,
+        "geom": "0101000020E610000037894160E58051C0BC74931804E64440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.015,
+          41.486
+        ]
+      },
+      "properties": {
+        "station_id": 49,
+        "station_name": "NTKS_4",
+        "station_alt_name": "NTKS-4",
+        "station_type": null,
+        "geom": "0101000020E6100000295C8FC2F58051C091ED7C3F35BE4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.017,
+          41.678
+        ]
+      },
+      "properties": {
+        "station_id": 506,
+        "station_name": "Taylors Pond",
+        "station_alt_name": "CM-10",
+        "station_type": null,
+        "geom": "0101000020E61000000C022B87168151C0105839B4C8D64440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.019,
+          41.329
+        ]
+      },
+      "properties": {
+        "station_id": 64,
+        "station_name": "Nantucket Harbor_3",
+        "station_alt_name": "NH-3",
+        "station_type": null,
+        "geom": "0101000020E6100000F0A7C64B378151C0273108AC1CAA4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.02,
+          41.788
+        ]
+      },
+      "properties": {
+        "station_id": 108,
+        "station_name": "Inner Namskaket",
+        "station_alt_name": "Namskaket",
+        "station_type": null,
+        "geom": "0101000020E6100000E17A14AE478151C0BE9F1A2FDDE44440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.023,
+          41.79
+        ]
+      },
+      "properties": {
+        "station_id": 31,
+        "station_name": "Namskaket",
+        "station_alt_name": "Namskaket",
+        "station_type": null,
+        "geom": "0101000020E6100000B6F3FDD4788151C085EB51B81EE54440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.025,
+          41.904
+        ]
+      },
+      "properties": {
+        "station_id": 10,
+        "station_name": "Blackfish Creek",
+        "station_alt_name": "Blackfish Creek",
+        "station_type": null,
+        "geom": "0101000020E61000009A999999998151C0C1CAA145B6F34440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.027,
+          41.934
+        ]
+      },
+      "properties": {
+        "station_id": 127,
+        "station_name": "Duck Creek",
+        "station_alt_name": "Duck Creek",
+        "station_type": null,
+        "geom": "0101000020E61000007D3F355EBA8151C0643BDF4F8DF74440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.029,
+          41.929
+        ]
+      },
+      "properties": {
+        "station_id": 28,
+        "station_name": "Inner Wellfleet Harbor",
+        "station_alt_name": "Inner Wellfleet Harbor",
+        "station_type": null,
+        "geom": "0101000020E610000060E5D022DB8151C0F4FDD478E9F64440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.036,
+          41.926
+        ]
+      },
+      "properties": {
+        "station_id": 43,
+        "station_name": "Wellfleet Harbor",
+        "station_alt_name": "Wellfleet Harbor",
+        "station_type": null,
+        "geom": "0101000020E6100000FCA9F1D24D8251C04A0C022B87F64440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.047,
+          41.638
+        ]
+      },
+      "properties": {
+        "station_id": 54,
+        "station_name": "NTKS_16",
+        "station_alt_name": "NTKS-16",
+        "station_type": null,
+        "geom": "0101000020E61000005EBA490C028351C08B6CE7FBA9D14440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.048,
+          41.923
+        ]
+      },
+      "properties": {
+        "station_id": 22,
+        "station_name": "Great Island Channel",
+        "station_alt_name": "Great Island Channel",
+        "station_type": null,
+        "geom": "0101000020E6100000508D976E128351C0A01A2FDD24F64440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.059,
+          41.667
+        ]
+      },
+      "properties": {
+        "station_id": 522,
+        "station_name": "Saquatucket Harbor",
+        "station_alt_name": "HAR-2",
+        "station_type": null,
+        "geom": "0101000020E6100000B29DEFA7C68351C04C37894160D54440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.066,
+          41.667
+        ]
+      },
+      "properties": {
+        "station_id": 523,
+        "station_name": "Wychmere",
+        "station_alt_name": "HAR-3",
+        "station_type": null,
+        "geom": "0101000020E61000004E621058398451C04C37894160D54440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.067,
+          41.931
+        ]
+      },
+      "properties": {
+        "station_id": 105,
+        "station_name": "Herring River Wellfleet",
+        "station_alt_name": "Herring River",
+        "station_type": null,
+        "geom": "0101000020E61000003F355EBA498451C0BA490C022BF74440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.071,
+          41.992
+        ]
+      },
+      "properties": {
+        "station_id": 117,
+        "station_name": "Pamet River",
+        "station_alt_name": "Pamet River",
+        "station_type": null,
+        "geom": "0101000020E6100000068195438B8451C0E5D022DBF9FE4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.073,
+          41.991
+        ]
+      },
+      "properties": {
+        "station_id": 25,
+        "station_name": "Inner Pamet",
+        "station_alt_name": "Inner Pamet Harbor",
+        "station_type": null,
+        "geom": "0101000020E6100000E9263108AC8451C0022B8716D9FE4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.077,
+          41.992
+        ]
+      },
+      "properties": {
+        "station_id": 36,
+        "station_name": "Pamet",
+        "station_alt_name": "Pamet Harbor",
+        "station_type": null,
+        "geom": "0101000020E6100000B0726891ED8451C0E5D022DBF9FE4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.089,
+          41.667
+        ]
+      },
+      "properties": {
+        "station_id": 524,
+        "station_name": "Allen Harbor",
+        "station_alt_name": "HAR-4",
+        "station_type": null,
+        "geom": "0101000020E610000004560E2DB28551C04C37894160D54440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.092,
+          41.282
+        ]
+      },
+      "properties": {
+        "station_id": 63,
+        "station_name": "Nantucket Harbor_2",
+        "station_alt_name": "NH-2",
+        "station_type": null,
+        "geom": "0101000020E6100000D9CEF753E38551C06ABC749318A44440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.095,
+          41.294
+        ]
+      },
+      "properties": {
+        "station_id": 62,
+        "station_name": "Nantucket Harbor",
+        "station_alt_name": "NH-1",
+        "station_type": null,
+        "geom": "0101000020E6100000AE47E17A148651C01283C0CAA1A54440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.103,
+          41.355
+        ]
+      },
+      "properties": {
+        "station_id": 48,
+        "station_name": "NTKS_3",
+        "station_alt_name": "NTKS-3",
+        "station_type": null,
+        "geom": "0101000020E61000003BDF4F8D978651C03D0AD7A370AD4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.109,
+          41.669
+        ]
+      },
+      "properties": {
+        "station_id": 525,
+        "station_name": "Herring River Harwich",
+        "station_alt_name": "HAR-7",
+        "station_type": null,
+        "geom": "0101000020E6100000E5D022DBF98651C01283C0CAA1D54440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.114,
+          41.76
+        ]
+      },
+      "properties": {
+        "station_id": 112,
+        "station_name": "Paines Tributary",
+        "station_alt_name": "Paines Creek Tributary B",
+        "station_type": null,
+        "geom": "0101000020E61000009EEFA7C64B8751C0E17A14AE47E14440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.114,
+          41.761
+        ]
+      },
+      "properties": {
+        "station_id": 111,
+        "station_name": "Paines A",
+        "station_alt_name": "Paines Creek Tributary A",
+        "station_type": null,
+        "geom": "0101000020E61000009EEFA7C64B8751C0C520B07268E14440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.114,
+          41.761
+        ]
+      },
+      "properties": {
+        "station_id": 110,
+        "station_name": "Paines",
+        "station_alt_name": "Paines Creek",
+        "station_type": null,
+        "geom": "0101000020E61000009EEFA7C64B8751C0C520B07268E14440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.118,
+          42.049
+        ]
+      },
+      "properties": {
+        "station_id": 118,
+        "station_name": "Pilgrim Lake",
+        "station_alt_name": "East Harbor",
+        "station_type": null,
+        "geom": "0101000020E6100000643BDF4F8D8751C083C0CAA145064540"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.118,
+          42.049
+        ]
+      },
+      "properties": {
+        "station_id": 38,
+        "station_name": "Pilgrim Lake",
+        "station_alt_name": "Pilgrim Lake",
+        "station_type": null,
+        "geom": "0101000020E6100000643BDF4F8D8751C083C0CAA145064540"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.118,
+          42.053
+        ]
+      },
+      "properties": {
+        "station_id": 119,
+        "station_name": "East Harbor",
+        "station_alt_name": "East Harbor - East",
+        "station_type": null,
+        "geom": "0101000020E6100000643BDF4F8D8751C0105839B4C8064540"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.123,
+          41.759
+        ]
+      },
+      "properties": {
+        "station_id": 128,
+        "station_name": "Quivet Marsh",
+        "station_alt_name": "Quivet Marsh",
+        "station_type": null,
+        "geom": "0101000020E61000001D5A643BDF8751C0FED478E926E14440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.139,
+          42.009
+        ]
+      },
+      "properties": {
+        "station_id": 1,
+        "station_name": "5N",
+        "station_alt_name": "5N",
+        "station_type": null,
+        "geom": "0101000020E610000037894160E58851C0FED478E926014540"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.14,
+          41.91
+        ]
+      },
+      "properties": {
+        "station_id": 2,
+        "station_name": "5S",
+        "station_alt_name": "5S",
+        "station_type": null,
+        "geom": "0101000020E6100000295C8FC2F58851C014AE47E17AF44440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.149,
+          41.664
+        ]
+      },
+      "properties": {
+        "station_id": 543,
+        "station_name": "Swan Pond River",
+        "station_alt_name": "SWP-2",
+        "station_type": null,
+        "geom": "0101000020E6100000A8C64B37898951C0A245B6F3FDD44440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.154,
+          41.752
+        ]
+      },
+      "properties": {
+        "station_id": 27,
+        "station_name": "Inner Sesuit Harbor",
+        "station_alt_name": "Inner Sesuit Harbor",
+        "station_type": null,
+        "geom": "0101000020E610000060E5D022DB8951C0C74B378941E04440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.156,
+          41.759
+        ]
+      },
+      "properties": {
+        "station_id": 41,
+        "station_name": "Sesuit Harbor",
+        "station_alt_name": "Sesuit Harbor",
+        "station_type": null,
+        "geom": "0101000020E6100000448B6CE7FB8951C0FED478E926E14440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.16,
+          41.685
+        ]
+      },
+      "properties": {
+        "station_id": 505,
+        "station_name": "Bass River",
+        "station_alt_name": "BR-7",
+        "station_type": null,
+        "geom": "0101000020E61000000AD7A3703D8A51C048E17A14AED74440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.162,
+          42.058
+        ]
+      },
+      "properties": {
+        "station_id": 23,
+        "station_name": "Holiday Inn",
+        "station_alt_name": "Holiday Inn",
+        "station_type": null,
+        "geom": "0101000020E6100000EE7C3F355E8A51C08195438B6C074540"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.163,
+          41.745
+        ]
+      },
+      "properties": {
+        "station_id": 130,
+        "station_name": "Sesuit Creek",
+        "station_alt_name": "Sesuit Creek",
+        "station_type": null,
+        "geom": "0101000020E6100000DF4F8D976E8A51C08FC2F5285CDF4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.174,
+          42.055
+        ]
+      },
+      "properties": {
+        "station_id": 24,
+        "station_name": "Ice House",
+        "station_alt_name": "Ice House",
+        "station_type": null,
+        "geom": "0101000020E61000004260E5D0228B51C0D7A3703D0A074540"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.182,
+          42.051
+        ]
+      },
+      "properties": {
+        "station_id": 30,
+        "station_name": "MacMillan",
+        "station_alt_name": "MacMillan",
+        "station_type": null,
+        "geom": "0101000020E6100000CFF753E3A58B51C04A0C022B87064540"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.187,
+          41.621
+        ]
+      },
+      "properties": {
+        "station_id": 60,
+        "station_name": "NTKS_14",
+        "station_alt_name": "NTKS-14",
+        "station_type": null,
+        "geom": "0101000020E61000008716D9CEF78B51C0736891ED7CCF4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.223,
+          41.649
+        ]
+      },
+      "properties": {
+        "station_id": 536,
+        "station_name": "Parkers River",
+        "station_alt_name": "PR-2",
+        "station_type": null,
+        "geom": "0101000020E610000083C0CAA1458E51C0508D976E12D34440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.228,
+          41.857
+        ]
+      },
+      "properties": {
+        "station_id": 4,
+        "station_name": "6S",
+        "station_alt_name": "6S",
+        "station_type": null,
+        "geom": "0101000020E61000003BDF4F8D978E51C004560E2DB2ED4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.229,
+          41.935
+        ]
+      },
+      "properties": {
+        "station_id": 3,
+        "station_name": "6M",
+        "station_alt_name": "6M",
+        "station_type": null,
+        "geom": "0101000020E61000002DB29DEFA78E51C048E17A14AEF74440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.245,
+          41.638
+        ]
+      },
+      "properties": {
+        "station_id": 504,
+        "station_name": "Lewis Bay",
+        "station_alt_name": "BHY-3",
+        "station_type": null,
+        "geom": "0101000020E610000048E17A14AE8F51C08B6CE7FBA9D14440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.262,
+          41.479
+        ]
+      },
+      "properties": {
+        "station_id": 50,
+        "station_name": "NTKS_6",
+        "station_alt_name": "NTKS-6",
+        "station_type": null,
+        "geom": "0101000020E610000054E3A59BC49051C05A643BDF4FBD4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.271,
+          41.723
+        ]
+      },
+      "properties": {
+        "station_id": 9,
+        "station_name": "Barnstable Harbor",
+        "station_alt_name": "Barnstable Harbor",
+        "station_type": null,
+        "geom": "0101000020E6100000D34D6210589151C0068195438BDC4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.289,
+          41.598
+        ]
+      },
+      "properties": {
+        "station_id": 53,
+        "station_name": "NTKS_13",
+        "station_alt_name": "NTKS-13",
+        "station_type": null,
+        "geom": "0101000020E6100000D122DBF97E9251C0068195438BCC4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.293,
+          41.636
+        ]
+      },
+      "properties": {
+        "station_id": 542,
+        "station_name": "Stewarts Creek",
+        "station_alt_name": "Stewarts",
+        "station_type": null,
+        "geom": "0101000020E6100000986E1283C09251C0C520B07268D14440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.299,
+          41.705
+        ]
+      },
+      "properties": {
+        "station_id": 131,
+        "station_name": "Millway",
+        "station_alt_name": "Millway Beach",
+        "station_type": null,
+        "geom": "0101000020E61000004260E5D0229351C00AD7A3703DDA4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.3,
+          41.707
+        ]
+      },
+      "properties": {
+        "station_id": 116,
+        "station_name": "Inner Barnstable Harbor",
+        "station_alt_name": "Barnstable Harbor",
+        "station_type": null,
+        "geom": "0101000020E610000033333333339351C0D122DBF97EDA4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.314,
+          41.841
+        ]
+      },
+      "properties": {
+        "station_id": 5,
+        "station_name": "7S",
+        "station_alt_name": "7S",
+        "station_type": null,
+        "geom": "0101000020E61000006ABC7493189451C0CFF753E3A5EB4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.318,
+          41.631
+        ]
+      },
+      "properties": {
+        "station_id": 501,
+        "station_name": "Halls Creek",
+        "station_alt_name": "BC-14",
+        "station_type": null,
+        "geom": "0101000020E61000003108AC1C5A9451C054E3A59BC4D04440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.345,
+          41.639
+        ]
+      },
+      "properties": {
+        "station_id": 502,
+        "station_name": "Centerville-E",
+        "station_alt_name": "BCT-1",
+        "station_type": null,
+        "geom": "0101000020E6100000AE47E17A149651C06F1283C0CAD14440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.358,
+          41.635
+        ]
+      },
+      "properties": {
+        "station_id": 503,
+        "station_name": "Centerville-W",
+        "station_alt_name": "BCT-2",
+        "station_type": null,
+        "geom": "0101000020E6100000F4FDD478E99651C0E17A14AE47D14440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.382,
+          41.343
+        ]
+      },
+      "properties": {
+        "station_id": 47,
+        "station_name": "NTKS_1",
+        "station_alt_name": "NTKS-1",
+        "station_type": null,
+        "geom": "0101000020E61000009CC420B0729851C096438B6CE7AB4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.4,
+          41.946
+        ]
+      },
+      "properties": {
+        "station_id": 6,
+        "station_name": "8M",
+        "station_alt_name": "8M",
+        "station_type": null,
+        "geom": "0101000020E61000009A999999999951C00C022B8716F94440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.405,
+          41.615
+        ]
+      },
+      "properties": {
+        "station_id": 553,
+        "station_name": "West Bay",
+        "station_alt_name": "West Bay",
+        "station_type": null,
+        "geom": "0101000020E610000052B81E85EB9951C01F85EB51B8CE4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.406,
+          41.731
+        ]
+      },
+      "properties": {
+        "station_id": 125,
+        "station_name": "Scorton Creek-Jones Lane",
+        "station_alt_name": "Scorton Creek-Jones Lane",
+        "station_type": null,
+        "geom": "0101000020E6100000448B6CE7FB9951C021B0726891DD4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.406,
+          41.645
+        ]
+      },
+      "properties": {
+        "station_id": 551,
+        "station_name": "Warrens Cove",
+        "station_alt_name": "Warens Cove",
+        "station_type": null,
+        "geom": "0101000020E6100000448B6CE7FB9951C0C3F5285C8FD24440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.41,
+          41.634
+        ]
+      },
+      "properties": {
+        "station_id": 533,
+        "station_name": "North Bay",
+        "station_alt_name": "North Bay",
+        "station_type": null,
+        "geom": "0101000020E61000000AD7A3703D9A51C0FED478E926D14440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.412,
+          41.629
+        ]
+      },
+      "properties": {
+        "station_id": 532,
+        "station_name": "Narrows",
+        "station_alt_name": "Narrows",
+        "station_type": null,
+        "geom": "0101000020E6100000EE7C3F355E9A51C08D976E1283D04440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.412,
+          41.615
+        ]
+      },
+      "properties": {
+        "station_id": 510,
+        "station_name": "Cotuit Bay",
+        "station_alt_name": "Cotuit",
+        "station_type": null,
+        "geom": "0101000020E6100000EE7C3F355E9A51C01F85EB51B8CE4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.426,
+          41.737
+        ]
+      },
+      "properties": {
+        "station_id": 124,
+        "station_name": "Scorton Creek-6A",
+        "station_alt_name": "Scorton Creek-6A",
+        "station_type": null,
+        "geom": "0101000020E610000025068195439B51C07593180456DE4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.427,
+          41.75
+        ]
+      },
+      "properties": {
+        "station_id": 40,
+        "station_name": "Scorton Creek Mouth",
+        "station_alt_name": "Scorton",
+        "station_type": null,
+        "geom": "0101000020E610000017D9CEF7539B51C00000000000E04440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.429,
+          41.747
+        ]
+      },
+      "properties": {
+        "station_id": 114,
+        "station_name": "Inner Scorton Creek",
+        "station_alt_name": "Scorton Creek",
+        "station_type": null,
+        "geom": "0101000020E6100000FA7E6ABC749B51C0560E2DB29DDF4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.446,
+          41.599
+        ]
+      },
+      "properties": {
+        "station_id": 538,
+        "station_name": "Rushy Marsh",
+        "station_alt_name": "RM-2",
+        "station_type": null,
+        "geom": "0101000020E6100000068195438B9C51C0E9263108ACCC4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.466,
+          41.594
+        ]
+      },
+      "properties": {
+        "station_id": 535,
+        "station_name": "Popponesset Bay",
+        "station_alt_name": "PBh",
+        "station_type": null,
+        "geom": "0101000020E6100000E7FBA9F1D29D51C079E9263108CC4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.468,
+          41.842
+        ]
+      },
+      "properties": {
+        "station_id": 8,
+        "station_name": "9S",
+        "station_alt_name": "9S",
+        "station_type": null,
+        "geom": "0101000020E6100000CBA145B6F39D51C0B29DEFA7C6EB4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.474,
+          41.765
+        ]
+      },
+      "properties": {
+        "station_id": 32,
+        "station_name": "Old Harbor",
+        "station_alt_name": "Old Harbor",
+        "station_type": null,
+        "geom": "0101000020E610000075931804569E51C052B81E85EBE14440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.485,
+          41.765
+        ]
+      },
+      "properties": {
+        "station_id": 101,
+        "station_name": "Boardwalk",
+        "station_alt_name": "Old Harbor",
+        "station_type": null,
+        "geom": "0101000020E6100000D7A3703D0A9F51C052B81E85EBE14440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.489,
+          41.761
+        ]
+      },
+      "properties": {
+        "station_id": 122,
+        "station_name": "Old Harbor-Boat Launch",
+        "station_alt_name": "Old Harbor-Boat Launch",
+        "station_type": null,
+        "geom": "0101000020E61000009EEFA7C64B9F51C0C520B07268E14440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.489,
+          41.758
+        ]
+      },
+      "properties": {
+        "station_id": 123,
+        "station_name": "Old Harbor-Dewey",
+        "station_alt_name": "Old Harbor-Dewey Ave",
+        "station_type": null,
+        "geom": "0101000020E61000009EEFA7C64B9F51C01B2FDD2406E14440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.494,
+          42.02
+        ]
+      },
+      "properties": {
+        "station_id": 7,
+        "station_name": "9N",
+        "station_alt_name": "9N",
+        "station_type": null,
+        "geom": "0101000020E6100000560E2DB29D9F51C0C3F5285C8F024540"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.495,
+          41.566
+        ]
+      },
+      "properties": {
+        "station_id": 527,
+        "station_name": "Jehu Pond",
+        "station_alt_name": "JHP",
+        "station_type": null,
+        "geom": "0101000020E610000048E17A14AE9F51C09CC420B072C84440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.496,
+          41.761
+        ]
+      },
+      "properties": {
+        "station_id": 121,
+        "station_name": "Old Harbor-6A",
+        "station_alt_name": "Old Harbor-6A",
+        "station_type": null,
+        "geom": "0101000020E610000039B4C876BE9F51C0C520B07268E14440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.498,
+          41.44
+        ]
+      },
+      "properties": {
+        "station_id": 51,
+        "station_name": "NTKS_8",
+        "station_alt_name": "NTKS-8",
+        "station_type": null,
+        "geom": "0101000020E61000001D5A643BDF9F51C0B81E85EB51B84440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.503,
+          41.772
+        ]
+      },
+      "properties": {
+        "station_id": 15,
+        "station_name": "Canal",
+        "station_alt_name": "Canal",
+        "station_type": null,
+        "geom": "0101000020E6100000D578E92631A051C0894160E5D0E24440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.511,
+          41.573
+        ]
+      },
+      "properties": {
+        "station_id": 526,
+        "station_name": "Hamblin Pond",
+        "station_alt_name": "HPu",
+        "station_type": null,
+        "geom": "0101000020E610000062105839B4A051C0D34D621058C94440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.514,
+          41.58
+        ]
+      },
+      "properties": {
+        "station_id": 537,
+        "station_name": "Quashnet River",
+        "station_alt_name": "QRm",
+        "station_type": null,
+        "geom": "0101000020E610000037894160E5A051C00AD7A3703DCA4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.521,
+          41.566
+        ]
+      },
+      "properties": {
+        "station_id": 552,
+        "station_name": "Waquoit Bay",
+        "station_alt_name": "WBu",
+        "station_type": null,
+        "geom": "0101000020E6100000D34D621058A151C09CC420B072C84440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.533,
+          41.84
+        ]
+      },
+      "properties": {
+        "station_id": 104,
+        "station_name": "Ellisville",
+        "station_alt_name": "Ellisville Harbor",
+        "station_type": null,
+        "geom": "0101000020E6100000273108AC1CA251C0EC51B81E85EB4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.534,
+          41.573
+        ]
+      },
+      "properties": {
+        "station_id": 511,
+        "station_name": "Childs River",
+        "station_alt_name": "CR-2",
+        "station_type": null,
+        "geom": "0101000020E61000001904560E2DA251C0D34D621058C94440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.537,
+          41.406
+        ]
+      },
+      "properties": {
+        "station_id": 541,
+        "station_name": "Sengekontacket-9",
+        "station_alt_name": "SKT9",
+        "station_type": null,
+        "geom": "0101000020E6100000EE7C3F355EA251C08716D9CEF7B34440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.544,
+          41.567
+        ]
+      },
+      "properties": {
+        "station_id": 517,
+        "station_name": "Eel River Falmouth",
+        "station_alt_name": "ER-2",
+        "station_type": null,
+        "geom": "0101000020E6100000894160E5D0A251C07F6ABC7493C84440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.549,
+          41.354
+        ]
+      },
+      "properties": {
+        "station_id": 515,
+        "station_name": "Edgartown Great Pond-6",
+        "station_alt_name": "EGP6",
+        "station_type": null,
+        "geom": "0101000020E61000004260E5D022A351C05A643BDF4FAD4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.551,
+          41.367
+        ]
+      },
+      "properties": {
+        "station_id": 512,
+        "station_name": "Edgartown Great Pond-2",
+        "station_alt_name": "EGP2",
+        "station_type": null,
+        "geom": "0101000020E61000002506819543A351C0E5D022DBF9AE4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.553,
+          41.565
+        ]
+      },
+      "properties": {
+        "station_id": 500,
+        "station_name": "Bournes Pond",
+        "station_alt_name": "B3",
+        "station_type": null,
+        "geom": "0101000020E610000008AC1C5A64A351C0B81E85EB51C84440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.558,
+          41.446
+        ]
+      },
+      "properties": {
+        "station_id": 519,
+        "station_name": "Farm Pond",
+        "station_alt_name": "FRM3",
+        "station_type": null,
+        "geom": "0101000020E6100000C1CAA145B6A351C00C022B8716B94440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.558,
+          41.368
+        ]
+      },
+      "properties": {
+        "station_id": 513,
+        "station_name": "Edgartown Great Pond-3",
+        "station_alt_name": "EGP3",
+        "station_type": null,
+        "geom": "0101000020E6100000C1CAA145B6A351C0C976BE9F1AAF4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.561,
+          41.374
+        ]
+      },
+      "properties": {
+        "station_id": 516,
+        "station_name": "Edgartown Great Pond-9",
+        "station_alt_name": "EGP9",
+        "station_type": null,
+        "geom": "0101000020E610000096438B6CE7A351C01D5A643BDFAF4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.564,
+          41.355
+        ]
+      },
+      "properties": {
+        "station_id": 514,
+        "station_name": "Edgartown Great Pond-5",
+        "station_alt_name": "EGP5",
+        "station_type": null,
+        "geom": "0101000020E61000006ABC749318A451C03D0AD7A370AD4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.565,
+          41.432
+        ]
+      },
+      "properties": {
+        "station_id": 539,
+        "station_name": "Sengekontacket-2",
+        "station_alt_name": "SKT-2",
+        "station_type": null,
+        "geom": "0101000020E61000005C8FC2F528A451C09EEFA7C64BB74440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.568,
+          41.562
+        ]
+      },
+      "properties": {
+        "station_id": 520,
+        "station_name": "Green Pond",
+        "station_alt_name": "G4",
+        "station_type": null,
+        "geom": "0101000020E61000003108AC1C5AA451C00E2DB29DEFC74440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.57,
+          41.417
+        ]
+      },
+      "properties": {
+        "station_id": 540,
+        "station_name": "Sengekontacket-4",
+        "station_alt_name": "SKT4",
+        "station_type": null,
+        "geom": "0101000020E610000014AE47E17AA451C04C37894160B54440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.586,
+          41.56
+        ]
+      },
+      "properties": {
+        "station_id": 521,
+        "station_name": "Great Pond",
+        "station_alt_name": "GT-5",
+        "station_type": null,
+        "geom": "0101000020E61000002FDD240681A551C048E17A14AEC74440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.593,
+          41.453
+        ]
+      },
+      "properties": {
+        "station_id": 528,
+        "station_name": "Lagoon Pond-10",
+        "station_alt_name": "LGP10",
+        "station_type": null,
+        "geom": "0101000020E6100000CBA145B6F3A551C0448B6CE7FBB94440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.597,
+          41.513
+        ]
+      },
+      "properties": {
+        "station_id": 52,
+        "station_name": "NTKS_10",
+        "station_alt_name": "NTKS-10",
+        "station_type": null,
+        "geom": "0101000020E610000091ED7C3F35A651C08B6CE7FBA9C14440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.602,
+          41.433
+        ]
+      },
+      "properties": {
+        "station_id": 531,
+        "station_name": "Lagoon Pond-4",
+        "station_alt_name": "LGP4",
+        "station_type": null,
+        "geom": "0101000020E61000004A0C022B87A651C08195438B6CB74440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.602,
+          41.549
+        ]
+      },
+      "properties": {
+        "station_id": 518,
+        "station_name": "Falmouth Inner Harbor",
+        "station_alt_name": "FHx",
+        "station_type": null,
+        "geom": "0101000020E61000004A0C022B87A651C083C0CAA145C64440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.622,
+          41.449
+        ]
+      },
+      "properties": {
+        "station_id": 550,
+        "station_name": "Tashmoo Pond-4",
+        "station_alt_name": "TSH4",
+        "station_type": null,
+        "geom": "0101000020E61000002B8716D9CEA751C0B6F3FDD478B94440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.624,
+          41.456
+        ]
+      },
+      "properties": {
+        "station_id": 549,
+        "station_name": "Tashmoo Pond-2",
+        "station_alt_name": "TSH2",
+        "station_type": null,
+        "geom": "0101000020E61000000E2DB29DEFA751C0EE7C3F355EBA4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.626,
+          41.944
+        ]
+      },
+      "properties": {
+        "station_id": 20.5,
+        "station_name": "Upper Eel River Kingston",
+        "station_alt_name": "ER-Upper",
+        "station_type": null,
+        "geom": "0101000020E6100000F2D24D6210A851C046B6F3FDD4F84440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.638,
+          41.539
+        ]
+      },
+      "properties": {
+        "station_id": 534,
+        "station_name": "Oyster Pond-Falmouth",
+        "station_alt_name": "OP-3",
+        "station_type": null,
+        "geom": "0101000020E610000046B6F3FDD4A851C0A245B6F3FDC44440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.639,
+          41.951
+        ]
+      },
+      "properties": {
+        "station_id": 20,
+        "station_name": "Eel River Kingston",
+        "station_alt_name": "ER",
+        "station_type": null,
+        "geom": "0101000020E610000037894160E5A851C07D3F355EBAF94440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.645,
+          41.986
+        ]
+      },
+      "properties": {
+        "station_id": 14,
+        "station_name": "C3",
+        "station_alt_name": "C3",
+        "station_type": null,
+        "geom": "0101000020E6100000E17A14AE47A951C091ED7C3F35FE4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.646,
+          41.954
+        ]
+      },
+      "properties": {
+        "station_id": 34,
+        "station_name": "P2",
+        "station_alt_name": "P2",
+        "station_type": null,
+        "geom": "0101000020E6100000D34D621058A951C0273108AC1CFA4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.649,
+          42.048
+        ]
+      },
+      "properties": {
+        "station_id": 19,
+        "station_name": "D3",
+        "station_alt_name": "D3",
+        "station_type": null,
+        "geom": "0101000020E6100000A8C64B3789A951C0A01A2FDD24064540"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.651,
+          41.965
+        ]
+      },
+      "properties": {
+        "station_id": 35,
+        "station_name": "P3",
+        "station_alt_name": "P3",
+        "station_type": null,
+        "geom": "0101000020E61000008B6CE7FBA9A951C0EC51B81E85FB4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.652,
+          41.35
+        ]
+      },
+      "properties": {
+        "station_id": 548,
+        "station_name": "Tisbury Great Pond-7",
+        "station_alt_name": "TGP7",
+        "station_type": null,
+        "geom": "0101000020E61000007D3F355EBAA951C0CDCCCCCCCCAC4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.662,
+          41.964
+        ]
+      },
+      "properties": {
+        "station_id": 33,
+        "station_name": "P1",
+        "station_alt_name": "P1",
+        "station_type": null,
+        "geom": "0101000020E6100000EE7C3F355EAA51C008AC1C5A64FB4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.666,
+          41.367
+        ]
+      },
+      "properties": {
+        "station_id": 545,
+        "station_name": "Tisbury Great Pond-4",
+        "station_alt_name": "TGP4",
+        "station_type": null,
+        "geom": "0101000020E6100000B4C876BE9FAA51C0E5D022DBF9AE4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.667,
+          42.036
+        ]
+      },
+      "properties": {
+        "station_id": 17,
+        "station_name": "D1",
+        "station_alt_name": "D1",
+        "station_type": null,
+        "geom": "0101000020E6100000A69BC420B0AA51C0F853E3A59B044540"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.668,
+          41.964
+        ]
+      },
+      "properties": {
+        "station_id": 113,
+        "station_name": "Plymouth Harbor",
+        "station_alt_name": "Plymouth Harbor",
+        "station_type": null,
+        "geom": "0101000020E6100000986E1283C0AA51C008AC1C5A64FB4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.669,
+          41.376
+        ]
+      },
+      "properties": {
+        "station_id": 544,
+        "station_name": "Tisbury Great Pond-1",
+        "station_alt_name": "TGP1",
+        "station_type": null,
+        "geom": "0101000020E6100000894160E5D0AA51C0E3A59BC420B04440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.68,
+          41.5
+        ]
+      },
+      "properties": {
+        "station_id": 58,
+        "station_name": "VS_4",
+        "station_alt_name": "VS_4",
+        "station_type": null,
+        "geom": "0101000020E6100000EC51B81E85AB51C00000000000C04440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.709,
+          42
+        ]
+      },
+      "properties": {
+        "station_id": 29,
+        "station_name": "Jones River",
+        "station_alt_name": "JR",
+        "station_type": null,
+        "geom": "0101000020E61000004C37894160AD51C00000000000004540"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.71,
+          41.998
+        ]
+      },
+      "properties": {
+        "station_id": 106,
+        "station_name": "Inner Jones River",
+        "station_alt_name": "Jones River",
+        "station_type": null,
+        "geom": "0101000020E61000003D0AD7A370AD51C039B4C876BEFF4440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.744,
+          41.447
+        ]
+      },
+      "properties": {
+        "station_id": 56,
+        "station_name": "VS_2",
+        "station_alt_name": "VS_2",
+        "station_type": null,
+        "geom": "0101000020E6100000560E2DB29DAF51C0F0A7C64B37B94440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.762,
+          41.375
+        ]
+      },
+      "properties": {
+        "station_id": 57,
+        "station_name": "VS_3",
+        "station_alt_name": "VS_3",
+        "station_type": null,
+        "geom": "0101000020E610000054E3A59BC4B051C00000000000B04440"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -70.829,
+          41.408
+        ]
+      },
+      "properties": {
+        "station_id": 55,
+        "station_name": "VS_1",
+        "station_alt_name": "VS_1",
+        "station_type": null,
+        "geom": "0101000020E6100000931804560EB551C04E62105839B44440"
+      }
+    }
+  ]
+}
