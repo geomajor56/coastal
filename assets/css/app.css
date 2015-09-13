@@ -8,7 +8,7 @@ body {
     padding-top: 55px;
 }
 
-tr{
+tr {
     background-color: rgba(225, 225, 225, .6);
 }
 
@@ -17,12 +17,13 @@ tr{
     font-weight: 500;
     font-size: 12px;
 }
-.pagination-detail{
+
+.pagination-detail {
     color: white;
     font-size: 12px;
 }
 
-.pagination{
+.pagination {
 
     color: white;
     font-size: 12px;

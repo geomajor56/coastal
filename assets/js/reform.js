@@ -166,18 +166,18 @@ $(function () {
                 },
 
                 legend: {
-                        enabled: false
-                    },
+                    enabled: false
+                },
 
                 title: {
-                        text: 'Temperature, Salinity, Dissolved Oxygen for Station: '
-                    },
+                    text: 'Temperature, Salinity, Dissolved Oxygen for Station: '
+                },
 
                 xAxis: {
                     type: 'datetime',
-                        dateTimeLabelFormats: {
-                            year: '%Y'
-                        },
+                    dateTimeLabelFormats: {
+                        year: '%Y'
+                    },
 
                     title: {
                         enabled: true,
@@ -227,112 +227,112 @@ $(function () {
 
                     }
                 },
-                 yAxis: [
-                        {// Primary yAxis
-                            labels: {
-                                formatter: function () {
-                                    return this.value + '°C';
-                                },
-                                style: {
-                                    color: '#89A54E'
-                                }
+                yAxis: [
+                    {// Primary yAxis
+                        labels: {
+                            formatter: function () {
+                                return this.value + '°C';
                             },
-                            title: {
-                                text: 'Temperature',
-                                style: {
-                                    color: '#89A54E'
-                                }
-                            },
-                            opposite: true
-
-                        },
-                        {// Secondary yAxis
-                            gridLineWidth: 0,
-                            title: {
-                                text: 'Dissolved Oxygen',
-                                style: {
-                                    color: '#4572A7'
-                                }
-                            },
-                            labels: {
-                                formatter: function () {
-                                    return this.value + ' mg/L';
-                                },
-                                style: {
-                                    color: '#4572A7'
-                                }
+                            style: {
+                                color: '#89A54E'
                             }
-
                         },
-                        {// Tertiary yAxis
-                            gridLineWidth: 0,
-                            title: {
-                                text: 'Salinity',
-                                style: {
-                                    color: '#AA4643'
-                                }
-                            },
-                            labels: {
-                                formatter: function () {
-                                    return this.value + ' ppt';
-                                },
-                                style: {
-                                    color: '#AA4643'
-                                }
-                            },
-                            opposite: true
-                        }
-                    ],
-                tooltip: {
-                        shared: true
+                        title: {
+                            text: 'Temperature',
+                            style: {
+                                color: '#89A54E'
+                            }
+                        },
+                        opposite: true
+
                     },
+                    {// Secondary yAxis
+                        gridLineWidth: 0,
+                        title: {
+                            text: 'Dissolved Oxygen',
+                            style: {
+                                color: '#4572A7'
+                            }
+                        },
+                        labels: {
+                            formatter: function () {
+                                return this.value + ' mg/L';
+                            },
+                            style: {
+                                color: '#4572A7'
+                            }
+                        }
+
+                    },
+                    {// Tertiary yAxis
+                        gridLineWidth: 0,
+                        title: {
+                            text: 'Salinity',
+                            style: {
+                                color: '#AA4643'
+                            }
+                        },
+                        labels: {
+                            formatter: function () {
+                                return this.value + ' ppt';
+                            },
+                            style: {
+                                color: '#AA4643'
+                            }
+                        },
+                        opposite: true
+                    }
+                ],
+                tooltip: {
+                    shared: true
+                },
 
                 series: [
-                        {
-                            name: 'Temperature',
-                            color: '#89A54E',
-                            type: 'area',
-                            data: temperature,
-                            tooltip: {
-                                valueSuffix: ' °C'
-                            },
-                            marker: {
-                                enabled: false
-                            }
-
+                    {
+                        name: 'Temperature',
+                        color: '#89A54E',
+                        type: 'area',
+                        data: temperature,
+                        tooltip: {
+                            valueSuffix: ' °C'
                         },
-                        {
-
-                            name: 'Dissolved Oxygen',
-                            color: '#4572A7',
-                            type: 'spline',
-                            yAxis: 1,
-
-                            data: dissolved_oxygen,
-                            tooltip: {
-                                valueSuffix: ' mg/L'
-                            },
-                            marker: {
-                                enabled: true
-                            }
-
-                        },
-                        {
-                            name: 'Salinity',
-                            type: 'spline',
-                            color: '#AA4643',
-                            yAxis: 2,
-                            data: salinity,
-                            tooltip: {
-                                valueSuffix: ' ppt'
-                            },
-
-                            marker: {
-                                enabled: true
-                            }
-
+                        marker: {
+                            enabled: false
                         }
-                    ]
+
+                    },
+                    {
+
+                        name: 'Dissolved Oxygen',
+                        color: '#4572A7',
+                        type: 'spline',
+                        yAxis: 1,
+
+                        data: dissolved_oxygen,
+                        tooltip: {
+                            valueSuffix: ' mg/L'
+                        },
+                        marker: {
+                            enabled: true
+                        }
+
+                    },
+                    {
+                        name: 'Salinity',
+                        type: 'spline',
+                        color: '#AA4643',
+                        yAxis: 2,
+                        data: salinity,
+                        tooltip: {
+                            valueSuffix: ' ppt'
+                        },
+
+                        marker: {
+                            enabled: true
+                        }
+
+                    }
+                ]
 
             }, function (chart) { //add this function to the chart definition to get synchronized crosshairs
                 syncronizeCrossHairs(chart);
@@ -355,15 +355,15 @@ $(function () {
                      }
                      }*/
                 },
-               title: {
-                        text: 'Nitrates/Nitrites, Ammonium for Station: ' + this_station
-                    },
+                title: {
+                    text: 'Nitrates/Nitrites, Ammonium for Station: ' + this_station
+                },
 
                 xAxis: {
                     type: 'datetime',
                     dateTimeLabelFormats: {
-                            year: '%Y'
-                        },
+                        year: '%Y'
+                    },
                     //title: {
                     //    enabled: true,
                     //    text: 'Height (cm)'
@@ -410,69 +410,69 @@ $(function () {
                     }
                 },
                 yAxis: [
-                        {// Primary yAxis
-                            labels: {
-                                format: '{value}um',
-                                style: {
-                                    color: '#89A54E'
-                                }
-                            },
-                            title: {
-                                text: 'Nitrates/Nitrites',
-                                style: {
-                                    color: '#89A54E'
-                                }
+                    {// Primary yAxis
+                        labels: {
+                            format: '{value}um',
+                            style: {
+                                color: '#89A54E'
                             }
                         },
-                        {// Secondary yAxis
-                            title: {
-                                text: 'Ammonium',
-                                style: {
-                                    color: '#4572A7'
-                                }
-                            },
-                            labels: {
-                                format: '{value} um',
-                                style: {
-                                    color: '#4572A7'
-                                }
-                            },
-                            opposite: true
+                        title: {
+                            text: 'Nitrates/Nitrites',
+                            style: {
+                                color: '#89A54E'
+                            }
                         }
-                    ],
-                tooltip: {
-                        shared: true
                     },
+                    {// Secondary yAxis
+                        title: {
+                            text: 'Ammonium',
+                            style: {
+                                color: '#4572A7'
+                            }
+                        },
+                        labels: {
+                            format: '{value} um',
+                            style: {
+                                color: '#4572A7'
+                            }
+                        },
+                        opposite: true
+                    }
+                ],
+                tooltip: {
+                    shared: true
+                },
 
 
                 series: [
-                        {
-                            name: 'Total Nitrogen',
-                            color: '#4572A7',
+                    {
+                        name: 'Total Nitrogen',
+                        color: '#4572A7',
 
-                            yAxis: 1,
-                            data: nitrogen,
-                            tooltip: {
-                                valueSuffix: ' um'
-                            },
-                            marker: {
-                                enabled: true
-                            }
-
+                        yAxis: 1,
+                        data: nitrogen,
+                        tooltip: {
+                            valueSuffix: ' um'
                         },
-                        {
-                            name: 'Ammonium',
-                            color: '#89A54E',
-
-                            data: ammonium,
-                            tooltip: {
-                                valueSuffix: ' um'
-                            },
-                            marker: {
-                                enabled: true
-                            }
+                        marker: {
+                            enabled: true
                         }
-                    ]
+
+                    },
+                    {
+                        name: 'Ammonium',
+                        color: '#89A54E',
+
+                        data: ammonium,
+                        tooltip: {
+                            valueSuffix: ' um'
+                        },
+                        marker: {
+                            enabled: true
+                        }
+                    }
+                ]
             }, function (chart) { //add this function to the chart definition to get synchronized crosshairs
                 //this function needs to be added to each syncronized chart
                 syncronizeCrossHairs(chart);
@@ -499,10 +499,11 @@ $(function () {
                 title: {
                     text: 'Total Nitrogen and Phosphorus for Station: ' + this_station
                 },
-                xAxis: {type: 'datetime',
-                        dateTimeLabelFormats: {
-                            year: '%Y'
-                        },
+                xAxis: {
+                    type: 'datetime',
+                    dateTimeLabelFormats: {
+                        year: '%Y'
+                    },
 
                     tickInterval: 5,
                     startOnTick: true,

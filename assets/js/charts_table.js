@@ -25,6 +25,12 @@ $("#about-btn").click(function () {
     return false;
 });
 
+$("#contact-btn").click(function () {
+    $("#contactModal").modal().show();
+    $(".navbar-collapse.in").collapse("hide");
+    return false;
+});
+
 $("#list-btn").click(function () {
     $('#sidebar').toggle();
     map.invalidateSize();
@@ -64,7 +70,7 @@ $("#table-button").click(function () {
         height: 650,
         striped: false,
         pagination: true,
-        pageSize: 25,
+        pageSize: 100,
         pageList: [10, 25, 50, 100, 200],
         search: false,
         showToggle: true,
@@ -239,7 +245,7 @@ $("#chart-btn").click(function () {
                 },
 
                 chart: {
-                   // marginTop: 140,
+                    // marginTop: 140,
                     borderColor: '#000000',
                     borderRadius: 5,
                     borderWidth: 1,

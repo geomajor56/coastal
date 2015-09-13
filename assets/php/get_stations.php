@@ -22,7 +22,7 @@ $sql = 'SELECT *, public.ST_AsGeoJSON(public.ST_Transform((geom),4326),6) AS geo
 */
 if (isset($_GET['bbox'])) {
     $bbox = explode(',', $_GET['bbox']);
-    $sql = $sql . ' WHERE public.ST_Transform(geom, 4326) && public.ST_SetSRID(public.ST_MakeBox2D(public.ST_Point('.$bbox[0].', '.$bbox[1].'), public.ST_Point('.$bbox[2].', '.$bbox[3].')),4326);';
+    $sql = $sql . ' WHERE public.ST_Transform(geom, 4326) && public.ST_SetSRID(public.ST_MakeBox2D(public.ST_Point(' . $bbox[0] . ', ' . $bbox[1] . '), public.ST_Point(' . $bbox[2] . ', ' . $bbox[3] . ')),4326);';
 }
 
 # Try query or error
@@ -34,8 +34,8 @@ if (!$rs) {
 
 # Build GeoJSON feature collection array
 $geojson = array(
-   'type'      => 'FeatureCollection',
-   'features'  => array()
+    'type' => 'FeatureCollection',
+    'features' => array()
 );
 
 # Loop through rows to build feature arrays
@@ -45,9 +45,9 @@ while ($row = $rs->fetch(PDO::FETCH_ASSOC)) {
     unset($properties['geojson']);
     unset($properties['the_geom']);
     $feature = array(
-         'type' => 'Feature',
-         'geometry' => json_decode($row['geojson'], true),
-         'properties' => $properties
+        'type' => 'Feature',
+        'geometry' => json_decode($row['geojson'], true),
+        'properties' => $properties
     );
     # Add feature arrays to feature collection array
     array_push($geojson['features'], $feature);

@@ -81,7 +81,7 @@ $("#chart-btn").click(function () {
             alert(thrownError);
         },
         success: function chartParser(data) {
-           //console.log(data);
+            //console.log(data);
 
             var sampleDate, d, sampleYear;
 
@@ -113,8 +113,8 @@ $("#chart-btn").click(function () {
             $('#container1').highcharts('StockChart', {
 
                 navigator: {
-            height: 20
-        },
+                    height: 20
+                },
 
                 scrollbar: {
                     liveRedraw: false
@@ -576,7 +576,7 @@ $("#chart-btn").click(function () {
             $('#container5').highcharts({
                 chart: {
                     height: 150
-                                    },
+                },
                 //legend: {
                 //    enabled: false
                 //},
