@@ -26,9 +26,8 @@ $("#about-btn").click(function () {
 });
 
 $("#contact-btn").click(function () {
-    $("#contactModal").modal().show();
-    $(".navbar-collapse.in").collapse("hide");
-    return false;
+    console.log('Hey MotherFuckers!!!')
+    $("#myModal").modal('show');
 });
 
 $("#list-btn").click(function () {
@@ -246,6 +245,7 @@ $("#chart-btn").click(function () {
 
                 chart: {
                     // marginTop: 140,
+                    //type: 'bubble',
                     borderColor: '#000000',
                     borderRadius: 5,
                     borderWidth: 1,
@@ -348,7 +348,7 @@ $("#chart-btn").click(function () {
                         connectNulls: false,
                         name: 'Temperature',
                         color: '#89A54E',
-                        type: 'area',
+                        //type: 'area',
                         //type: 'line',
                         data: temperature,
                         tooltip: {
