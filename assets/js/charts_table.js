@@ -950,8 +950,12 @@ var stations = L.geoJson(null, {
 $.getJSON('assets/php/get_stations.php', function (data) {
     stations.addData(data);
     map.addLayer(stations);
-});
 
+    if ($.cookie("pop") == null) {
+		$("#splashModal").modal("show");
+	$.cookie("pop", "2");
+	}
+});
 
 map = L.map("map", {
     zoom: 10,
