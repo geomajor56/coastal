@@ -25,10 +25,10 @@ $("#about-btn").click(function () {
     return false;
 });
 
-$("#contact-btn").click(function () {
-    console.log('Hey MotherFuckers!!!')
-    $("#myModal").modal('show');
-});
+//$("#contact-btn").click(function () {
+//    console.log('Hey MotherFuckers!!!')
+//    $("#myModal").modal('show');
+//});
 
 $("#list-btn").click(function () {
     $('#sidebar').toggle();
