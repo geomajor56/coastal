@@ -3,7 +3,7 @@
 $name = $_POST['InputName'];
 $email = $_POST['InputEmail'];
 $message = $_POST['InputMessage'];
-$from = 'BryanDemo';
+$from = 'Center for Coastal Studies';
 $to = 'geomajor56@gmail.com';
 $subject = 'Website inquiry';
 $human = $_POST['InputHuman'];
