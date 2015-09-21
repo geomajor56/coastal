@@ -74,6 +74,7 @@ $("#table-button").click(function () {
         search: false,
         showToggle: true,
         showColumns: true,
+        showExport: true,
         showRefresh: true,
         minimumCountColumns: 2,
         clickToSelect: false,
