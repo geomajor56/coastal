@@ -25,10 +25,89 @@ $("#about-btn").click(function () {
     return false;
 });
 
-//$("#contact-btn").click(function () {
-//    console.log('Hey MotherFuckers!!!')
-//    $("#myModal").modal('show');
+$("#params-btn").click(function () {
+    $("#parametersModal").modal("show");
+    $(".navbar-collapse.in").collapse("hide");
+    return false;
+});
+
+$("#threats-btn").click(function () {
+    $("#threatsModal").modal("show");
+    $(".navbar-collapse.in").collapse("hide");
+    return false;
+});
+
+$("#citizen-btn").click(function () {
+    $("#citizenModal").modal("show");
+    $(".navbar-collapse.in").collapse("hide");
+    return false;
+});
+
+//$("#contact-btn").click(function submitForm() {
+//     Initiate Variables With Form Content
+    //var name = $("#name").val();
+    //var email = $("#email").val();
+    //var message = $("#message").val();
 //});
+
+//contact form functions
+
+$("#contactForm").validator().on("submit", function (event) {
+    if (event.isDefaultPrevented()) {
+        // handle the invalid form...
+        formError();
+        submitMSG(false, "Did you fill in the form properly?");
+    } else {
+        // everything looks good!
+        event.preventDefault();
+        submitForm();
+    }
+});
+
+
+function submitForm(){
+    // Initiate Variables With Form Content
+    var name = $("#name").val();
+    var email = $("#email").val();
+    var message = $("#message").val();
+
+    $.ajax({
+        type: "POST",
+        url: "assets/php/contact.php",
+        data: "name=" + name + "&email=" + email + "&message=" + message,
+        success : function(text){
+            if (text == "success"){
+                formSuccess();
+            } else {
+                formError();
+                submitMSG(false,text);
+            }
+        }
+    });
+}
+
+function formSuccess(){
+    $("#contactForm")[0].reset();
+    submitMSG(true, "Message Submitted!")
+}
+
+function formError(){
+    $("#contactForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+        $(this).removeClass();
+    });
+}
+
+function submitMSG(valid, msg){
+    if(valid){
+        var msgClasses = "h3 text-center tada animated text-success";
+    } else {
+        var msgClasses = "h3 text-center text-danger";
+    }
+    $("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
+}
+//end contact form functions
+
+
 
 $("#list-btn").click(function () {
     $('#sidebar').toggle();
@@ -68,9 +147,9 @@ $("#table-button").click(function () {
         refresh: true,
         height: 650,
         striped: false,
-        pagination: true,
-        pageSize: 100,
-        pageList: [10, 25, 50, 100, 200],
+        //pagination: true,
+        //pageSize: 100,
+        //pageList: [10, 25, 50, 100, 200],
         search: false,
         showToggle: true,
         showColumns: true,
@@ -121,8 +200,8 @@ $("#table-button").click(function () {
             valign: 'bottom',
             sortable: 'true'
         }, {
-            field: 'nitrates',
-            title: 'Nitrates',
+            field: 'nitrogen',
+            title: 'Nitrate + Nitrite',
             align: 'right',
             valign: 'bottom',
             sortable: 'true'
@@ -133,7 +212,7 @@ $("#table-button").click(function () {
             valign: 'bottom',
             sortable: 'true'
         }, {
-            field: 'phosphate',
+            field: 'phosphates',
             title: 'Phosphate',
             align: 'right',
             valign: 'bottom',
@@ -151,8 +230,8 @@ $("#table-button").click(function () {
             valign: 'bottom',
             sortable: 'true'
         }, {
-            field: 'total_phosphates',
-            title: 'Total Phosphates',
+            field: 'total_phosphorus',
+            title: 'Total Phosphorus',
             align: 'right',
             valign: 'bottom',
             sortable: 'true'
@@ -187,216 +266,45 @@ $("#chart-btn").click(function () {
             alert(thrownError);
         },
         success: function chartParser(data) {
-            //console.log(data);
+            console.log(this_station);
+            console.log(data);
 
             var sampleDate, d, sampleYear;
 
-            for (var i = 0; i < data.length; i++) {
+  for (var i = 0; i < data.length; i++) {
                 sampleDate = data[i][1];   // in milliseconds for Highcharts
                 d = new Date(data[i][1]);
-                //console.log(moment(sampleDate));
-                //console.log(d);
+                console.log(moment(sampleDate));
+                console.log(d);
                 sampleYear = d.getFullYear();
                 temperature.push([sampleDate, data[i][3]]);
                 salinity.push([sampleDate, data[i][4]]);
                 dissolved_oxygen.push([sampleDate, data[i][5]]);
                 //ph.push([sampleDate, data[i][6]]);
-                chlorophyll.push([sampleDate, data[i][13]]);
-                pheophytin.push([sampleDate, data[i][14]]);
-                turbidity.push([sampleDate, data[i][15]]);
-                nitrogen.push([sampleDate, data[i][7]]);
-                ammonium.push([sampleDate, data[i][9]]);
-                phosphates.push([sampleDate, data[i][8]]);
-                silicates.push([sampleDate, data[i][10]]);
-                total_nitrogen.push([sampleDate, data[i][11]]);
-                total_phosphorus.push([sampleDate, data[i][12]]);
-
-
+                chlorophyll.push([sampleDate, data[i][7]]);
+                pheophytin.push([sampleDate, data[i][8]]);
+                turbidity.push([sampleDate, data[i][9]]);
+                nitrogen.push([sampleDate, data[i][10]]);
+                ammonium.push([sampleDate, data[i][11]]);
+                phosphates.push([sampleDate, data[i][12]]);
+                silicates.push([sampleDate, data[i][13]]);
+                total_nitrogen.push([sampleDate, data[i][14]]);
+                total_phosphorus.push([sampleDate, data[i][15]]);
             }
+
 
             var chart1, chart2, chart3, chart4, chart5;
 
-            $('#container1').highcharts('StockChart', {
 
-                navigator: {
-                    height: 20
-                },
+            //Highcharts.setOptions({
+	//global: {
+	//	useUTC: false
+	//}
+//});
 
-
-                scrollbar: {
-                    liveRedraw: false
-                },
-
-                title: {
-                    text: 'Temperature, Salinity, Dissolved Oxygen for Station: ' + this_station_name,
-                    align: 'center',
-                    //y: 50,
-                    style: {
-                        fontSize: '14px'
-                    }
-                },
-                legend: {
-                    enabled: true,
-                    align: 'left',
-                    verticalAlign: 'top',
-                    //x: -20,
-                    //y: 50,
-                    floating: true
-                },
-
-                chart: {
-                    // marginTop: 140,
-                    //type: 'bubble',
-                    borderColor: '#000000',
-                    borderRadius: 5,
-                    borderWidth: 1,
-                    height: 250,
-
-                },
-
-                xAxis: {
-                    type: 'datetime',
-                    dateTimeLabelFormats: {
-                        year: '%Y'
-                    },
-
-                    events: {
-                        setExtremes: function (e) {
-                            var thisMin = e.min,
-                                thisMax = e.max,
-                                chart2 = $('#container2').highcharts();
-                            chart3 = $('#container3').highcharts();
-                            chart4 = $('#container4').highcharts();
-                            chart5 = $('#container5').highcharts();
-
-                            chart2.xAxis[0].setExtremes(thisMin, thisMax);
-                            chart3.xAxis[0].setExtremes(thisMin, thisMax);
-                            chart4.xAxis[0].setExtremes(thisMin, thisMax);
-                            chart5.xAxis[0].setExtremes(thisMin, thisMax);
-                        }
-                    }
-                },
-                yAxis: [
-
-
-                    {// Primary yAxis
-                        labels: {
-
-                            enabled: true,
-
-                            formatter: function () {
-                                return this.value + '°C';
-                            },
-                            style: {
-                                color: '#89A54E'
-                            }
-                        },
-                        title: {
-                            text: 'Temperature',
-                            style: {
-                                color: '#89A54E'
-                            }
-                        },
-                        opposite: false
-
-                    },
-                    {// Secondary yAxis
-                        gridLineWidth: 0,
-                        title: {
-                            text: 'Dissolved Oxygen',
-                            align: 'middle',
-                            style: {
-                                color: '#529CF2'
-                            }
-                        },
-                        labels: {
-
-                            formatter: function () {
-                                return this.value + ' mg/L';
-                            },
-                            style: {
-                                color: '#529CF2'
-                            }
-                        }
-
-                    },
-                    {// Tertiary yAxis
-                        gridLineWidth: 0,
-                        title: {
-                            text: null,
-                            style: {
-                                color: '#E83631'
-                            }
-                        },
-                        labels: {
-                            enabled: false,
-                            formatter: function () {
-                                return this.value + ' ppt';
-                            },
-                            style: {
-                                color: '#E83631'
-                            }
-                        },
-                        opposite: true
-                    }
-                ],
-                tooltip: {
-                    shared: true
-                },
-
-                series: [
-                    {
-                        connectNulls: false,
-                        name: 'Temperature',
-                        color: '#89A54E',
-                        //type: 'area',
-                        //type: 'line',
-                        data: temperature,
-                        tooltip: {
-                            valueSuffix: ' °C'
-                        },
-                        marker: {
-                            enabled: false
-                        }
-
-
-                    },
-                    {
-
-                        connectNulls: false,
-                        name: 'Dissolved Oxygen',
-                        color: '#529CF2',
-                        // type: 'area',
-                        yAxis: 1,
-                        data: dissolved_oxygen,
-                        tooltip: {
-                            valueSuffix: ' mg/L'
-                        },
-                        marker: {
-                            enabled: true
-                        }
-
-                    },
-                    {
-                        connectNulls: false,
-                        name: 'Salinity',
-                        //  type: 'area',
-                        color: '#E83631',
-                        yAxis: 2,
-                        data: salinity,
-                        tooltip: {
-                            valueSuffix: ' ppt'
-                        },
-
-                        marker: {
-                            enabled: true
-                        },
-
-                    }
-                ]
-            });
             $('#container2').highcharts({
                 chart: {
+                    marginLeft: 70,
                     borderColor: '#000000',
                     borderRadius: 5,
                     borderWidth: 1,
@@ -497,6 +405,7 @@ $("#chart-btn").click(function () {
             });
             $('#container3').highcharts({
                 chart: {
+                    marginLeft: 70,
                     borderColor: '#000000',
                     borderRadius: 5,
                     borderWidth: 1,
@@ -596,6 +505,7 @@ $("#chart-btn").click(function () {
             });
             $('#container4').highcharts({
                 chart: {
+                    marginLeft: 70,
                     borderColor: '#000000',
                     borderRadius: 5,
                     borderWidth: 1,
@@ -696,6 +606,7 @@ $("#chart-btn").click(function () {
             });
             $('#container5').highcharts({
                 chart: {
+                    marginLeft: 70,
                     borderColor: '#000000',
                     borderRadius: 5,
                     borderWidth: 1,
@@ -749,7 +660,7 @@ $("#chart-btn").click(function () {
                         title: {
                             text: 'Chlorophyll',
                             style: {
-                                color: '#fed976'
+                                color: 'green'
                             }
                         },
                         labels: {
@@ -757,7 +668,7 @@ $("#chart-btn").click(function () {
                                 return this.value + ' ug/L';
                             },
                             style: {
-                                color: '#fed976'
+                                color: 'green'
                             }
                         },
                         opposite: true
@@ -819,7 +730,7 @@ $("#chart-btn").click(function () {
                     {
                         connectNulls: false,
                         name: 'Chlorophyll',
-                        color: '#fed976',
+                        color: 'green',
                         yaxis: 2,
                         data: chlorophyll,
                         marker: {
@@ -828,6 +739,195 @@ $("#chart-btn").click(function () {
                         tooltip: {
                             valueSuffix: ' ug/L'
                         }
+                    }
+                ]
+            });
+            $('#container1').highcharts('StockChart', {
+                rangeSelector: {
+                    selected: 3
+                },
+
+                navigator: {
+                    //top: 100,
+                    height: 20
+                },
+
+                scrollbar: {
+                    liveRedraw: false
+                },
+
+                title: {
+                    text: 'Temperature, Salinity, Dissolved Oxygen for Station: ' + this_station_name,
+                    align: 'center',
+                    //y: 50,
+                    style: {
+                        fontSize: '14px'
+                    }
+                },
+                legend: {
+                    enabled: true,
+                    align: 'bottom',
+                    verticalAlign: 'top',
+                    floating: true
+                },
+
+                chart: {
+                    marginLeft: 70,
+                    //marginRight: 100,
+                    //type: 'bubble',
+                    borderColor: '#000000',
+                    borderRadius: 5,
+                    borderWidth: 1,
+                    height: 250,
+
+                },
+
+                xAxis: {
+                    ordinal: false,
+                    type: 'datetime',
+                    dateTimeLabelFormats: {
+                        year: '%Y'
+                    },
+
+
+
+
+
+                    events: {
+                        setExtremes: function (e) {
+                            var thisMin = e.min,
+                                thisMax = e.max,
+                            //chart1 = $('#container1').highcharts();
+                            chart2 = $('#container2').highcharts();
+                            chart3 = $('#container3').highcharts();
+                            chart4 = $('#container4').highcharts();
+                            chart5 = $('#container5').highcharts();
+
+                            //chart1.xAxis[0].setExtremes(thisMin, thisMax);
+                            chart2.xAxis[0].setExtremes(thisMin, thisMax);
+                            chart3.xAxis[0].setExtremes(thisMin, thisMax);
+                            chart4.xAxis[0].setExtremes(thisMin, thisMax);
+                            chart5.xAxis[0].setExtremes(thisMin, thisMax);
+                        }
+                    }
+                },
+                yAxis: [
+
+
+                    {// Primary yAxis
+                        labels: {
+
+                            enabled: true,
+
+                            formatter: function () {
+                                return this.value + '°C';
+                            },
+                            style: {
+                                color: '#89A54E'
+                            }
+                        },
+                        title: {
+                            text: 'Temperature',
+                            style: {
+                                color: '#89A54E'
+                            }
+                        },
+                        opposite: false
+
+                    },
+                    {// Secondary yAxis
+                        gridLineWidth: 0,
+                        title: {
+                            text: 'Dissolved Oxygen',
+                            align: 'middle',
+                            style: {
+                                color: '#529CF2'
+                            }
+                        },
+                        labels: {
+
+                            formatter: function () {
+                                return this.value + ' mg/L';
+                            },
+                            style: {
+                                color: '#529CF2'
+                            }
+                        }
+
+                    },
+                    {// Tertiary yAxis
+                        gridLineWidth: 0,
+                        title: {
+                            text: null,
+                            style: {
+                                color: '#E83631'
+                            }
+                        },
+                        labels: {
+                            enabled: false,
+                            formatter: function () {
+                                return this.value + ' ppt';
+                            },
+                            style: {
+                                color: '#E83631'
+                            }
+                        },
+                        opposite: true
+                    }
+
+                ],
+                tooltip: {
+                    shared: true
+                },
+
+                series: [
+                    {
+                        connectNulls: false,
+                        name: 'Temperature',
+                        color: '#89A54E',
+                        type: 'area',
+                        data: temperature,
+                        tooltip: {
+                            valueSuffix: ' °C'
+                        },
+                        marker: {
+                            enabled: false
+                        }
+
+
+                    },
+                    {
+
+                        connectNulls: false,
+                        name: 'Dissolved Oxygen',
+                        color: '#529CF2',
+                        // type: 'area',
+                        yAxis: 1,
+                        data: dissolved_oxygen,
+                        tooltip: {
+
+                            valueSuffix: ' mg/L'
+                        },
+                        marker: {
+                            enabled: true
+                        }
+
+                    },
+                    {
+                        connectNulls: false,
+                        name: 'Salinity',
+                        //  type: 'area',
+                        color: '#E83631',
+                        yAxis: 2,
+                        data: salinity,
+                        tooltip: {
+                            valueSuffix: ' ppt'
+                        },
+
+                        marker: {
+                            enabled: true
+                        },
+
                     }
                 ]
             });
@@ -948,15 +1048,16 @@ var stations = L.geoJson(null, {
     }
 });
 
-$.getJSON('assets/php/get_stations.php', function (data) {
+$.getJSON('assets/php/get_stations.php ', function (data) {
     stations.addData(data);
     map.addLayer(stations);
 
     if ($.cookie("pop") == null) {
-		$("#splashModal").modal("show");
-	$.cookie("pop", "2");
-	}
+        $("#splashModal").modal("show");
+        $.cookie("pop", "2");
+    }
 });
+
 
 map = L.map("map", {
     zoom: 10,
@@ -1122,7 +1223,26 @@ $(document).one("ajaxStop", function () {
     $(".twitter-typeahead").css("position", "static");
     $(".twitter-typeahead").css("display", "block");
 });
+// Instance the tour
+//var tour = new Tour({
+//  steps: [
+//  {
+//    element: ".form-control",
+//    title: "Title of my step",
+//    content: "Content of my step"
+//  },
+//  {
+//    element: ".feature-name",
+//    title: "Title of my step",
+//    content: "Content of my step"
+//  }
+//]});
 
+// Initialize the tour
+//tour.init();
+
+// Start the tour
+//tour.start();
 // Leaflet patch to make layer control scrollable on touch browsers
 //var container = $(".leaflet-control-layers")[0];
 //if (!L.Browser.touch) {

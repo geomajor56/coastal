@@ -8,6 +8,14 @@ body {
     padding-top: 50px;
 }
 
+#contact-amy{
+    font-size: small;
+    color: royalblue;
+
+
+}
+
+
 tr {
     background-color: rgba(225, 225, 225, .6);
 }
@@ -28,6 +36,7 @@ tr {
     font-size: 12px;
 }
 
+
 #dataModal {
     position: fixed;
     top: 0;
@@ -46,6 +55,12 @@ tr {
     height: 100%;
     padding: 0;
 }
+
+#contactModalContent{
+    background-image: url("nameskaket-creek-2014-1024x768.jpg");
+
+}
+
 
 /*.modal-content {*/
 #dataModalContent {
@@ -214,6 +229,7 @@ td.feature-name {
     top: 103px;
     bottom: 0px;
     overflow: auto;
+    /*background-color:#2780E3;*/
 }
 
 .leaflet-control-layers {

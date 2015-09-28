@@ -15,7 +15,11 @@
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-1.0.0-b1/leaflet.css"/>
     <link rel="stylesheet" href="assets/leaflet-plugins/Leaflet-NavBar/Leaflet.NavBar.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.css">
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.10.1/css/bootstrap-tour.min.css">-->
     <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/validator/4.0.5/validator.js"></script>-->
+
 
     <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicon-76.png">
     <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicon-120.png">
@@ -26,148 +30,10 @@
 <body>
 
 
-<!-- Modal -->
-<div class="modal fade" id="splashModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Center for Coastal Studies</h4>
-            </div>
-            <div class="modal-body">
-                <p>The Center for Coastal Studies (CCS) began monitoring the water quality of the coastal waters of Cape
-                    Cod in 2006. Since then this program has expanded to include over 100 stations on the Cape and
-                    Islands
-                    and 20 stations in the offshore water of Cape Cod Bay and Nantucket Sound. The information collected
-                    through this monitoring program is expanding our understanding of how human activities and
-                    management
-                    actions affect our surrounding water bodies. This program is the longest-running and only bay-wide
-                    monitoring being conducted in Cape Cod Bay, and the only water quality monitoring being regularly
-                    conducted in Nantucket Sound.</p>
-
-                <p>Sampling is a collaborative effort done by staff at the Center for Coastal Studies, several volunteer
-                    citizen scientists and partnering organizations including Waquoit Bay National Estuarine Research
-                    Reserve, University of Massachusetts Boston – Nantucket Field Station, Martha’s Vineyard Commission,
-                    Edgartown Shellfish Department, Three Bays Preservation, Town of Harwich, and Cape Cod Commercial
-                    Fishermen’s Association. Samples are analyzed for key indicators of environmental health (i.e.
-                    nitrogen,
-                    chlorophyll, temperature and turbidity) by scientists at the CCS state-certified laboratory.</p>
-
-
-                <h4>The goals of this program are:</h4>
-                <ul>
-                    <li>To contribute accurate, unbiased science that can be used to guide decision-makers in cleaning
-                        up
-                        coastal waters.
-                    </li>
-                    <li>To network with Cape and Islands organizations with similar interests in water quality to
-                        promote data
-                        sharing and education and outreach.
-                    </li>
-                    <li>To increase public awareness of the importance of preserving water quality and the actions they
-                        can take
-                        to help eliminate pollution.
-                    </li>
-                </ul>
-
-                <p>In accordance with these goals, CCS is making the water quality data collected to date publically
-                    available. Comments and questions regarding these data can be sent to wqdata@coastalstudies.org.</p>
-            </div>
-            <div class="modal-footer"><!-- footer area with buttons for a continued dialog -->
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <!--<button type="button" class="btn btn-primary">Save changes</button>-->
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
-<!-- /.modal -->
-
-<!-- contact modal -->
-
-<div class="modal fade" id="myContact">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-          <h4 class="modal-title">Send us an inquiry!</h4>
-        </div>
-        <div class="modal-body">
-          <form role="form" method="post" action="assets/php/process.php">
-          <div class="form-group">
-            <label>Your Name</label>
-            <div class="input-group">
-            <input name="InputName" id="InputName" class="form-control" placeholder="Enter Name" required></input>
-            <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span></div>
-          </div>
-          <div class="form-group">
-            <label for="InputEmail">Your Email</label>
-            <div class="input-group">
-              <input type="email" class="form-control" id="InputEmail" name="InputEmail" placeholder="Enter Email" required>
-              <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="InputMessage">Message</label>
-            <div class="input-group">
-              <textarea name="InputMessage" id="InputMessage" class="form-control" placeholder="Enter Message" rows="5" required></textarea>
-              <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
-            </div>
-          </div>
-          <div class="form-group">
-            <label>Anti-Spam</label>
-            <div class="input-group">
-              <input name="InputHuman" id="InputHuman" class="form-control" placeholder="What's 2+2?" required></input>
-              <span class="input-group-addon"><i class="glyphicon glyphicon-ok form-control-feedback"></i></span>
-            </div>
-          </div>
-          <hr class="featurette-divider hidden-lg">
-
-              <div class="modal-footer">
-          <input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">
-        </div>
-          </form>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-<!-- end contact modal -->
-
-<div id="splash" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title">Modal title</h4>
-            </div>
-            <div class="modal-body">
-                <p>One fine body&hellip;</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-        <!-- /.modal-content -->
-    </div>
-    <!-- /.modal-dialog -->
-</div>
-<!-- /.modal -->
-
+<!--graph and table modal container-->
 <div id="dataModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-
-    <!-- dialog -->
     <div id="dataModalDialog" class="modal-dialog">
-
-        <!-- content -->
         <div id="dataModalContent" class="modal-content">
-
-
-            <!-- body -->
             <div id="dataModalBody" class="modal-body">
                 <div id="cc" class="container">
                     <div class="charts" id="container1"></div>
@@ -180,9 +46,6 @@
                     <table id="data-table"></table>
                 </div>
             </div>
-            <!-- body -->
-
-
             <div id="dataModalFooter" class="modal-footer">
                 <div class="btn-group" role="group">
                     <button id="graphs-button" type="button" class="btn btn-info">Graphs</button>
@@ -190,16 +53,82 @@
                     <button id="table-button" type="button" class="btn btn-info">Table</button>
                 </div>
             </div>
-
-
         </div>
-        <!-- content -->
-
     </div>
-    <!-- dialog -->
-
 </div>
+<!-- end graph and table modal container-->
 
+<!-- Splash Modal -->
+<div class="modal fade" id="splashModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Center for Coastal Studies</h4>
+            </div>
+            <div class="modal-body">
+                <p>The Center for Coastal Studies (CCS) began monitoring the water quality of the coastal waters of
+                    Cape
+                    Cod in 2006. Since then this program has expanded to include over 100 stations on the Cape and
+                    Islands
+                    and 20 stations in the offshore water of Cape Cod Bay and Nantucket Sound. The information
+                    collected
+                    through this monitoring program is expanding our understanding of how human activities and
+                    management
+                    actions affect our surrounding water bodies. This program is the longest-running and only
+                    bay-wide
+                    monitoring being conducted in Cape Cod Bay, and the only water quality monitoring being
+                    regularly
+                    conducted in Nantucket Sound.</p>
+
+                <p>Sampling is a collaborative effort done by staff at the Center for Coastal Studies, several
+                    volunteer
+                    citizen scientists and partnering organizations including Waquoit Bay National Estuarine
+                    Research
+                    Reserve, University of Massachusetts Boston – Nantucket Field Station, Martha’s Vineyard
+                    Commission,
+                    Edgartown Shellfish Department, Three Bays Preservation, Town of Harwich, and Cape Cod
+                    Commercial
+                    Fishermen’s Association. Samples are analyzed for key indicators of environmental health (i.e.
+                    nitrogen,
+                    chlorophyll, temperature and turbidity) by scientists at the CCS state-certified laboratory.</p>
+
+
+                <h4>The goals of this program are:</h4>
+                <ul>
+                    <li>To contribute accurate, unbiased science that can be used to guide decision-makers in
+                        cleaning
+                        up
+                        coastal waters.
+                    </li>
+                    <li>To network with Cape and Islands organizations with similar interests in water quality to
+                        promote data
+                        sharing and education and outreach.
+                    </li>
+                    <li>To increase public awareness of the importance of preserving water quality and the actions
+                        they
+                        can take
+                        to help eliminate pollution.
+                    </li>
+                </ul>
+
+                <p>In accordance with these goals, CCS is making the water quality data collected to date publically
+                    available. Comments and questions regarding these data can be sent to
+                    wqdata@coastalstudies.org.</p>
+            </div>
+            <div class="modal-footer"><!-- footer area with buttons for a continued dialog -->
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <!--<button type="button" class="btn btn-primary">Save changes</button>-->
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- Splash Modal End -->
+
+<!--map station popup modal-->
 <div class="modal fade" id="featureModal" tabindex="-1" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -216,12 +145,11 @@
                 <button type="button" class="btn btn-default" role="button" data-dismiss="modal">Close</button>
             </div>
         </div>
-        <!-- /.modal-content -->
     </div>
-    <!-- /.modal-dialog -->
 </div>
-<!-- /.modal -->
+<!-- end map station popup modal-->
 
+<!--nav bar-->
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -243,17 +171,19 @@
 
                 <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="params-btn"><i
                         class="fa fa-flask white"></i>&nbsp;&nbsp;Sample Parameters</a></li>
+                <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="citizen-btn">Citizen
+                    Scientists</a></li>
 
-                <li><a href="#" data-toggle="modal" data-target="#myContact">Contact</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#myContact">Contact Us</a></li>
 
             </ul>
 
         </div>
-        <!--/.navbar-collapse -->
     </div>
 </div>
+<!--end nav bar-->
 
-
+<!--map sidebar-->
 <div id="container">
     <div id="sidebar">
         <div class="sidebar-wrapper">
@@ -261,7 +191,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-xs-10 col-md-10">
-                            <input type="text" class="form-control search" placeholder="Search by name or id"/>
+                            <input type="text" class="form-control search" placeholder="Search name or id"/>
                         </div>
                     </div>
                 </div>
@@ -286,6 +216,9 @@
     </div>
     <div id="map"></div>
 </div>
+<!--end map sidebar-->
+
+<!--loading indicator-->
 <div id="loading">
     <div class="loading-indicator">
         <div class="progress progress-striped active">
@@ -293,7 +226,9 @@
         </div>
     </div>
 </div>
+<!--end loading indicator-->
 
+<!-- about modal -->
 <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -317,7 +252,8 @@
                             <li> To study the quality and health of Cape Cod Bay through applied science and
                                 research;
                             </li>
-                            <li>To protect and when possible restore the Bay’s estuaries and marshes, barrier beaches,
+                            <li>To protect and when possible restore the Bay’s estuaries and marshes, barrier
+                                beaches,
                                 creeks, rivers and harbors from human and natural threats;
                             </li>
                             <li>To inform the public and decision makers about the natural resources of the Bay and
@@ -326,7 +262,8 @@
                             <li>To advise local, state and federal resource managers about this unique marine
                                 environment;
                             </li>
-                            <li>To preserve Cape Cod Bay as a State Ocean Sanctuary, as defined by Chapter 132 of the
+                            <li>To preserve Cape Cod Bay as a State Ocean Sanctuary, as defined by Chapter 132 of
+                                the
                                 General Laws of Massachusetts.
                             </li>
                         </ul>
@@ -337,14 +274,17 @@
                     <div id="disclaimer" class="tab-pane fade text-danger">
                         <p>The data provided on this site is for informational and planning purposes only.</p>
 
-                        <p>Absolutely no accuracy or completeness guarantee is implied or intended. All information on
-                            this map is subject to such variations and corrections as might result from a complete title
+                        <p>Absolutely no accuracy or completeness guarantee is implied or intended. All information
+                            on
+                            this map is subject to such variations and corrections as might result from a complete
+                            title
                             search and/or accurate field survey.</p>
                     </div>
 
                     <div class="tab-pane fade" id="boroughs-tab">
-                        <p>Borough data courtesy of <a href="http://www.nyc.gov/html/dcp/pdf/bytes/nybbwi_metadata.pdf"
-                                                       target="_blank">New York City Department of City Planning</a></p>
+                        <p>Borough data courtesy of <a
+                                href="http://www.nyc.gov/html/dcp/pdf/bytes/nybbwi_metadata.pdf"
+                                target="_blank">New York City Department of City Planning</a></p>
                     </div>
                     <div class="tab-pane fade" id="subway-lines-tab">
                         <p><a href="http://spatialityblog.com/2010/07/08/mta-gis-data-update/#datalinks"
@@ -372,9 +312,454 @@
     </div>
     <!-- /.modal-dialog -->
 </div>
-<!-- /.modal -->
+<!-- end about modal  -->
 
-<!-- /. Contact Us Modal -->
+<!-- threats to the bay modal -->
+<div class="modal fade" id="threatsModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Citizen Scientists</h4>
+            </div>
+            <div class="modal-body">
+                <h1>Threats to the Bay</h1>
+
+                <p>Threats to Cape Cod Bay &amp; Water Quality Parameters</p>
+
+                <p><strong>Pollution</strong></p>
+
+                <div id="attachment_707" style="width: 198px" class="wp-caption alignright"><img
+                        src="http://coastalstudies.org/cms/wp-content/uploads/2013/12/CTD.jpg"
+                        alt="A CTD is deployed to measure temperature, salinity and depth." width="188" height="250"
+                        class="size-full wp-image-707"/>
+
+                    <p class="wp-caption-text">A CTD is deployed to measure temperature, salinity and depth.</p>
+                </div>
+                <p>Over 30 discharge facilities are located in the Cape Cod watershed. While some offer advanced
+                    treatment with nutrient removal of their effluent, most are designed for only secondary
+                    treatment.
+                    The number of discharge facilities in combination with the slightly pervious sandy soil of the
+                    Cape
+                    is a potential hazard that needs to be closely monitored. Also within the watershed are 90 known
+                    facilities that handle hazardous wastes, and 3 facilities with National Pollution Discharge
+                    Elimination System (NPDES) permits. Although limitations and monitoring requirements are in
+                    place
+                    for the effluent at these facilities, a close appraisal of the effects on the surrounding
+                    ecosystem
+                    is warranted.</p>
+
+                <p>Polluted runoff is another major problem on the Cape. this type of pollution is a result of
+                    contaminants picked up in rainwater and melting snow which are eventually emptied into the bay.
+                    Examples of possible pollutants picked up in runoff include fertilizers and other lawn/garden
+                    chemicals, wastes from pets, salt from roadways, and oil and gasoline leaked from automobiles.
+                    In
+                    many towns on the Cape this problem is compounded by the large parking lots located near or
+                    directly
+                    adjacent to harbors. Not only are the oil and gasoline associated with parked automobiles a
+                    problem,
+                    but these large parking lots are often the site of the disposal of snow (and the associated salt
+                    used to treat the roads) cleared from roads during the winter.</p>
+
+                <p>The consequences of pollution have already manifested in the bay. In addition to the direct,
+                    toxic
+                    effects of pollution, excessive nutrient input from both point and nonpoint sources leads to
+                    high
+                    levels of plant growth in the bay, better known as eutrophication. Eutrophication has been
+                    linked to
+                    a number of different harmful processes in coastal waters (e.g., hypoxia, HABs), and there is
+                    evidence that eutrophication is already occurring in certain regions of the bay.</p>
+
+                <p><strong>Habitat Destruction</strong></p>
+
+                <p>One of the most important, yet least studied habitats in Cape Cod Bay are the eelgrass
+                    ecosystems. In
+                    shallow areas of Cape Cod Bay, eelgrass (Zostera marina) is fundamental in structuring the
+                    resident
+                    flora and fauna. Eelgrass systems are highly productive and extremely important biologically.
+                    They
+                    act as a refuge and nursery for juvenile fish and shellfish, many of which are commercially
+                    important species in this region and typically support a higher diversity and abundance of
+                    marine
+                    life compared to surrounding unvegetated areas (Heck et al. 1989). Seagrasses are equally
+                    important
+                    from a purely physical perspective in that they help to prevent erosion by stabilizing sediments
+                    with their extensive root systems as well as aid in filtering contaminants from the water
+                    column.</p>
+
+                <p>Despite the obvious value of eelgrass ecosystems, eelgrass beds are threatened by a number of
+                    anthropogenic perturbations. Declines in seagrass populations have been linked to physical
+                    disturbances (i.e., dredging, construction, shellfishing, propeller damage from boating),
+                    turbidity
+                    (i.e. topsoil runoff, activities that resuspend sediments), and pollution (including
+                    eutrophication). In Cape Cod Bay the destruction off eelgrass habitats by each of these
+                    mechanisms
+                    is evident. Hydraulic pumping by commercial sea clammers and the use of draggers fitted with
+                    teeth
+                    to pull out quahogs completely uproot the eelgrass plants, requiring years to recover (Neckles
+                    2005). This is compounded by the damage from propellers by the powerboats that concentrate in
+                    the
+                    eelgrass beds of the Bay for recreational fishing. Adding the additional stress of
+                    eutrophication,
+                    as discussed previously, makes the health of this already fragile ecosystem even more
+                    tenuous.</p>
+
+                <p><strong>Eutrophication</strong></p>
+
+                <p>The consequences of pollution have already manifested in the Bay. In addition to the direct,
+                    toxic
+                    effects of pollution, excessive nutrient input from both point and nonpoint sources leads to
+                    high
+                    levels of plant growth in the Bay, better known as eutrophication. Eutrophication has been
+                    linked to
+                    a number of different harmful processes in coastal waters, and there is evidence that
+                    eutrophication
+                    is already occurring in certain regions of the Bay. Two symptoms of eutrophication that have
+                    been
+                    extensively documented are harmful algal blooms (HABs) and hypoxia.</p>
+
+                <p><strong>Harmful Algal Blooms (HABs)</strong></p>
+
+                <p>Algal blooms occur primarily during the spring and summer in Cape Cod waters. During the spring,
+                    Phaeocystis blooms occur frequently. The negative impacts of a bloom of this phytoplankton are
+                    far
+                    reaching, affecting the entire food chain by out-competing other beneficial species of
+                    phytoplankton
+                    (Roberts 2003, Tang 2003), affecting zooplankton growth and production (Tang 2001, Turner et al.
+                    2002), and being a nuisance to feeding right whales (Kelly et al. 1998). A more well-known
+                    species
+                    of phytoplankton resulting in HABs is Alexandrium sp., one of the species behind the phenomenon
+                    of
+                    red tides. Red tides have been linked to the deaths of fish, whales, and humans (Anderson 1994,
+                    Bushaw-Neston &#038; Sellner 1999). The occurrence of this species was particularly high in Bay
+                    waters this summer, and, due to its lifecycle of dormant cysts, is likely to become a repetitive
+                    occurrence if conditions remain conducive, i.e. high nutrient input, stratification
+                    (Mcgillicuddy et
+                    al. 2003). Although there were no documented deaths as a result of the bloom in the Bay this
+                    summer,
+                    the effects were still felt by the loss of income of commercial fishermen from shellfish bed
+                    closures.</p>
+
+                <p><strong>Hypoxia</strong></p>
+
+                <p>Closer inshore, the negative impacts of pollution are evident in the sediments. Sediments in and
+                    around harbors such as Rock Harbor and Wellfleet Harbor, which were once sandy, are now composed
+                    primarily of a silty, dark mud. If disturbed, these sediments release a distinct sulfurous odor
+                    indicative of areas of low oxygen. This odor comes from the production of hydrogen sulfide by
+                    bacteria which reside in low oxygen (hypoxic) sediments. Since most organisms are stressed by
+                    low
+                    oxygen levels, hypoxic waters are usually devoid of most life. While motile organisms such as
+                    fish
+                    can leave these areas, benthic organisms will be killed. This had occurred in areas of
+                    Chesapeake
+                    Bay and the Gulf of Mexico, giving these areas the name &#8220;dead zones.&#8221; Although
+                    hypoxic
+                    areas of Cape Cod Bay are not nearly as extensive as observed in these locations, these areas
+                    need
+                    to be monitored and remedied before the problem progresses.</p>
+
+                <p><strong>Overexploitation</strong></p>
+
+                <p>This region of Massachusetts was given the name of Cape Cod because of its abundance of codfish.
+                    Today these fish have virtually disappeared from the waters of the Bay. Other species such as
+                    flounder, tautaug, sea bass, and, most notable, striped bass have likewise suffered from
+                    overexploitation. In the early days, charter captains could guarantee their customers a catch.
+                    Now a
+                    common saying is &#8220;That&#8217;s why they call it fishing and not catching.&#8221; The
+                    apparent,
+                    recent recovery of the striped bass fishery is a result of the close monitoring of this species
+                    implemented by the state. Unfortunately, this recovery is a unique case and has not occurred
+                    with
+                    other commercial species. It is now the poignant prediction of fishermen that the bluefish will
+                    be
+                    the next population to crash in the Bay.</p>
+
+                <p>With reference to some commercial shellfish species, overexploitation is tied directly to habitat
+                    destruction. The development of different methods of fishing to increase the catch of a
+                    declining
+                    stock has been disruptive. Hydraulic pumping for sea clams was once outlawed in the Bay. Over
+                    the
+                    past decade, however, it has been re-implemented in an attempt to increase the harvesting of
+                    these
+                    clams.</p>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- end threats to the bay modal  -->
+
+<!-- parameters modal -->
+<div class="modal fade" id="parametersModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Sample Parameters</h4>
+            </div>
+            <div class="modal-body">
+
+
+                <p><strong>Nutrients</strong></p>
+
+                <p>Key in this study will be to map out the spatial and temporal variability in nutrient fluxes in
+                    the
+                    bay, focusing specifically on nitrogen and phosphorous. Excessive nutrient input is behind most
+                    major problems affecting coastal ecosystems, (e.g., eutrophication, algal blooms, hypoxia). It
+                    is
+                    therefore important that we establish baseline data for the bay and continue to closely monitor
+                    nutrient levels to address existing and imminent problems.</p>
+
+                <p><strong>Chlorophyll a</strong></p>
+
+                <p>Chlorophyll a is a green photosynthetic pigment found in most phytoplankton and plant cells. It
+                    is a
+                    commonly measured parameter of water quality as it can be used as an estimate of the amount of
+                    organic matter produced within the bay. By keeping tract of trends in chlorophyll a, we are able
+                    to
+                    assess effects of nutrients entering the bay and better understand the delicate balance between
+                    photosynthetic rates, nutrient inputs, and oxygen levels in our bay waters.</p>
+
+                <p><strong>Dissolved Oxygen</strong></p>
+
+                <p>Dissolved oxygen concentrations are a measure of how well the water is aerated. This parameter is
+                    one
+                    of the best and most immediate indicators of a system&#8217;s health (EPA). Because oxygen is
+                    needed
+                    to support animal and plant life, consequences of declining D.O. levels will set in quickly.
+                    This
+                    immediate impact on plant and animal life makes measuring the level of oxygen an important means
+                    of
+                    assessing water quality. Additionally, at low oxygen conditions, nutrients (and other
+                    pollutants)
+                    will be released from sediments thereby exacerbating problems.</p>
+
+                <p><strong>Temperature and Salinity</strong></p>
+
+                <p>Water temperature and salinity are two of the most important physical properties of the marine
+                    environment, influencing many physical (density), chemical (capacity to hold D.O., sensitivity
+                    to
+                    toxic wastes), and biological processes (metabolic processes, photosynthesis) as well as
+                    dictating
+                    the types, distribution and abundance of marine flora and fauna. Monitoring levels of these
+                    properties, and more importantly, changes in the levels, will provide a direct indication of
+                    potential problems.</p>
+
+                <div id="attachment_706" style="width: 198px" class="wp-caption alignright"><img
+                        src="http://coastalstudies.org/cms/wp-content/uploads/2013/12/turbidity.jpg"
+                        alt="A Secchi disk is used to measure turbidity (water clarity)." width="188" height="250"
+                        class="size-full wp-image-706"/>
+
+                    <p class="wp-caption-text">A Secchi disk is used to measure turbidity (water clarity).</p></div>
+                <p><strong>Turbidity</strong></p>
+
+                <p>Turbidity, a measure of water clarity or how much the material suspended in the water column
+                    decreases light penetration, will also be measured as an indicator of the quality of the water
+                    in
+                    the bay. High levels of turbidity can result from anthropogenic disturbances such as urban
+                    runoff,
+                    waste discharge, dredging, and boating, as well as natural disturbances such as storms, wave
+                    action,
+                    and bottom feeding animals. Highly turbid waters are detrimental to the entire ecosystem from
+                    sediment quality, to water chemistry, to the survival of plants and animals. Some of the
+                    associated
+                    negative impacts of high levels of turbidity include lowering the rates of photosynthesis,
+                    smothering benthic organisms, and altering bottom material and sediment size.<br/>
+                    <strong><br/>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- end parameters modal  -->
+
+<!-- citizen modal -->
+<div class="modal fade" id="citizenModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Citizen Scientists</h4>
+            </div>
+            <div class="modal-body">
+
+                <h4>Volunteer “Citizen Scientists”
+                    <small>are a critical component of the water quality monitoring program. of
+                        Cape Cod Bay. At least 12 sites, from Provincetown to Plymouth, are sampled each week (June
+                        –
+                        October) during mid-ebb tide by volunteers. These sites are located further inshore in areas
+                        not
+                        accessible by boat. Data on water quality parameters (temperature, salinity, turbidity,
+                        dissolved
+                        oxygen, pH, and nutrients) are collected.
+                    </small>
+                </h4>
+
+
+                <h3 align="center">Citizen Scientists</h3>
+
+                <table data-toggle="table" data-row-style="rowStyle">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Monitoring Stations</th>
+                        <th>Involvement</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Nina Kaars</td>
+                        <td>Herring River</td>
+                        <td>May 2007 - present</td>
+                    </tr>
+                    <tr>
+                        <td>Keith Harrison</td>
+                        <td>Cole Road Beach</td>
+                        <td>May 2007 – present</td>
+                    </tr>
+                    <tr>
+                        <td>Joann Figueras</td>
+                        <td>Little Namskaket</td>
+                        <td>May 2006 – present</td>
+                    </tr>
+                    <tr>
+                        <td>Val Magor</td>
+                        <td>Namskaket</td>
+                        <td>May 2006 – present</td>
+                    </tr>
+                    <tr>
+                        <td>Bill Edwards</td>
+                        <td>Paines Creek</td>
+                        <td>May 2006 – present</td>
+                    </tr>
+                    <tr>
+                        <td>Phil and Elizabeth Suraci</td>
+                        <td>Boat Meadow</td>
+                        <td>May 2007 – present</td>
+                    </tr>
+                    <tr>
+                        <td>Scott and Heather Grenon</td>
+                        <td>Upper Namskaket</td>
+                        <td>May 2007 – present</td>
+                    </tr>
+                    <tr>
+                        <td>Diana Stinson</td>
+                        <td>Scorton and Old Harbor (Sandwich)</td>
+                        <td>May 2006 – present</td>
+                    </tr>
+                    <tr>
+                        <td>Arthur Neill</td>
+                        <td>Upper Scorton and Upper Old Harbor (Sandwich)</td>
+                        <td>May 2006 – present</td>
+                    </tr>
+                    <tr>
+                        <td>Regina Asmutis-Silva</td>
+                        <td>Ellisville Harbor and Plymouth Harbor</td>
+                        <td>May 2006 – present</td>
+                    </tr>
+                    <tr>
+                        <td>Carol Carson</td>
+                        <td>Jones River</td>
+                        <td>May 2006 – present</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+
+                <h4>If you are interested in participating in the Cape Cod Bay Monitoring Program, please
+                    contact:</h4>
+
+
+                <address>
+                    <strong>Amy Costa</strong><br>
+                    CCBM Program Director<br>
+                    Provincetown Center for Coastal Studies<br>
+                    5 Holway Avenue<br>
+                    Provincetown, MA 02657<br>
+                    <a href="mailto:#">acosta@coastalstudies.org</a>
+                </address>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- citizen modal end -->
+
+
+<!-- contact modal -->
+<div class="modal fade" id="myContact">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="contactModalContent">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title"  align="center">Center for Coastal Studies</h3>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-sm-6 col-sm-offset-3">
+                        <div class="well" style="margin-top: 10%;">
+                            <!--<h3>Send me a message</h3>-->
+
+                            <form role="form" id="contactForm" data-toggle="validator" class="shake">
+                                <div class="row">
+                                    <div class="form-group col-sm-6">
+                                        <label for="name" class="h4">Name</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Enter name"
+                                               required data-error="You have a name, don't you?">
+
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="email" class="h4">Email</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Enter email"
+                                               required>
+
+                                        <div class="help-block with-errors"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message" class="h4 ">Message</label>
+                                    <textarea id="message" class="form-control" rows="5"
+                                              placeholder="Enter your message" required></textarea>
+
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">Close
+                                </button>
+                                <button type="submit" id="form-submit" class="btn btn-success pull-right ">
+                                    Submit
+                                </button>
+                                <div id="msgSubmit" class="h4 text-center hidden"></div>
+                                <div class="clearfix"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- end contact modal -->
+
 
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
@@ -383,7 +768,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/extensions/export/bootstrap-table-export.js"></script>
 <script src="assets/js/tableExport.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2014-11-29/FileSaver.min.js"></script>
-
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.10.1/js/bootstrap-tour.min.js"></script>-->
+<script src="assets/js/validator.min.js"></script>
 <script src="assets/js/jquery.cookie.js"></script>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.5/typeahead.bundle.min.js"></script>
@@ -399,6 +785,7 @@
 <script src="http://code.highcharts.com/stock/modules/exporting.js"></script>
 
 <script src="assets/js/charts_table.js"></script>
+
 
 </body>
 </html>

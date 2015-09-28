@@ -3,9 +3,9 @@
 $name = $_POST['InputName'];
 $email = $_POST['InputEmail'];
 $message = $_POST['InputMessage'];
-$from = 'Center for Coastal Studies';
+$from = '';
 $to = 'geomajor56@gmail.com';
-$subject = 'Website inquiry';
+$subject = 'Question or Comments from Cape Cod Bay Website';
 $human = $_POST['InputHuman'];
 $body = "From: $name\n E-Mail: $email\n Message: $message\n";
 if ($_POST['submit'] && $human == '4') {
