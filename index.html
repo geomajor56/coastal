@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-1.0.0-b1/leaflet.css"/>
     <link rel="stylesheet" href="assets/leaflet-plugins/Leaflet-NavBar/Leaflet.NavBar.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.css">
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.10.1/css/bootstrap-tour.min.css">-->
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/validator/4.0.5/validator.js"></script>-->
@@ -43,7 +42,10 @@
                     <div class="charts" id="container5"></div>
                 </div>
                 <div id="tc" class="container">
-                    <table id="data-table"></table>
+                    <table id="data-table" data-fixed-columns="true"
+                           data-fixed-number="1">
+
+                    </table>
                 </div>
             </div>
             <div id="dataModalFooter" class="modal-footer">
@@ -191,7 +193,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-xs-10 col-md-10">
-                            <input type="text" class="form-control search" placeholder="Search name or id"/>
+                            <input type="text" class="form-control search" placeholder="Search Station"/>
                         </div>
                     </div>
                 </div>
@@ -710,44 +712,44 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                         aria-hidden="true">&times;</span></button>
-                <h3 class="modal-title"  align="center">Contact The Center for Coastal Studies</h3>
+                <h3 class="modal-title" align="center">Contact The Center for Coastal Studies</h3>
             </div>
             <div class="modal-body">
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-2">
                         <!--<div class="well" style="margin-top: 10%;">-->
-                            <!--<h3>Send me a message</h3>-->
+                        <!--<h3>Send me a message</h3>-->
 
-                            <form role="form" id="contactForm" data-toggle="validator" class="shake">
-                                <div class="row">
-                                    <div class="form-group col-sm-6">
-                                        <label for="name" class="h4">Name</label>
-                                        <input type="text" class="form-control" id="name" placeholder="Enter name"
-                                               required data-error="You have a name, don't you?">
-
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                    <div class="form-group col-sm-6">
-                                        <label for="email" class="h4">Email</label>
-                                        <input type="email" class="form-control" id="email" placeholder="Enter email"
-                                               required>
-
-                                        <div class="help-block with-errors"></div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="message" class="h4 ">Message</label>
-                                    <textarea id="message" class="form-control" rows="5"
-                                              placeholder="Enter your message" required></textarea>
+                        <form role="form" id="contactForm" data-toggle="validator" class="shake">
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="name" class="h4">Name</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Enter name"
+                                           required data-error="You have a name, don't you?">
 
                                     <div class="help-block with-errors"></div>
                                 </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="email" class="h4">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Enter email"
+                                           required>
 
-                                <button type="submit" id="form-submit" class="btn btn-success pull-left">Submit</button>
-                                <!--<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>-->
-                                <div id="msgSubmit" class="h5 text-center hidden"></div>
-                                <div class="clearfix"></div>
-                            </form>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="h4 ">Message</label>
+                                    <textarea id="message" class="form-control" rows="5"
+                                              placeholder="Enter your message" required></textarea>
+
+                                <div class="help-block with-errors"></div>
+                            </div>
+
+                            <button type="submit" id="form-submit" class="btn btn-success pull-left">Submit</button>
+                            <!--<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>-->
+                            <div id="msgSubmit" class="h5 text-center hidden"></div>
+                            <div class="clearfix"></div>
+                        </form>
                         <!--</div>-->
                     </div>
                 </div>
@@ -765,8 +767,8 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/extensions/export/bootstrap-table-export.js"></script>
 <script src="assets/js/tableExport.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2014-11-29/FileSaver.min.js"></script>
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tour/0.10.1/js/bootstrap-tour.min.js"></script>-->
 <script src="assets/js/validator.min.js"></script>
 <script src="assets/js/jquery.cookie.js"></script>
 

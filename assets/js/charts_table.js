@@ -147,6 +147,7 @@ $("#table-button").click(function () {
         refresh: true,
         height: 650,
         striped: false,
+
         //pagination: true,
         //pageSize: 100,
         //pageList: [10, 25, 50, 100, 200],
@@ -266,41 +267,34 @@ $("#chart-btn").click(function () {
             alert(thrownError);
         },
         success: function chartParser(data) {
-            console.log(this_station);
-            console.log(data);
+
+           console.log(data);
 
             var sampleDate, d, sampleYear;
 
   for (var i = 0; i < data.length; i++) {
-                sampleDate = data[i][1];   // in milliseconds for Highcharts
+                sampleDate = data[i][1];
+                  console.log(sampleDate, 'moment: ',moment(sampleDate));// in milliseconds for Highcharts
                 d = new Date(data[i][1]);
-                console.log(moment(sampleDate));
-                console.log(d);
+
                 sampleYear = d.getFullYear();
                 temperature.push([sampleDate, data[i][3]]);
                 salinity.push([sampleDate, data[i][4]]);
                 dissolved_oxygen.push([sampleDate, data[i][5]]);
                 //ph.push([sampleDate, data[i][6]]);
-                chlorophyll.push([sampleDate, data[i][7]]);
-                pheophytin.push([sampleDate, data[i][8]]);
-                turbidity.push([sampleDate, data[i][9]]);
-                nitrogen.push([sampleDate, data[i][10]]);
-                ammonium.push([sampleDate, data[i][11]]);
-                phosphates.push([sampleDate, data[i][12]]);
-                silicates.push([sampleDate, data[i][13]]);
-                total_nitrogen.push([sampleDate, data[i][14]]);
-                total_phosphorus.push([sampleDate, data[i][15]]);
+                chlorophyll.push([sampleDate, data[i][13]]);
+                pheophytin.push([sampleDate, data[i][14]]);
+                turbidity.push([sampleDate, data[i][15]]);
+                nitrogen.push([sampleDate, data[i][7]]);
+                ammonium.push([sampleDate, data[i][9]]);
+                phosphates.push([sampleDate, data[i][8]]);
+                silicates.push([sampleDate, data[i][10]]);
+                total_nitrogen.push([sampleDate, data[i][11]]);
+                total_phosphorus.push([sampleDate, data[i][12]]);
             }
-
 
             var chart1, chart2, chart3, chart4, chart5;
 
-
-            //Highcharts.setOptions({
-	//global: {
-	//	useUTC: false
-	//}
-//});
 
             $('#container2').highcharts({
                 chart: {
@@ -308,8 +302,7 @@ $("#chart-btn").click(function () {
                     borderColor: '#000000',
                     borderRadius: 5,
                     borderWidth: 1,
-                    height: 150,
-                    //width: 1200
+                    height: 200
                 },
                 title: {
                     text: 'Nitrate + Nitrite, Ammonium for Station: ' + this_station_name,
@@ -318,9 +311,7 @@ $("#chart-btn").click(function () {
                         fontSize: '14px'
                     }
                 },
-                //legend: {
-                //    enabled: false
-                //},
+
                 legend: {
                     align: 'left',
                     verticalAlign: 'top',
@@ -367,6 +358,7 @@ $("#chart-btn").click(function () {
                     }
                 ],
                 tooltip: {
+
                     shared: true
                 },
 
@@ -380,6 +372,7 @@ $("#chart-btn").click(function () {
                         data: nitrogen,
                         //type: 'spline',
                         tooltip: {
+                            xDateFormat: '%m-%d-%Y',
                             valueSuffix: ' um'
                         },
                         marker: {
@@ -394,6 +387,7 @@ $("#chart-btn").click(function () {
                         data: ammonium,
                         //type: 'spline',
                         tooltip: {
+                            xDateFormat: '%m-%d-%Y',
                             valueSuffix: ' um'
                         },
                         marker: {
@@ -409,7 +403,7 @@ $("#chart-btn").click(function () {
                     borderColor: '#000000',
                     borderRadius: 5,
                     borderWidth: 1,
-                    height: 150,
+                    height: 200,
                     //width: 1200
                 },
                 //legend: {
@@ -482,6 +476,7 @@ $("#chart-btn").click(function () {
                         yAxis: 1,
                         data: phosphates,
                         tooltip: {
+                            xDateFormat: '%m-%d-%Y',
                             valueSuffix: ' um'
                         },
                         marker: {
@@ -495,6 +490,7 @@ $("#chart-btn").click(function () {
                         color: '#abd9e9',
                         data: silicates,
                         tooltip: {
+                            xDateFormat: '%m-%d-%Y',
                             valueSuffix: ' um'
                         },
                         marker: {
@@ -509,7 +505,7 @@ $("#chart-btn").click(function () {
                     borderColor: '#000000',
                     borderRadius: 5,
                     borderWidth: 1,
-                    height: 150,
+                    height: 200,
                     //width: 1200
                 },
                 //legend: {
@@ -582,6 +578,7 @@ $("#chart-btn").click(function () {
                         yAxis: 1,
                         data: total_nitrogen,
                         tooltip: {
+                            xDateFormat: '%m-%d-%Y',
                             valueSuffix: ' um'
                         },
                         marker: {
@@ -596,6 +593,7 @@ $("#chart-btn").click(function () {
 
                         data: total_phosphorus,
                         tooltip: {
+                            xDateFormat: '%m-%d-%Y',
                             valueSuffix: ' um'
                         },
                         marker: {
@@ -610,11 +608,9 @@ $("#chart-btn").click(function () {
                     borderColor: '#000000',
                     borderRadius: 5,
                     borderWidth: 1,
-                    height: 150
+                    height: 200
                 },
-                //legend: {
-                //    enabled: false
-                //},
+
                 title: {
                     text: 'Chlorophyll, Pheophytin, and Turbidity for Station: ' + this_station_name,
                     align: 'center',
@@ -710,6 +706,7 @@ $("#chart-btn").click(function () {
                             enabled: false
                         },
                         tooltip: {
+                            xDateFormat: '%m-%d-%Y',
                             valueSuffix: ' NTU'
                         }
                     },
@@ -723,6 +720,7 @@ $("#chart-btn").click(function () {
                             enabled: true
                         },
                         tooltip: {
+                            xDateFormat: '%m-%d-%Y',
                             valueSuffix: ' ug/L'
                         }
 
@@ -737,6 +735,7 @@ $("#chart-btn").click(function () {
                             enabled: true
                         },
                         tooltip: {
+                            xDateFormat: '%m-%d-%Y',
                             valueSuffix: ' ug/L'
                         }
                     }
@@ -797,13 +796,11 @@ $("#chart-btn").click(function () {
                         setExtremes: function (e) {
                             var thisMin = e.min,
                                 thisMax = e.max,
-                            //chart1 = $('#container1').highcharts();
                             chart2 = $('#container2').highcharts();
                             chart3 = $('#container3').highcharts();
                             chart4 = $('#container4').highcharts();
                             chart5 = $('#container5').highcharts();
 
-                            //chart1.xAxis[0].setExtremes(thisMin, thisMax);
                             chart2.xAxis[0].setExtremes(thisMin, thisMax);
                             chart3.xAxis[0].setExtremes(thisMin, thisMax);
                             chart4.xAxis[0].setExtremes(thisMin, thisMax);
@@ -812,13 +809,9 @@ $("#chart-btn").click(function () {
                     }
                 },
                 yAxis: [
-
-
                     {// Primary yAxis
                         labels: {
-
                             enabled: true,
-
                             formatter: function () {
                                 return this.value + '°C';
                             },
@@ -888,6 +881,7 @@ $("#chart-btn").click(function () {
                         type: 'area',
                         data: temperature,
                         tooltip: {
+                            xDateFormat: '%m-%d-%Y',
                             valueSuffix: ' °C'
                         },
                         marker: {
@@ -905,7 +899,7 @@ $("#chart-btn").click(function () {
                         yAxis: 1,
                         data: dissolved_oxygen,
                         tooltip: {
-
+                            xDateFormat: '%m-%d-%Y',
                             valueSuffix: ' mg/L'
                         },
                         marker: {
@@ -921,6 +915,7 @@ $("#chart-btn").click(function () {
                         yAxis: 2,
                         data: salinity,
                         tooltip: {
+                            xDateFormat: '%m-%d-%Y',
                             valueSuffix: ' ppt'
                         },
 
