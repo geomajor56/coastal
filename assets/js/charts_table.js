@@ -45,9 +45,9 @@ $("#citizen-btn").click(function () {
 
 //$("#contact-btn").click(function submitForm() {
 //     Initiate Variables With Form Content
-    //var name = $("#name").val();
-    //var email = $("#email").val();
-    //var message = $("#message").val();
+//var name = $("#name").val();
+//var email = $("#email").val();
+//var message = $("#message").val();
 //});
 
 //contact form functions
@@ -65,7 +65,7 @@ $("#contactForm").validator().on("submit", function (event) {
 });
 
 
-function submitForm(){
+function submitForm() {
     // Initiate Variables With Form Content
     var name = $("#name").val();
     var email = $("#email").val();
@@ -75,30 +75,30 @@ function submitForm(){
         type: "POST",
         url: "assets/php/contact.php",
         data: "name=" + name + "&email=" + email + "&message=" + message,
-        success : function(text){
-            if (text == "success"){
+        success: function (text) {
+            if (text == "success") {
                 formSuccess();
             } else {
                 formError();
-                submitMSG(false,text);
+                submitMSG(false, text);
             }
         }
     });
 }
 
-function formSuccess(){
+function formSuccess() {
     $("#contactForm")[0].reset();
     submitMSG(true, "Message Submitted!")
 }
 
-function formError(){
-    $("#contactForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+function formError() {
+    $("#contactForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
         $(this).removeClass();
     });
 }
 
-function submitMSG(valid, msg){
-    if(valid){
+function submitMSG(valid, msg) {
+    if (valid) {
         var msgClasses = "h3 text-center tada animated text-success";
     } else {
         var msgClasses = "h3 text-center text-danger";
@@ -106,7 +106,6 @@ function submitMSG(valid, msg){
     $("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
 }
 //end contact form functions
-
 
 
 $("#list-btn").click(function () {
@@ -267,14 +266,47 @@ $("#chart-btn").click(function () {
             alert(thrownError);
         },
         success: function chartParser(data) {
+console.log(data);
+//***********************************************  insert year-end-null        ************************
+            var cruiseDate = [];
 
-           console.log(data);
+            for (var i = 0; i < data.length; i++) {
+                sampleDate = data[i][1];
+                thisDate = moment(sampleDate).format('MM/DD/YYYY');
+                cruiseDate.push([thisDate]);
+            }
 
+            var minDate = moment(cruiseDate[0], "MM/DD/YYYY").year();
+            var maxDate = moment(cruiseDate[cruiseDate.length - 1], "MM/DD/YYYY").year();
+            console.log(minDate + '  ' + maxDate);
+
+            for (var i = minDate; i <= maxDate; i++) {
+                temp = null;
+                insertDate = moment('12/31/' + i).valueOf();
+                console.log(insertDate);
+                data.push(["year-end-null", insertDate, 0, temp, temp, temp, temp, temp, temp, temp, temp, temp, temp, temp, temp, temp])
+            }
+
+            function compare(a, b) {
+                var aDate = new Date(a[1]);
+                var bDate = new Date(b[1]);
+                if (aDate < bDate)
+                    return -1;
+                if (aDate > bDate)
+                    return 1;
+                return 0;
+            }
+
+            data.sort(compare);
+
+
+//***************************************  insert year-end-nulls   ***********************************************************
             var sampleDate, d, sampleYear;
 
-  for (var i = 0; i < data.length; i++) {
+            for (var i = 0; i < data.length; i++) {
                 sampleDate = data[i][1];
-                  console.log(sampleDate, 'moment: ',moment(sampleDate));// in milliseconds for Highcharts
+
+
                 d = new Date(data[i][1]);
 
                 sampleYear = d.getFullYear();
@@ -282,16 +314,19 @@ $("#chart-btn").click(function () {
                 salinity.push([sampleDate, data[i][4]]);
                 dissolved_oxygen.push([sampleDate, data[i][5]]);
                 //ph.push([sampleDate, data[i][6]]);
-                chlorophyll.push([sampleDate, data[i][13]]);
-                pheophytin.push([sampleDate, data[i][14]]);
-                turbidity.push([sampleDate, data[i][15]]);
-                nitrogen.push([sampleDate, data[i][7]]);
-                ammonium.push([sampleDate, data[i][9]]);
-                phosphates.push([sampleDate, data[i][8]]);
-                silicates.push([sampleDate, data[i][10]]);
-                total_nitrogen.push([sampleDate, data[i][11]]);
-                total_phosphorus.push([sampleDate, data[i][12]]);
+                chlorophyll.push([sampleDate, data[i][7]]);
+                pheophytin.push([sampleDate, data[i][8]]);
+                turbidity.push([sampleDate, data[i][9]]);
+                nitrogen.push([sampleDate, data[i][10]]);
+                ammonium.push([sampleDate, data[i][11]]);
+                phosphates.push([sampleDate, data[i][12]]);
+                silicates.push([sampleDate, data[i][13]]);
+                total_nitrogen.push([sampleDate, data[i][14]]);
+                total_phosphorus.push([sampleDate, data[i][15]]);
             }
+
+
+            //console.log(temperature);
 
             var chart1, chart2, chart3, chart4, chart5;
 
@@ -299,8 +334,6 @@ $("#chart-btn").click(function () {
             $('#container2').highcharts({
                 chart: {
                     marginLeft: 70,
-                    borderColor: '#000000',
-                    borderRadius: 5,
                     borderWidth: 1,
                     height: 200
                 },
@@ -311,7 +344,6 @@ $("#chart-btn").click(function () {
                         fontSize: '14px'
                     }
                 },
-
                 legend: {
                     align: 'left',
                     verticalAlign: 'top',
@@ -320,6 +352,7 @@ $("#chart-btn").click(function () {
                     floating: true
                 },
                 xAxis: {
+                    crosshair: true,
                     type: 'datetime',
                     dateTimeLabelFormats: {
                         year: '%Y'
@@ -361,16 +394,13 @@ $("#chart-btn").click(function () {
 
                     shared: true
                 },
-
-
                 series: [
                     {
                         connectNulls: false,
                         name: 'Nitrate+Nitrite',
                         color: '#a1d76a',
-                        yAxis: 1,
+                        //yAxis: 1,
                         data: nitrogen,
-                        //type: 'spline',
                         tooltip: {
                             xDateFormat: '%m-%d-%Y',
                             valueSuffix: ' um'
@@ -378,14 +408,14 @@ $("#chart-btn").click(function () {
                         marker: {
                             enabled: true
                         }
-
                     },
                     {
                         connectNulls: false,
                         name: 'Ammonium',
                         color: '#fc8d59',
+                        yAxis: 1,
                         data: ammonium,
-                        //type: 'spline',
+
                         tooltip: {
                             xDateFormat: '%m-%d-%Y',
                             valueSuffix: ' um'
@@ -395,20 +425,13 @@ $("#chart-btn").click(function () {
                         }
                     }
                 ]
-
             });
             $('#container3').highcharts({
                 chart: {
                     marginLeft: 70,
-                    borderColor: '#000000',
-                    borderRadius: 5,
                     borderWidth: 1,
-                    height: 200,
-                    //width: 1200
+                    height: 200
                 },
-                //legend: {
-                //    enabled: false
-                //},
                 title: {
                     text: 'Ortho-Phosphates and Silicates for : ' + this_station_name,
                     align: 'center',
@@ -423,8 +446,8 @@ $("#chart-btn").click(function () {
                     y: -5,
                     floating: true
                 },
-
                 xAxis: {
+                    crosshair: true,
                     type: 'datetime',
                     dateTimeLabelFormats: {
                         year: '%Y'
@@ -465,15 +488,11 @@ $("#chart-btn").click(function () {
                 tooltip: {
                     shared: true
                 },
-
-
                 series: [
                     {
                         connectNulls: false,
                         name: 'Ortho-Phosphates',
                         color: '#f46d43',
-
-                        yAxis: 1,
                         data: phosphates,
                         tooltip: {
                             xDateFormat: '%m-%d-%Y',
@@ -482,12 +501,12 @@ $("#chart-btn").click(function () {
                         marker: {
                             enabled: true
                         }
-
                     },
                     {
                         connectNulls: false,
                         name: 'Silicates',
                         color: '#abd9e9',
+                        yAxis: 1,
                         data: silicates,
                         tooltip: {
                             xDateFormat: '%m-%d-%Y',
@@ -502,15 +521,13 @@ $("#chart-btn").click(function () {
             $('#container4').highcharts({
                 chart: {
                     marginLeft: 70,
-                    borderColor: '#000000',
-                    borderRadius: 5,
+                    //borderColor: '#000000',
+                    //borderRadius: 5,
                     borderWidth: 1,
                     height: 200,
                     //width: 1200
                 },
-                //legend: {
-                //    enabled: false
-                //},
+
                 title: {
                     text: 'Total Nitrogen and Total Phosphorus for Station: ' + this_station_name,
                     align: 'center',
@@ -527,6 +544,7 @@ $("#chart-btn").click(function () {
                 },
 
                 xAxis: {
+                    crosshair: true,
                     type: 'datetime',
                     dateTimeLabelFormats: {
                         year: '%Y'
@@ -574,8 +592,6 @@ $("#chart-btn").click(function () {
                         connectNulls: false,
                         name: 'Total Nitrogen',
                         color: '#33a02c',
-
-                        yAxis: 1,
                         data: total_nitrogen,
                         tooltip: {
                             xDateFormat: '%m-%d-%Y',
@@ -590,7 +606,7 @@ $("#chart-btn").click(function () {
                         connectNulls: false,
                         name: 'Total Phosphorus',
                         color: '#ff7f00',
-
+                        yAxis: 1,
                         data: total_phosphorus,
                         tooltip: {
                             xDateFormat: '%m-%d-%Y',
@@ -604,13 +620,10 @@ $("#chart-btn").click(function () {
             });
             $('#container5').highcharts({
                 chart: {
-                    marginLeft: 70,
-                    borderColor: '#000000',
-                    borderRadius: 5,
+                    marginLeft: 75,
                     borderWidth: 1,
                     height: 200
                 },
-
                 title: {
                     text: 'Chlorophyll, Pheophytin, and Turbidity for Station: ' + this_station_name,
                     align: 'center',
@@ -625,8 +638,8 @@ $("#chart-btn").click(function () {
                     y: -5,
                     floating: true
                 },
-
                 xAxis: {
+                    crosshair: true,
                     type: 'datetime',
                     dateTimeLabelFormats: {
                         year: '%Y'
@@ -635,24 +648,36 @@ $("#chart-btn").click(function () {
                 },
                 yAxis: [
                     {// Primary yAxis
+                        gridLineWidth: 0,
+                        title: {
+                            text: 'Pheophytin',
+                            style: {
+                                color: '#762a83'
+                            }
+                        },
+                        labels: {
+                            format: '{value} ug/L',
+                            style: {
+                                color: '#762a83'
+                            }
+                        },
+                        opposite: true
+                    },
+                    {// Secondary yAxis
                         title: {
                             text: 'Turbidity',
                             style: {
-                                color: '#ED7842'
+                                color: '#636363'
                             }
                         },
-
                         labels: {
-                            formatter: function () {
-                                return this.value + ' NTU';
-                            },
+                            format: '{value} NTU',
                             style: {
-                                color: '#ED7842'
+                                color: '#636363'
                             }
                         }
-
                     },
-                    {// Secondary yAxis
+                    {// Tertiary yAxis
                         title: {
                             text: 'Chlorophyll',
                             style: {
@@ -660,88 +685,73 @@ $("#chart-btn").click(function () {
                             }
                         },
                         labels: {
-                            formatter: function () {
-                                return this.value + ' ug/L';
-                            },
+                            format: '{value} ug/L',
                             style: {
                                 color: 'green'
                             }
                         },
                         opposite: true
-                    },
-                    {// Tertiary yAxis
-                        gridLineWidth: 0,
-                        title: {
-                            text: 'Pheophytin',
-                            style: {
-                                color: '#8fbc8f'
-                            }
-                        },
-                        labels: {
-                            formatter: function () {
-                                return this.value + ' ug/L';
-                            },
-                            style: {
-                                color: '#8fbc8f'
-                            }
-                        },
-                        opposite: true
-
                     }
                 ],
                 tooltip: {
                     shared: true
                 },
-
-
-                series: [
-                    {
-                        connectNulls: false,
-                        name: 'Turbidity',
-                        color: '#A0522D ',
-                        data: turbidity,
-                        type: 'area',
-                        yAxis: 1,
-                        marker: {
-                            enabled: false
-                        },
-                        tooltip: {
-                            xDateFormat: '%m-%d-%Y',
-                            valueSuffix: ' NTU'
-                        }
-                    },
-                    {
-                        connectNulls: false,
-                        name: 'Pheophytin',
-                        color: '#8fbc8f',
-                        yAxis: 2,
-                        data: pheophytin,
-                        marker: {
-                            enabled: true
-                        },
-                        tooltip: {
-                            xDateFormat: '%m-%d-%Y',
-                            valueSuffix: ' ug/L'
-                        }
-
-                    },
-                    {
-                        connectNulls: false,
-                        name: 'Chlorophyll',
-                        color: 'green',
-                        yaxis: 2,
-                        data: chlorophyll,
-                        marker: {
-                            enabled: true
-                        },
-                        tooltip: {
-                            xDateFormat: '%m-%d-%Y',
-                            valueSuffix: ' ug/L'
-                        }
+                plotOptions: {
+                    series: {
+                        fillOpacity: 0.5
                     }
-                ]
+                },
+                series: [{
+                    connectNulls: false,
+                    name: 'Chlorophyll',
+                    color: 'green',
+                    yAxis: 2,
+                    data: chlorophyll,
+                    marker: {
+                        enabled: true
+                    },
+                    tooltip: {
+                        xDateFormat: '%m-%d-%Y',
+                        valueSuffix: ' ug/L'
+                    }
+                }, {
+                    connectNulls: false,
+                    name: 'Turbidity',
+                    color: '#636363',
+                    data: turbidity,
+                    type: 'area',
+                    yAxis: 1,
+                    marker: {
+                        enabled: true
+                    },
+                    tooltip: {
+                        xDateFormat: '%m-%d-%Y',
+                        valueSuffix: ' NTU'
+                    }
+                }, {
+                    connectNulls: false,
+                    name: 'Pheophytin',
+                    color: '#762a83',
+                    yaxis: 0,
+                    data: pheophytin,
+                    marker: {
+                        enabled: true
+                    },
+                    tooltip: {
+                        xDateFormat: '%m-%d-%Y',
+                        valueSuffix: ' ug/L'
+                    }
+                }]
             });
             $('#container1').highcharts('StockChart', {
+
+                chart: {
+                    zoomType: 'x',
+                    marginLeft: 70,
+                    borderWidth: 1,
+                    height: 250,
+
+                },
                 rangeSelector: {
                     selected: 3
                 },
@@ -758,7 +768,7 @@ $("#chart-btn").click(function () {
                 title: {
                     text: 'Temperature, Salinity, Dissolved Oxygen for Station: ' + this_station_name,
                     align: 'center',
-                    //y: 50,
+                    //x: -50,
                     style: {
                         fontSize: '14px'
                     }
@@ -770,33 +780,19 @@ $("#chart-btn").click(function () {
                     floating: true
                 },
 
-                chart: {
-                    marginLeft: 70,
-                    //marginRight: 100,
-                    //type: 'bubble',
-                    borderColor: '#000000',
-                    borderRadius: 5,
-                    borderWidth: 1,
-                    height: 250,
-
-                },
 
                 xAxis: {
+                    crosshair: true,
                     ordinal: false,
                     type: 'datetime',
                     dateTimeLabelFormats: {
                         year: '%Y'
                     },
-
-
-
-
-
                     events: {
                         setExtremes: function (e) {
                             var thisMin = e.min,
                                 thisMax = e.max,
-                            chart2 = $('#container2').highcharts();
+                                chart2 = $('#container2').highcharts();
                             chart3 = $('#container3').highcharts();
                             chart4 = $('#container4').highcharts();
                             chart5 = $('#container5').highcharts();
@@ -810,59 +806,54 @@ $("#chart-btn").click(function () {
                 },
                 yAxis: [
                     {// Primary yAxis
-                        labels: {
-                            enabled: true,
-                            formatter: function () {
-                                return this.value + '°C';
-                            },
+
+                        gridLineWidth: 0,
+                        title: {
+                            text: 'Salinity',
                             style: {
-                                color: '#89A54E'
+                                color: '#E83631'
                             }
                         },
+                        labels: {
+                            enabled: true,
+                            format: '{value} ppt',
+                            style: {
+                                color: '#E83631'
+                            }
+                        },
+                        opposite: true
+
+
+                    }, {// Secondary yAxis
+                        gridLineWidth: 0,
                         title: {
                             text: 'Temperature',
                             style: {
                                 color: '#89A54E'
                             }
                         },
+                        labels: {
+                            enabled: true,
+                            format: '{value} °C',
+                            style: {
+                                color: '#89A54E'
+                            }
+                        },
                         opposite: false
 
-                    },
-                    {// Secondary yAxis
-                        gridLineWidth: 0,
+                    }, {// Tertiary yAxis
+                        //gridLineWidth: 0,
                         title: {
                             text: 'Dissolved Oxygen',
-                            align: 'middle',
+                            //align: 'middle',
                             style: {
-                                color: '#529CF2'
+                                color: '#023858'
                             }
                         },
                         labels: {
-
-                            formatter: function () {
-                                return this.value + ' mg/L';
-                            },
+                            format: '{value} mg/L',
                             style: {
-                                color: '#529CF2'
-                            }
-                        }
-
-                    },
-                    {// Tertiary yAxis
-                        gridLineWidth: 0,
-                        title: {
-                            text: null,
-                            style: {
-                                color: '#E83631'
-                            }
-                        },
-                        labels: {
-                            enabled: false,
-                            formatter: function () {
-                                return this.value + ' ppt';
-                            },
-                            style: {
-                                color: '#E83631'
+                                color: '#023858'
                             }
                         },
                         opposite: true
@@ -872,59 +863,55 @@ $("#chart-btn").click(function () {
                 tooltip: {
                     shared: true
                 },
-
-                series: [
-                    {
-                        connectNulls: false,
-                        name: 'Temperature',
-                        color: '#89A54E',
-                        type: 'area',
-                        data: temperature,
-                        tooltip: {
-                            xDateFormat: '%m-%d-%Y',
-                            valueSuffix: ' °C'
-                        },
-                        marker: {
-                            enabled: false
-                        }
-
-
-                    },
-                    {
-
-                        connectNulls: false,
-                        name: 'Dissolved Oxygen',
-                        color: '#529CF2',
-                        // type: 'area',
-                        yAxis: 1,
-                        data: dissolved_oxygen,
-                        tooltip: {
-                            xDateFormat: '%m-%d-%Y',
-                            valueSuffix: ' mg/L'
-                        },
-                        marker: {
-                            enabled: true
-                        }
-
-                    },
-                    {
-                        connectNulls: false,
-                        name: 'Salinity',
-                        //  type: 'area',
-                        color: '#E83631',
-                        yAxis: 2,
-                        data: salinity,
-                        tooltip: {
-                            xDateFormat: '%m-%d-%Y',
-                            valueSuffix: ' ppt'
-                        },
-
-                        marker: {
-                            enabled: true
-                        },
-
+                plotOptions: {
+                    series: {
+                        fillOpacity: 0.6
                     }
-                ]
+                },
+                series: [{
+                    type: 'line',
+                    connectNulls: false,
+                    name: 'Salinity',
+                    color: '#E83631',
+                    yaxis: 0,
+                    data: salinity,
+                    marker: {
+                        enabled: true
+                    },
+                    tooltip: {
+                        xDateFormat: '%m-%d-%Y',
+                        valueSuffix: 'ug/L'
+                    }
+                }, {
+                    connectNulls: false,
+                    name: 'Temperature',
+                    color: '#89A54E',
+                    data: temperature,
+                    type: 'area',
+                    yAxis: 1,
+                    marker: {
+                        enabled: true
+                    },
+                    tooltip: {
+                        xDateFormat: '%m-%d-%Y',
+                        valueSuffix: '°C'
+                    }
+                }, {
+                    type: 'line',
+                    connectNulls: false,
+                    name: 'Dissolved Oxygen',
+                    color: '#023858',
+                    yAxis: 2,
+                    data: dissolved_oxygen,
+                    marker: {
+                        enabled: true
+                    },
+                    tooltip: {
+                        xDateFormat: '%m-%d-%Y',
+                        valueSuffix: 'mg/L'
+                    }
+                }]
+
             });
         }
     });
@@ -1069,10 +1056,10 @@ map.on("overlayadd", function (e) {
         markerClusters.addLayer(stations);
         syncSidebar();
     }
-    if (e.layer === museumLayer) {
-        markerClusters.addLayer(museums);
-        syncSidebar();
-    }
+    //if (e.layer === museumLayer) {
+    //    markerClusters.addLayer(museums);
+    //    syncSidebar();
+    //}
 });
 
 map.on("overlayremove", function (e) {
@@ -1218,34 +1205,5 @@ $(document).one("ajaxStop", function () {
     $(".twitter-typeahead").css("position", "static");
     $(".twitter-typeahead").css("display", "block");
 });
-// Instance the tour
-//var tour = new Tour({
-//  steps: [
-//  {
-//    element: ".form-control",
-//    title: "Title of my step",
-//    content: "Content of my step"
-//  },
-//  {
-//    element: ".feature-name",
-//    title: "Title of my step",
-//    content: "Content of my step"
-//  }
-//]});
-
-// Initialize the tour
-//tour.init();
-
-// Start the tour
-//tour.start();
-// Leaflet patch to make layer control scrollable on touch browsers
-//var container = $(".leaflet-control-layers")[0];
-//if (!L.Browser.touch) {
-//    L.DomEvent
-//        .disableClickPropagation(container)
-//        .disableScrollPropagation(container);
-//} else {
-//    L.DomEvent.disableClickPropagation(container);
-//}
 
 
