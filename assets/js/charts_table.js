@@ -137,6 +137,8 @@ $("#graphs-button").click(function () {
 
 $("#table-button").click(function () {
 
+
+
     $('#tc').show();
     $('#cc').hide();
     $('#data-table').bootstrapTable({
@@ -157,6 +159,9 @@ $("#table-button").click(function () {
         showRefresh: true,
         minimumCountColumns: 2,
         clickToSelect: false,
+
+        //{"cruise_date":"2014-10-08","temperature":"23","salinity":"32","dissolved_oxygen":"8.6","chlorophyll":"1.579","pheophytin":"0.533",
+        // "turbidity":"2.3593","nitrogen":"3.7495","ammonium":"20.7495","phosphates":"0.9755","silicates":"3.53","total_nitrogen":"1.67","total_phosphorus":"314"}
 
         columns: [{
             field: 'cruise_date',
@@ -314,15 +319,15 @@ console.log(data);
                 salinity.push([sampleDate, data[i][4]]);
                 dissolved_oxygen.push([sampleDate, data[i][5]]);
                 //ph.push([sampleDate, data[i][6]]);
-                chlorophyll.push([sampleDate, data[i][7]]);
-                pheophytin.push([sampleDate, data[i][8]]);
-                turbidity.push([sampleDate, data[i][9]]);
-                nitrogen.push([sampleDate, data[i][10]]);
-                ammonium.push([sampleDate, data[i][11]]);
-                phosphates.push([sampleDate, data[i][12]]);
-                silicates.push([sampleDate, data[i][13]]);
-                total_nitrogen.push([sampleDate, data[i][14]]);
-                total_phosphorus.push([sampleDate, data[i][15]]);
+                chlorophyll.push([sampleDate, data[i][13]]);
+                pheophytin.push([sampleDate, data[i][14]]);
+                turbidity.push([sampleDate, data[i][15]]);
+                nitrogen.push([sampleDate, data[i][7]]);
+                ammonium.push([sampleDate, data[i][9]]);
+                phosphates.push([sampleDate, data[i][8]]);
+                silicates.push([sampleDate, data[i][10]]);
+                total_nitrogen.push([sampleDate, data[i][11]]);
+                total_phosphorus.push([sampleDate, data[i][12]]);
             }
 
 

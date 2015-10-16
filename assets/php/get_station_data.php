@@ -45,19 +45,23 @@ while ($r1 = pg_fetch_array($chart_data)) {
         $r1['tp']
     );
 
+
+# //{"cruise_date":"2014-10-08","temperature":"23","salinity":"32","dissolved_oxygen":"8.6","chlorophyll":"1.579","pheophytin":"0.533",
+#        // "turbidity":"2.3593","nitrogen":"3.7495","ammonium":"20.7495","phosphates":"0.9755","silicates":"3.53","total_nitrogen":"1.67","total_phosphorus":"314"}
+
     $row_table[] = array('cruise_date' => $r1['cruise_date'],
         'temperature' => $r1['temp'],
         'salinity' => $r1['salinity'],
         'dissolved_oxygen' => $r1['dissolved_o'],
-        'chlorophyll' => $r1['chl'],
-        'pheophytin' => $r1['pheo'],
-        'turbidity' => $r1['turb'],
-        'nitrogen' => $r1['no'],
-        'ammonium' => $r1['nh'],
-        'phosphates' => $r1['po'],
-        'silicates' => $r1['si'],
-        'total_nitrogen' => $r1['tn'],
-        'total_phosphorus' => $r1['tp']
+        'chlorophyll' => $r1['si'],//ok
+        'pheophytin' => $r1['tn'],//ok
+        'turbidity' => $r1['tp'],//ok
+        'nitrogen' => $r1['chl'],//ok
+        'ammonium' => $r1['turb'],//ok
+        'phosphates' => $r1['pheo'],//ok
+        'silicates' => $r1['no'],//ok
+        'total_nitrogen' => $r1['nh'],//ok
+        'total_phosphorus' => $r1['po'] //ok
     );
 }
 fwrite($myfile, json_encode($row_table));
