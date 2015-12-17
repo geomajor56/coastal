@@ -28,6 +28,58 @@
 </head>
 <body>
 
+<!--disclaimer modal container-->
+<div id="dataDisclaimer" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title">Center for Coastal Studies</h3>
+            </div>
+            <div class="modal-body">
+                <h3>Data Liability Disclaimer</h3>
+                <p>The Center for Coastal Studies (CCS) has established this website to make the water quality data
+                    collected
+                    and maintained by CCS publically available. It is strongly recommended that these data are directly
+                    acquired only
+                    through this website, and not indirectly through other sources, which may have changed the data in
+                    some way.Although
+                    the data have undergone data formatting quality review prior to posting, errors or inaccuracies may
+                    still exist in
+                    the data. Neither the Center for Coastal Studies, nor any of the employees, contractors, or
+                    volunteers, make any
+                    warranty, express or implied, nor assume any legal liability or responsibility for the accuracy,
+                    completeness, or
+                    usefulness of any information disclosed, nor represent that its use would not infringe on privately
+                    owned rights.
+                <p>
+
+                <h3>Attribution and Citing of CCS Data and Information</h3>
+
+                <p>As a condition of use, those who refer to data and information found through this website in their
+                    publications
+                    and presentations must formally identify both the original author(s) and data authority for any
+                    cited item(s),
+                    and also must cite the CCS website as the source through which the data or information was found.
+                    Such citation
+                    may be in any format appropriate to the publication or presentation. If a publication is based
+                    solely on the
+                    analysis of the data, we suggest that you involve the point of contact in the development and/or
+                    review of the
+                    manuscript. The point of contact might also appreciate receiving a reprint or photocopy of any such
+                    article at
+                    the time of its publication.</p>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 
 <!--graph and table modal container-->
 <div id="dataModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -57,6 +109,7 @@
             </div>
         </div>
     </div>
+
 </div>
 <!-- end graph and table modal container-->
 
@@ -178,6 +231,9 @@
 
                 <li><a href="#" data-toggle="modal" data-target="#myContact">Contact Us</a></li>
 
+
+                <li><a href="#" data-toggle="modal" data-target="#dataDisclaimer">Data Download Disclaimer</a></li>
+
             </ul>
 
         </div>
@@ -235,79 +291,62 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <button class="close" type="button" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Center for Coastal Studies Cape Cod Bay Monitoring Project</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Center for Coastal Studies</h4>
             </div>
             <div class="modal-body">
-                <ul class="nav nav-tabs" id="aboutTabs">
-                    <li class="active"><a href="#about" data-toggle="tab"><i class="fa fa-question-circle"></i>&nbsp;About
-                        the project</a></li>
+                <p>The Center for Coastal Studies (CCS) began monitoring the water quality of the coastal waters of
+                    Cape
+                    Cod in 2006. Since then this program has expanded to include over 100 stations on the Cape and
+                    Islands
+                    and 20 stations in the offshore water of Cape Cod Bay and Nantucket Sound. The information
+                    collected
+                    through this monitoring program is expanding our understanding of how human activities and
+                    management
+                    actions affect our surrounding water bodies. This program is the longest-running and only
+                    bay-wide
+                    monitoring being conducted in Cape Cod Bay, and the only water quality monitoring being
+                    regularly
+                    conducted in Nantucket Sound.</p>
+
+                <p>Sampling is a collaborative effort done by staff at the Center for Coastal Studies, several
+                    volunteer
+                    citizen scientists and partnering organizations including Waquoit Bay National Estuarine
+                    Research
+                    Reserve, University of Massachusetts Boston – Nantucket Field Station, Martha’s Vineyard
+                    Commission,
+                    Edgartown Shellfish Department, Three Bays Preservation, Town of Harwich, and Cape Cod
+                    Commercial
+                    Fishermen’s Association. Samples are analyzed for key indicators of environmental health (i.e.
+                    nitrogen,
+                    chlorophyll, temperature and turbidity) by scientists at the CCS state-certified laboratory.</p>
+
+
+                <h4>The goals of this program are:</h4>
+                <ul>
+                    <li>To contribute accurate, unbiased science that can be used to guide decision-makers in
+                        cleaning
+                        up
+                        coastal waters.
+                    </li>
+                    <li>To network with Cape and Islands organizations with similar interests in water quality to
+                        promote data
+                        sharing and education and outreach.
+                    </li>
+                    <li>To increase public awareness of the importance of preserving water quality and the actions
+                        they
+                        can take
+                        to help eliminate pollution.
+                    </li>
                 </ul>
-                <div class="tab-content" id="aboutTabsContent">
-                    <div class="tab-pane fade active in" id="about">
-                        <h3>Mission statement</h3>
 
-                        <p>The Center’s latest commitment to marine conservation is the Cape Cod Bay Ocean Sanctuary
-                            & Monitoring Programs. The shared mission of the two programs is to:</p>
-
-                        <ul>
-                            <li> To study the quality and health of Cape Cod Bay through applied science and
-                                research;
-                            </li>
-                            <li>To protect and when possible restore the Bay’s estuaries and marshes, barrier
-                                beaches,
-                                creeks, rivers and harbors from human and natural threats;
-                            </li>
-                            <li>To inform the public and decision makers about the natural resources of the Bay and
-                                threats to their long-term protection;
-                            </li>
-                            <li>To advise local, state and federal resource managers about this unique marine
-                                environment;
-                            </li>
-                            <li>To preserve Cape Cod Bay as a State Ocean Sanctuary, as defined by Chapter 132 of
-                                the
-                                General Laws of Massachusetts.
-                            </li>
-                        </ul>
-                        </p>
-
-
-                    </div>
-                    <div id="disclaimer" class="tab-pane fade text-danger">
-                        <p>The data provided on this site is for informational and planning purposes only.</p>
-
-                        <p>Absolutely no accuracy or completeness guarantee is implied or intended. All information
-                            on
-                            this map is subject to such variations and corrections as might result from a complete
-                            title
-                            search and/or accurate field survey.</p>
-                    </div>
-
-                    <div class="tab-pane fade" id="boroughs-tab">
-                        <p>Borough data courtesy of <a
-                                href="http://www.nyc.gov/html/dcp/pdf/bytes/nybbwi_metadata.pdf"
-                                target="_blank">New York City Department of City Planning</a></p>
-                    </div>
-                    <div class="tab-pane fade" id="subway-lines-tab">
-                        <p><a href="http://spatialityblog.com/2010/07/08/mta-gis-data-update/#datalinks"
-                              target="_blank">MTA Subway data</a> courtesy of the <a
-                                href="http://www.urbanresearch.org/about/cur-components/cuny-mapping-service"
-                                target="_blank">CUNY Mapping Service at the Center for Urban Research</a></p>
-                    </div>
-                    <div class="tab-pane fade" id="theaters-tab">
-                        <p>Theater data courtesy of <a
-                                href="https://data.cityofnewyork.us/Recreation/Theaters/kdu2-865w" target="_blank">NYC
-                            Department of Information & Telecommunications (DoITT)</a></p>
-                    </div>
-                    <div class="tab-pane fade" id="museums-tab">
-                        <p>Museum data courtesy of <a
-                                href="https://data.cityofnewyork.us/Recreation/Museums-and-Galleries/sat5-adpb"
-                                target="_blank">NYC Department of Information & Telecommunications (DoITT)</a></p>
-                    </div>
-                </div>
+                <p>In accordance with these goals, CCS is making the water quality data collected to date publically
+                    available. Comments and questions regarding these data can be sent to
+                    wqdata@coastalstudies.org.</p>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer"><!-- footer area with buttons for a continued dialog -->
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <!--<button type="button" class="btn btn-primary">Save changes</button>-->
             </div>
         </div>
         <!-- /.modal-content -->
@@ -599,7 +638,7 @@
 
                 <h4>Volunteer “Citizen Scientists”
                     <small>are a critical component of the water quality monitoring program. of
-                        Cape Cod Bay. At least 12 sites, from Provincetown to Plymouth, are sampled each week (June
+                        Cape Cod Bay. At least 20 sites, from Provincetown to Plymouth, are sampled each week (June
                         –
                         October) during mid-ebb tide by volunteers. These sites are located further inshore in areas
                         not
@@ -609,89 +648,30 @@
                     </small>
                 </h4>
 
-
                 <h3 align="center">Citizen Scientists</h3>
 
-                <table data-toggle="table" data-row-style="rowStyle">
-                    <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Monitoring Stations</th>
-                        <th>Involvement</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Nina Kaars</td>
-                        <td>Herring River</td>
-                        <td>May 2007 - present</td>
-                    </tr>
-                    <tr>
-                        <td>Keith Harrison</td>
-                        <td>Cole Road Beach</td>
-                        <td>May 2007 – present</td>
-                    </tr>
-                    <tr>
-                        <td>Joann Figueras</td>
-                        <td>Little Namskaket</td>
-                        <td>May 2006 – present</td>
-                    </tr>
-                    <tr>
-                        <td>Val Magor</td>
-                        <td>Namskaket</td>
-                        <td>May 2006 – present</td>
-                    </tr>
-                    <tr>
-                        <td>Bill Edwards</td>
-                        <td>Paines Creek</td>
-                        <td>May 2006 – present</td>
-                    </tr>
-                    <tr>
-                        <td>Phil and Elizabeth Suraci</td>
-                        <td>Boat Meadow</td>
-                        <td>May 2007 – present</td>
-                    </tr>
-                    <tr>
-                        <td>Scott and Heather Grenon</td>
-                        <td>Upper Namskaket</td>
-                        <td>May 2007 – present</td>
-                    </tr>
-                    <tr>
-                        <td>Diana Stinson</td>
-                        <td>Scorton and Old Harbor (Sandwich)</td>
-                        <td>May 2006 – present</td>
-                    </tr>
-                    <tr>
-                        <td>Arthur Neill</td>
-                        <td>Upper Scorton and Upper Old Harbor (Sandwich)</td>
-                        <td>May 2006 – present</td>
-                    </tr>
-                    <tr>
-                        <td>Regina Asmutis-Silva</td>
-                        <td>Ellisville Harbor and Plymouth Harbor</td>
-                        <td>May 2006 – present</td>
-                    </tr>
-                    <tr>
-                        <td>Carol Carson</td>
-                        <td>Jones River</td>
-                        <td>May 2006 – present</td>
-                    </tr>
-                    </tbody>
-                </table>
 
+                <div id="volunteers" class="container col-md-12">
+                    <table id="volunteer-table" data-fixed-columns="true"
+                           data-fixed-number="1">
+                    </table>
+                </div>
 
                 <h4>If you are interested in participating in the Cape Cod Bay Monitoring Program, please
                     contact:</h4>
 
 
                 <address>
-                    <strong>Amy Costa</strong><br>
-                    CCBM Program Director<br>
-                    Provincetown Center for Coastal Studies<br>
+
+
+                    <strong>Beth Larson</strong><br>
+                    Volunteer Coordinator, Cape Cod Bay Monitoring Program<br>
+                    Center for Coastal Studies<br>
                     5 Holway Avenue<br>
                     Provincetown, MA 02657<br>
-                    <a href="mailto:#">acosta@coastalstudies.org</a>
+                    <a href="mailto:#">elarson@coastalstudies.org</a>
                 </address>
+
 
             </div>
             <div class="modal-footer">
@@ -761,15 +741,19 @@
 <!-- end contact modal -->
 
 
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/extensions/export/bootstrap-table-export.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/bootstrap-table.min.js"></script>
+<!--<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/extensions/export/bootstrap-table-export.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/export/bootstrap-table-export.js"></script>
 <script src="assets/js/tableExport.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2014-11-29/FileSaver.min.js"></script>
 <script src="assets/js/validator.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.0.4/js.cookie.min.js"></script>-->
 <script src="assets/js/jquery.cookie.js"></script>
 
 <script src="//cdnjs.cloudflare.com/ajax/libs/typeahead.js/0.10.5/typeahead.bundle.min.js"></script>
