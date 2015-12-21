@@ -8,5 +8,7 @@
     <orderEntry type="library" name="highcharts-more" level="application" />
     <orderEntry type="library" name="leaflet" level="application" />
     <orderEntry type="library" name="bootstrap-table" level="application" />
+    <orderEntry type="library" name="bootstrap-table-export" level="application" />
+    <orderEntry type="library" name="moment" level="application" />
   </component>
 </module>

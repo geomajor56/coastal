@@ -11,8 +11,13 @@ body {
 #contact-amy{
     font-size: small;
     color: royalblue;
+}
 
-
+#disclaimer {
+    max-height: calc(50vh - 110px);
+    padding:5px;
+    overflow-y: auto;
+    font-weight: normal;
 }
 
 

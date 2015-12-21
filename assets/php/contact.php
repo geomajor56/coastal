@@ -23,8 +23,8 @@ if (empty($_POST["message"])) {
     $message = $_POST["message"];
 }
 
-
-$EmailTo = "wqdata@coastalstudies.org";
+$EmailTo = "geomajor56@gmail.com";
+//$EmailTo = "wqdata@coastalstudies.org";
 $Subject = "New Message Received";
 
 // prepare email body text

@@ -56,4 +56,19 @@ while ($row = $rs->fetch(PDO::FETCH_ASSOC)) {
 header('Content-type: application/json');
 echo json_encode($geojson, JSON_NUMERIC_CHECK);
 $conn = NULL;
+
+# volunteer table
+
+$volunteer_data = pg_query($connection, "SELECT site, previous, present FROM monitor_volunteers  ORDER BY site ASC ");
+$row_table = array();
+
+while ($r1 = pg_fetch_array($volunteer_data)) {
+
+    $row_table[] = array('site', 'previous', 'present');
+
+}
+$myfile = fopen("volunteer_table.json", "w") or die("Unable to open file!");
+fwrite($myfile, json_encode($row_table));
+fclose($myfile);
+
 ?>

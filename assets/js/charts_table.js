@@ -33,13 +33,9 @@ if ($.cookie("pop") === null) {
         url: 'assets/php/volunteer_table.json',
         cache: false,
         refresh: true,
-        //height: 'auto',
         striped: true,
         height: 350,
         search: false,
-        //showToggle: true,
-        //showColumns: true,
-        //showExport: true,
         showRefresh: true,
         minimumCountColumns: 2,
         clickToSelect: false,
@@ -95,12 +91,68 @@ if ($.cookie("pop") === null) {
         //return false;
     });
 
-//$("#contact-btn").click(function submitForm() {
-//     Initiate Variables With Form Content
-//var name = $("#name").val();
-//var email = $("#email").val();
-//var message = $("#message").val();
-//});
+
+    //data request form functions
+
+    //$('#requestForm').validator().on("submit", function (event) {
+    //    if (event.isDefaultPrevented()) {
+    //        // handle the invalid form...
+    //        requestFormError();
+    //        submitRequestMSG(false, "Did you fill in the form properly?");
+    //    } else {
+    //        // everything looks good!
+    //        event.preventDefault();
+    //        submitRequestForm();
+    //    }
+    //});
+    //
+    //
+    //function submitRequestForm() {
+    //    // Initiate Variables With Form Content
+    //    var name = $("#requestname").val();
+    //    var email = $("#requestemail").val();
+    //    var organization = $("#requestorganization").val();
+    //    var intentions = $("#requestintentions").val();
+    //
+    //    $.ajax({
+    //        type: "POST",
+    //        url: "assets/php/data_request_form.php",
+    //        data: "name=" + name + "&email=" + email + "&organization=" + organization + "&intentions" + intentions,
+    //        success: function (text) {
+    //            if (text == "success") {
+    //                requestFormSuccess();
+    //            } else {
+    //                requestFormError();
+    //                submitRequestMSG(false, text);
+    //            }
+    //        }
+    //    });
+    //}
+    //
+    //function requestFormSuccess() {
+    //    $("#requestForm")[0].reset();
+    //    submitMSG(true, "Message Submitted!");
+    //}
+    //
+    //function requestFormError() {
+    //    $("#requestForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
+    //        $(this).removeClass();
+    //    });
+    //}
+    //
+    //function submitRequestMSG(valid, msg) {
+    //    var msgClasses;
+    //    if (valid) {
+    //        msgClasses = "h3 text-center tada animated text-success";
+    //    } else {
+    //        msgClasses = "h3 text-center text-danger";
+    //    }
+    //    $("#requestMSGSubmit").removeClass().addClass(msgClasses).text(msg);
+    //}
+
+//data request form functions end
+
+
 
 //contact form functions
 
@@ -190,19 +242,18 @@ if ($.cookie("pop") === null) {
     });
 
     $("#table-button").click(function () {
+        console.log(this_station_name);
+
         $('#tc').show();
         $('#cc').hide();
         $('#data-table').bootstrapTable({
             method: 'get',
             url: 'assets/php/station_data_table.json',
             cache: false,
+            htmlContent: false,
             refresh: true,
             height: 650,
             striped: false,
-
-            //pagination: true,
-            //pageSize: 100,
-            //pageList: [10, 25, 50, 100, 200],
             search: false,
             showToggle: true,
             showColumns: true,
@@ -210,8 +261,6 @@ if ($.cookie("pop") === null) {
             showRefresh: true,
             minimumCountColumns: 2,
             clickToSelect: false,
-
-
             columns: [{
                 field: 'cruise_date',
                 title: 'Sample Date',
