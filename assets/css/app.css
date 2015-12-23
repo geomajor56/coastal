@@ -8,10 +8,23 @@ body {
     padding-top: 50px;
 }
 
+
+#table-footer{
+    padding-top: 0px;
+    padding-right: 0px;
+    padding-bottom: 0px;
+    padding-left: 100px;
+}
+
 #contact-amy{
     font-size: small;
     color: royalblue;
 }
+
+.input-group[class*="col-"] {
+    padding-right: 15px;
+    padding-left: 15px;
+    }
 
 #disclaimer {
     max-height: calc(50vh - 110px);

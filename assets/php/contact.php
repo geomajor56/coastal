@@ -1,56 +1,23 @@
 <?php
+$myemail = 'wqdata@coastalstudies.org';
+if (isset($_POST['name'])) {
+$name = strip_tags($_POST['name']);
+$email = strip_tags($_POST['email']);
+$message = strip_tags($_POST['message']);
+echo "<span class=\"alert alert-success\" >Your message has been received. Thanks! Here is what you submitted:</span><br><br>";
+echo "<stong>Name:</strong> ".$name."<br>";
+echo "<stong>Email:</strong> ".$email."<br>";
+echo "<stong>Message:</strong> ".$message."<br>";
 
-$errorMSG = "";
 
-// NAME
-if (empty($_POST["name"])) {
-    $errorMSG = "Name is required ";
-} else {
-    $name = $_POST["name"];
-}
 
-// EMAIL
-if (empty($_POST["email"])) {
-    $errorMSG .= "Email is required ";
-} else {
-    $email = $_POST["email"];
-}
+$to = $myemail;
+$email_subject = "Contact form submission: $name";
+$email_body = "You have received a new message. ".
+" Here are the details:\n Name: $name \n ".
+"Email: $email\n Message \n $message";
+$headers = "From: $myemail\n";
+$headers .= "Reply-To: $email";
+mail($to,$email_subject,$email_body,$headers);
 
-// MESSAGE
-if (empty($_POST["message"])) {
-    $errorMSG .= "Message is required ";
-} else {
-    $message = $_POST["message"];
-}
-
-$EmailTo = "geomajor56@gmail.com";
-//$EmailTo = "wqdata@coastalstudies.org";
-$Subject = "New Message Received";
-
-// prepare email body text
-$Body = "";
-$Body .= "Name: ";
-$Body .= $name;
-$Body .= "\n";
-$Body .= "Email: ";
-$Body .= $email;
-$Body .= "\n";
-$Body .= "Message: ";
-$Body .= $message;
-$Body .= "\n";
-
-// send email
-$success = mail($EmailTo, $Subject, $Body, "From:".$email);
-
-// redirect to success page
-if ($success && $errorMSG == ""){
-   echo "success";
-}else{
-    if($errorMSG == ""){
-        echo "Something went wrong :(";
-    } else {
-        echo $errorMSG;
-    }
-}
-
-?>
+}?>

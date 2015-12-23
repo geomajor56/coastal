@@ -1,66 +1,24 @@
 <?php
-
-$errorMSG = "";
-
-// NAME
-if (empty($_POST["requestname"])) {
-    $errorMSG = "Name is required ";
-} else {
-    $name = $_POST["requestname"];
-}
-
-// EMAIL
-if (empty($_POST["requestemail"])) {
-    $errorMSG .= "Email is required ";
-} else {
-    $email = $_POST["requestemail"];
-}
-
-// ORGANIZATION
-if (empty($_POST["requestorganization"])) {
-    $errorMSG .= "Organization is required ";
-} else {
-    $organization = $_POST["requestorganization"];
-}
-
-// INTENTION
-if (empty($_POST["requestintentions"])) {
-    $errorMSG .= "Intended use is required ";
-} else {
-    $intentions = $_POST["requestintentions"];
-}
+$myemail = 'wqdata@coastalstudies.org';
+if (isset($_POST['name'])) {
+$name = strip_tags($_POST['name']);
+$email = strip_tags($_POST['email']);
+$organization = strip_tags($_POST['organization']);
+$intentions = strip_tags($_POST['intentions']);
+echo "<span class=\"alert alert-success\" >Your message has been received. Thanks! Here is what you submitted:</span><br><br>";
+//echo "<stong>Name:</strong> ".$name."<br>";
+//echo "<stong>Email:</strong> ".$email."<br>";
+//echo "<stong>Message:</strong> ".$message."<br>";
 
 
-$EmailTo = "geomajor56@gmail.com";
-$Subject = "Data Download Request";
 
-// prepare email body text
-$Body = "";
-$Body .= "Name: ";
-$Body .= $name;
-$Body .= "\n";
-$Body .= "Email: ";
-$Body .= $email;
-$Body .= "\n";
-$Body .= "Organization: ";
-$Body .= $organization;
-$Body .= "\n";
-$Body .= "Intended Use: ";
-//$Body .= 'My Intentions';
-$Body .= $intentions;
+$to = $myemail;
+$email_subject = "Data Download Request Submission: $name";
+$email_body = "You have received a new request. ".
+" Here are the details:\n Name: $name \n ".
+"Email: $email\n Organization:  $organization \n Intentions:  $intentions";
+$headers = "From: $myemail\n";
+$headers .= "Reply-To: $email";
+mail($to,$email_subject,$email_body,$headers);
 
-// send email
-$success = mail($EmailTo, $Subject, $Body, "From:".$email);
-
-// redirect to success page
-if ($success && $errorMSG == ""){
-   echo "success";
-}else{
-    if($errorMSG == ""){
-        echo "Something went wrong :(";
-    } else {
-        echo $errorMSG;
-    }
-}
-
-?>
+}?>

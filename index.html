@@ -97,8 +97,20 @@
 
                     <table id="data-table" data-fixed-columns="true"
                            data-fixed-number="1">
-
                     </table>
+
+
+                    <div class="panel panel-default">
+                        <div id="table-footer" class="panel-body">
+                            <h4>Before downloading data, please read the disclaimer and fill out the form here
+                                <button id="request-button" type="button" class=" btn btn-danger">Data Request Form
+                                </button>
+                            </h4>
+                        </div>
+
+                    </div>
+
+
                 </div>
             </div>
             <div id="dataModalFooter" class="modal-footer">
@@ -230,7 +242,7 @@
                 <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="citizen-btn">Citizen
                     Scientists</a></li>
 
-                <li><a href="#" data-toggle="modal" data-target="#myContact">Contact Us</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#form-content">Contact Us</a></li>
 
 
                 <li><a href="#" data-toggle="modal" data-target="#dataDisclaimer">Data Download Disclaimer</a></li>
@@ -613,9 +625,7 @@
                     associated
                     negative impacts of high levels of turbidity include lowering the rates of photosynthesis,
                     smothering benthic organisms, and altering bottom material and sediment size.<br/>
-                    <strong><br/>
-
-
+                    <br/>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -686,119 +696,8 @@
 <!-- citizen modal end -->
 
 
-<!-- data download request modal -->
-<!--<div class="modal fade" id="myDataRequest">-->
-    <!--<div class="modal-dialog modal-lg">-->
-        <!--<div class="modal-content" id="dataRequestModalContent">-->
-            <!--<div class="modal-header">-->
-                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span-->
-                        <!--aria-hidden="true">&times;</span></button>-->
-                <!--<h3 class="modal-title" align="center">Data Download Request Form</h3>-->
-            <!--</div>-->
-            <!--<div class="modal-body">-->
-                <!--<div class="panel panel-default" id="disclaimer">-->
-                    <!--<h3 align="center">Data Liability Disclaimer</h3>-->
-                    <!--<p>The Center for Coastal Studies (CCS) has established this website to make the water quality data-->
-                        <!--collected-->
-                        <!--and maintained by CCS publically available. It is strongly recommended that these data are-->
-                        <!--directly-->
-                        <!--acquired only-->
-                        <!--through this website, and not indirectly through other sources, which may have changed the data-->
-                        <!--in-->
-                        <!--some way.Although-->
-                        <!--the data have undergone data formatting quality review prior to posting, errors or inaccuracies-->
-                        <!--may-->
-                        <!--still exist in-->
-                        <!--the data. Neither the Center for Coastal Studies, nor any of the employees, contractors, or-->
-                        <!--volunteers, make any-->
-                        <!--warranty, express or implied, nor assume any legal liability or responsibility for the accuracy,-->
-                        <!--completeness, or-->
-                        <!--usefulness of any information disclosed, nor represent that its use would not infringe on-->
-                        <!--privately-->
-                        <!--owned rights.-->
-                    <!--<p>-->
-
-                    <!--<h3 align="center">Attribution and Citing of CCS Data and Information</h3>-->
-
-                    <!--<p>As a condition of use, those who refer to data and information found through this website in-->
-                        <!--their-->
-                        <!--publications-->
-                        <!--and presentations must formally identify both the original author(s) and data authority for any-->
-                        <!--cited item(s),-->
-                        <!--and also must cite the CCS website as the source through which the data or information was-->
-                        <!--found.-->
-                        <!--Such citation-->
-                        <!--may be in any format appropriate to the publication or presentation. If a publication is based-->
-                        <!--solely on the-->
-                        <!--analysis of the data, we suggest that you involve the point of contact in the development and/or-->
-                        <!--review of the-->
-                        <!--manuscript. The point of contact might also appreciate receiving a reprint or photocopy of any-->
-                        <!--such-->
-                        <!--article at-->
-                        <!--the time of its publication.</p>-->
-                <!--</div>-->
-                <!--<div class="row">-->
-                    <!--<div class="col-sm-10 col-sm-offset-1">-->
-                        <!--&lt;!&ndash;<div class="well" style="margin-top: 10%;">&ndash;&gt;-->
-                        <!--&lt;!&ndash;<h3>Send me a message</h3>&ndash;&gt;-->
-
-                        <!--<form role="form" id="requestForm" data-toggle="validator" class="shake">-->
-                            <!--<div class="row">-->
-                                <!--<div class="form-group col-sm-6">-->
-                                    <!--<label for="name" class="h4">Name</label>-->
-                                    <!--<input type="text" class="form-control" id="requestname" placeholder="Enter name"-->
-                                           <!--required data-error="You have a name, don't you?">-->
-
-                                    <!--<div class="help-block with-errors"></div>-->
-                                <!--</div>-->
-                                <!--<div class="form-group col-sm-6">-->
-                                    <!--<label for="email" class="h4">Email</label>-->
-                                    <!--<input type="email" class="form-control" id="requestemail"-->
-                                           <!--placeholder="Enter email"-->
-                                           <!--required>-->
-
-                                    <!--<div class="help-block with-errors"></div>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--<div class="row">-->
-                                <!--<div class="form-group col-sm-6">-->
-                                    <!--<label for="requestorganization" class="h4 ">Organization</label>-->
-                                    <!--<textarea id="requestorganization" class="form-control"-->
-                                              <!--placeholder="Enter Organization"-->
-                                              <!--required></textarea>-->
-
-                                    <!--<div class="help-block with-errors"></div>-->
-                                <!--</div>-->
-
-                                <!--<div class="form-group col-sm-6">-->
-                                    <!--<label for="requestintentions" class="h4 ">Intended Use</label>-->
-                                    <!--<textarea id="requestintentions" class="form-control" rows="2"-->
-                                              <!--placeholder="A brief explantaion of your indended use"-->
-                                              <!--required></textarea>-->
-
-                                    <!--<div class="help-block with-errors"></div>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                            <!--<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button>-->
-                            <!--<button type="submit" id="request-form-submit" class="btn btn-success pull-right">Submit-->
-                            <!--</button>-->
-                            <!--&lt;!&ndash;<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>&ndash;&gt;-->
-                            <!--<div id="requestMSGSubmit" class="h5 text-center hidden"></div>-->
-                            <!--<div class="clearfix"></div>-->
-                        <!--</form>-->
-                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-
-        <!--</div>-->
-    <!--</div>-->
-<!--</div>-->
-<!-- data download request modal end -->
-
-
 <!-- contact modal -->
-<div class="modal fade" id="myContact">
+<div class="modal fade" id="form-content">
     <div class="modal-dialog">
         <div class="modal-content" id="contactModalContent">
             <div class="modal-header">
@@ -806,24 +705,24 @@
                         aria-hidden="true">&times;</span></button>
                 <h3 class="modal-title" align="center">Contact The Center for Coastal Studies</h3>
             </div>
+
             <div class="modal-body">
+
                 <div class="row">
                     <div class="col-sm-8 col-sm-offset-2">
-                        <!--<div class="well" style="margin-top: 10%;">-->
-                        <!--<h3>Send me a message</h3>-->
 
-                        <form role="form" id="contactForm" data-toggle="validator" class="shake">
+                        <form role="form" class="contact" name="contact">
                             <div class="row">
                                 <div class="form-group col-sm-6">
                                     <label for="name" class="h4">Name</label>
-                                    <input type="text" class="form-control" id="name" placeholder="Enter name"
+                                    <input type="text" class="form-control" name="name" placeholder="Enter name"
                                            required data-error="You have a name, don't you?">
 
                                     <div class="help-block with-errors"></div>
                                 </div>
                                 <div class="form-group col-sm-6">
                                     <label for="email" class="h4">Email</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Enter email"
+                                    <input type="email" class="form-control" name="email" placeholder="Enter email"
                                            required>
 
                                     <div class="help-block with-errors"></div>
@@ -831,30 +730,134 @@
                             </div>
                             <div class="form-group">
                                 <label for="message" class="h4 ">Message</label>
-                                    <textarea id="message" class="form-control" rows="5"
+                                    <textarea name="message" class="form-control" rows="5"
                                               placeholder="Enter your message" required></textarea>
 
                                 <div class="help-block with-errors"></div>
                             </div>
 
-                            <button type="submit" id="form-submit" class="btn btn-success pull-right"
-                                    data-dismiss="modal">Submit
-                            </button>
-                            <!--<button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button>-->
-                            <!--<button type="button" class="btn btn-default pull-right" data-dismiss="modal">Close</button>-->
                             <div id="msgSubmit" class="h5 text-center hidden"></div>
                             <div class="clearfix"></div>
                         </form>
-                        <!--</div>-->
+
                     </div>
                 </div>
             </div>
-
+            <div class="modal-footer">
+                <input class="btn btn-success" type="submit" value="Submit" id="submit">
+                <a href="#" class="btn btn-danger" data-dismiss="modal">Cancel</a>
+            </div>
+            <div id="thanks"><p><a data-toggle="modal" href="#form-content"></a></p></div>
         </div>
     </div>
 </div>
+
 <!-- end contact modal -->
 
+<!--data download request modal -->
+<div class="modal fade" id="request-content">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="dataRequestModalContent">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title" align="center">Data Download Request Form</h3>
+            </div>
+            <div class="modal-body">
+                <div class="panel panel-default" id="disclaimer">
+                    <h3 align="center">Data Liability Disclaimer</h3>
+                    <p>The Center for Coastal Studies (CCS) has established this website to make the water quality data
+                        collected
+                        and maintained by CCS publically available. It is strongly recommended that these data are
+                        directly
+                        acquired only
+                        through this website, and not indirectly through other sources, which may have changed the data
+                        in
+                        some way.Although
+                        the data have undergone data formatting quality review prior to posting, errors or inaccuracies
+                        may
+                        still exist in
+                        the data. Neither the Center for Coastal Studies, nor any of the employees, contractors, or
+                        volunteers, make any
+                        warranty, express or implied, nor assume any legal liability or responsibility for the accuracy,
+                        completeness, or
+                        usefulness of any information disclosed, nor represent that its use would not infringe on
+                        privately
+                        owned rights.
+                    <p>
+
+                    <h3 align="center">Attribution and Citing of CCS Data and Information</h3>
+
+                    <p>As a condition of use, those who refer to data and information found through this website in
+                        their
+                        publications
+                        and presentations must formally identify both the original author(s) and data authority for any
+                        cited item(s),
+                        and also must cite the CCS website as the source through which the data or information was
+                        found.
+                        Such citation
+                        may be in any format appropriate to the publication or presentation. If a publication is based
+                        solely on the
+                        analysis of the data, we suggest that you involve the point of contact in the development and/or
+                        review of the
+                        manuscript. The point of contact might also appreciate receiving a reprint or photocopy of any
+                        such
+                        article at
+                        the time of its publication.</p>
+                </div>
+                <div class="row">
+                    <div class="col-sm-10 col-sm-offset-1">
+                        <form role="form" class="request" name="request" data-toggle="validator">
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="name" class="h4">Name</label>
+                                    <input type="text" class="form-control" name="name" placeholder="Enter name"
+                                           required data-error="You have a name, don't you?">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+
+                                <div class="form-group col-sm-6">
+                                    <label for="email" class="h4">Email</label>
+                                    <input type="email" class="form-control" name="email"
+                                           placeholder="Enter email"
+                                           required>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="organization" class="h4 ">Organization</label>
+                                    <textarea name="organization" class="form-control"
+                                              placeholder="Enter Organization"
+                                              required></textarea>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+
+                                <div class="form-group col-sm-6">
+                                    <label for="intentions" class="h4 ">Intended Use</label>
+                                    <textarea name="intentions" class="form-control" rows="2"
+                                              placeholder="A brief explantaion of your indended use"
+                                              required></textarea>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div id="msgSubmitRequest" class="h5 text-center hidden"></div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input class="btn btn-success" type="submit" value="Submit" id="submitRequest">
+                <a href="#" class="btn btn-danger" data-dismiss="modal">Cancel.</a>
+            </div>
+
+            <div id="thankyou"><p><a data-toggle="modal" href="#form-content"></a></p></div>
+        </div>
+    </div>
+</div>
+<!-- data download request modal end -->
 
 <!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -883,7 +886,9 @@
 <script src="http://code.highcharts.com/stock/modules/exporting.js"></script>
 
 <script src="assets/js/charts_table.js"></script>
-
+<script>
+    $('#send_btn').popover({content: 'Thank You'}, 'click');
+</script>
 
 </body>
 </html>

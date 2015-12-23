@@ -3,10 +3,10 @@
  */
 
 var map, featureList, stationSearch = [], this_station, this_station_name;
-$(document).ready(function() {
+$(document).ready(function () {
 
-if ($.cookie("pop") === null) {
-    $("#splashModal").modal("show");
+    if ($.cookie("pop") === null) {
+        $("#splashModal").modal("show");
         $.cookie("pop", "2");
     }
 
@@ -91,125 +91,48 @@ if ($.cookie("pop") === null) {
         //return false;
     });
 
+    $("#request-button").click(function () {
+        $("#request-content").modal("show");
+        //$(".navbar-collapse.in").collapse("hide");
+        //return false;
+    });
+
 
     //data request form functions
-
-    //$('#requestForm').validator().on("submit", function (event) {
-    //    if (event.isDefaultPrevented()) {
-    //        // handle the invalid form...
-    //        requestFormError();
-    //        submitRequestMSG(false, "Did you fill in the form properly?");
-    //    } else {
-    //        // everything looks good!
-    //        event.preventDefault();
-    //        submitRequestForm();
-    //    }
-    //});
-    //
-    //
-    //function submitRequestForm() {
-    //    // Initiate Variables With Form Content
-    //    var name = $("#requestname").val();
-    //    var email = $("#requestemail").val();
-    //    var organization = $("#requestorganization").val();
-    //    var intentions = $("#requestintentions").val();
-    //
-    //    $.ajax({
-    //        type: "POST",
-    //        url: "assets/php/data_request_form.php",
-    //        data: "name=" + name + "&email=" + email + "&organization=" + organization + "&intentions" + intentions,
-    //        success: function (text) {
-    //            if (text == "success") {
-    //                requestFormSuccess();
-    //            } else {
-    //                requestFormError();
-    //                submitRequestMSG(false, text);
-    //            }
-    //        }
-    //    });
-    //}
-    //
-    //function requestFormSuccess() {
-    //    $("#requestForm")[0].reset();
-    //    submitMSG(true, "Message Submitted!");
-    //}
-    //
-    //function requestFormError() {
-    //    $("#requestForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-    //        $(this).removeClass();
-    //    });
-    //}
-    //
-    //function submitRequestMSG(valid, msg) {
-    //    var msgClasses;
-    //    if (valid) {
-    //        msgClasses = "h3 text-center tada animated text-success";
-    //    } else {
-    //        msgClasses = "h3 text-center text-danger";
-    //    }
-    //    $("#requestMSGSubmit").removeClass().addClass(msgClasses).text(msg);
-    //}
+ $("input#submitRequest").click(function () {
+        $.ajax({
+            type: "POST",
+            url: "./assets/php/data_request_form.php",
+            data: $('form.request').serialize(),
+            success: function (msg) {
+                $("#thankyou").html(msg)
+                $("#request-content").modal('hide');
+            },
+            error: function () {
+                alert("failure");
+            }
+        });
+    });
 
 //data request form functions end
 
 
-
 //contact form functions
 
-    $("#contactForm").validator().on("submit", function (event) {
-        if (event.isDefaultPrevented()) {
-            // handle the invalid form...
-            formError();
-            submitMSG(false, "Did you fill in the form properly?");
-        } else {
-            // everything looks good!
-            event.preventDefault();
-            submitForm();
-        }
-    });
-
-
-    function submitForm() {
-        // Initiate Variables With Form Content
-        var name = $("#name").val();
-        var email = $("#email").val();
-        var message = $("#message").val();
-
+    $("input#submit").click(function () {
         $.ajax({
             type: "POST",
-            url: "assets/php/contact.php",
-            data: "name=" + name + "&email=" + email + "&message=" + message,
-            success: function (text) {
-                if (text == "success") {
-                    formSuccess();
-                } else {
-                    formError();
-                    submitMSG(false, text);
-                }
+            url: "./assets/php/contact.php",
+            data: $('form.contact').serialize(),
+            success: function (msg) {
+                $("#thanks").html(msg)
+                $("#form-content").modal('hide');
+            },
+            error: function () {
+                alert("failure");
             }
         });
-    }
-
-    function formSuccess() {
-        $("#contactForm")[0].reset();
-        submitMSG(true, "Message Submitted!");
-    }
-
-    function formError() {
-        $("#contactForm").removeClass().addClass('shake animated').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function () {
-            $(this).removeClass();
-        });
-    }
-
-    function submitMSG(valid, msg) {
-        var msgClasses;
-        if (valid) {
-            msgClasses = "h3 text-center tada animated text-success";
-        } else {
-            msgClasses = "h3 text-center text-danger";
-        }
-        $("#msgSubmit").removeClass().addClass(msgClasses).text(msg);
-    }
+    });
 
 //end contact form functions
 
