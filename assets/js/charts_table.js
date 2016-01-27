@@ -5,10 +5,13 @@
 var map, featureList, stationSearch = [], this_station, this_station_name;
 $(document).ready(function () {
 
-    if ($.cookie("pop") === null) {
-        $("#splashModal").modal("show");
-        $.cookie("pop", "2");
-    }
+    $("#dataDisclaimer").modal("show");
+
+
+    //if ($.cookie("pop") === null) {
+    //    $("#splashModal").modal("show");
+    //    $.cookie("pop", "2");
+    //}
 
     $(window).resize(function () {
         sizeLayerControl();
@@ -34,9 +37,9 @@ $(document).ready(function () {
         cache: false,
         refresh: true,
         striped: true,
-        height: 350,
+        height: 200,
         search: false,
-        showRefresh: true,
+        //showRefresh: true,
         minimumCountColumns: 2,
         clickToSelect: false,
         columns: [{
@@ -47,14 +50,14 @@ $(document).ready(function () {
 
         }, {
             field: 'previous',
-            title: 'Previous',
-            align: 'right',
+            title: 'Previous Volunteers',
+            align: 'left',
             valign: 'bottom',
             sortable: true
         }, {
             field: 'present',
-            title: 'Present',
-            align: 'right',
+            title: 'Present Volunteers',
+            align: 'left',
             valign: 'bottom',
             sortable: true
         }]
@@ -86,7 +89,7 @@ $(document).ready(function () {
     });
 
     $("#disclaimer-button").click(function () {
-        $("#disclaimerModal").modal("show");
+        $("#dataDisclaimer").modal("show");
         //$(".navbar-collapse.in").collapse("hide");
         //return false;
     });

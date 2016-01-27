@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-1.0.0-b1/leaflet.css"/>
     <link rel="stylesheet" href="assets/leaflet-plugins/Leaflet-NavBar/Leaflet.NavBar.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/bootstrap-table.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.css">
     <link rel="stylesheet" href="assets/css/app.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/validator/4.0.5/validator.js"></script>-->
@@ -30,7 +30,7 @@
 
 <!--disclaimer modal container-->
 <div id="dataDisclaimer" class="modal fade" tabindex="-1" role="dialog">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
@@ -95,21 +95,14 @@
                 </div>
                 <div id="tc" class="container">
 
-                    <table id="data-table" data-fixed-columns="true"
-                           data-fixed-number="1">
-                    </table>
-
-
-                    <div class="panel panel-default">
-                        <div id="table-footer" class="panel-body">
-                            <h4>Before downloading data, please read the disclaimer and fill out the form here
-                                <button id="request-button" type="button" class=" btn btn-danger">Data Request Form
-                                </button>
-                            </h4>
-                        </div>
-
+                    <div id="toolbar" class="btn-group">
+                        <button id="request-button" type="button" class=" btn btn-danger">Data Request Form
+                        </button>
                     </div>
 
+                    <table id="data-table" data-toolbar="#toolbar" data-fixed-columns="true"
+                           data-fixed-number="1">
+                    </table>
 
                 </div>
             </div>
@@ -374,7 +367,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button class="close" type="button" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Citizen Scientists</h4>
+                <h4 class="modal-title"></h4>
             </div>
             <div class="modal-body">
                 <h1>Threats to the Bay</h1>
@@ -658,23 +651,9 @@
                         oxygen, pH, and nutrients) are collected.
                     </small>
                 </h4>
-
-                <h3 align="center">Citizen Scientists</h3>
-
-
-                <div id="volunteers" class="container col-md-12">
-                    <table id="volunteer-table" data-fixed-columns="true"
-                           data-fixed-number="1">
-                    </table>
-                </div>
-
                 <h4>If you are interested in participating in the Cape Cod Bay Monitoring Program, please
                     contact:</h4>
-
-
                 <address>
-
-
                     <strong>Beth Larson</strong><br>
                     Volunteer Coordinator, Cape Cod Bay Monitoring Program<br>
                     Center for Coastal Studies<br>
@@ -682,8 +661,9 @@
                     Provincetown, MA 02657<br>
                     <a href="mailto:#">elarson@coastalstudies.org</a>
                 </address>
+                <!--<h3 align="center">Citizen Scientists</h3>-->
 
-
+                <table id="volunteer-table" data-fixed-columns="true" data-fixed-number="1"></table>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -850,7 +830,7 @@
             </div>
             <div class="modal-footer">
                 <input class="btn btn-success" type="submit" value="Submit" id="submitRequest">
-                <a href="#" class="btn btn-danger" data-dismiss="modal">Cancel.</a>
+                <a href="#" class="btn btn-danger" data-dismiss="modal">Cancel</a>
             </div>
 
             <div id="thankyou"><p><a data-toggle="modal" href="#form-content"></a></p></div>
@@ -863,7 +843,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/bootstrap-table.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.js"></script>
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.9.1/extensions/export/bootstrap-table-export.js"></script>-->
 <script src="assets/js/tableExport.js"></script>
 <script src="assets/js/bootstrap-table-export.js"></script>
