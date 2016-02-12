@@ -5,7 +5,7 @@
 var map, featureList, stationSearch = [], this_station, this_station_name;
 $(document).ready(function () {
 
-    $("#dataDisclaimer").modal("show");
+    //$("#dataDisclaimer").modal("show");
 
 
     //if ($.cookie("pop") === null) {

@@ -8,19 +8,40 @@ body {
     padding-top: 50px;
 }
 
+.modal-body {
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+}
+
+/*scrollspy affix stuff*/
+
+
+/*end scrollspy affix stuff*/
+
+.popover {
+
+    border-top-color: #FCD086; /*<----here*/
+    background-color: lightyellow;
+    /*border-bottom-color: tomato;*/
+    /*border-bottom-width: 0;*/
+    /*content: " ";*/
+}
+
+/*.popover{*/
+/*background-color: lightyellow;*/
+/*}*/
 /*#volunteer-table{*/
-    /*padding-bottom: 20px;*/
+/*padding-bottom: 20px;*/
 /*}*/
 
-
-#table-footer{
+#table-footer {
     padding-top: 0px;
     padding-right: 0px;
     padding-bottom: 0px;
     padding-left: 100px;
 }
 
-#contact-amy{
+#contact-amy {
     font-size: small;
     color: royalblue;
 }
@@ -28,15 +49,14 @@ body {
 .input-group[class*="col-"] {
     padding-right: 15px;
     padding-left: 15px;
-    }
+}
 
 #disclaimer {
     max-height: calc(50vh - 110px);
-    padding:5px;
+    padding: 5px;
     overflow-y: auto;
     font-weight: normal;
 }
-
 
 tr {
     background-color: rgba(225, 225, 225, .6);
@@ -58,7 +78,6 @@ tr {
     font-size: 12px;
 }
 
-
 #dataModal {
     position: fixed;
     top: 0;
@@ -78,12 +97,11 @@ tr {
     padding: 0;
 }
 
-#contactModalContent{
+#contactModalContent {
     background-color: rgba(225, 225, 225, .8);
     /*background-image: url("nameskaket-creek-2014-1024x768.jpg");*/
 
 }
-
 
 /*.modal-content {*/
 #dataModalContent {

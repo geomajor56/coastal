@@ -2,7 +2,7 @@
 
 $host = 'web482.webfaction.com';
 $user = 'ccs';
-$pass = 'huskies1975';
+$pass = 'ccs2015';
 $db = 'capecodbay';
 
 $connection = pg_connect("host=$host dbname=$db user=$user password=$pass") or die('Could not connect: ' . pg_last_error());
