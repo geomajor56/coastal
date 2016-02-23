@@ -5,6 +5,30 @@ h3, em{
 	margin-top: 80px;
 }
 
+blockquote.left {
+   width: 200px;
+   margin: 5px 15px 5px 0;
+   padding: 5px 0;
+   border: 3px double #aaa;
+   border-width: 3px 0;
+   font-size: 1.4em;
+   text-align: center;
+   float: left;
+}
+
+blockquote.right {
+   width: 200px;
+   margin: 5px 0 5px 15px;
+   padding: 5px 0;
+   border: 3px double #aaa;
+   border-width: 3px 0;
+   font-size: 1.4em;
+   text-align: center;
+   float: right;
+}
+
+
+
 ul.affix {
 	position: fixed;
 	top: 60px;
