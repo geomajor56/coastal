@@ -70,17 +70,9 @@ $(document).ready(function () {
         return false;
     });
 
-    $("#params-btn").click(function () {
-        $("#parametersModal").modal("show");
-        $(".navbar-collapse.in").collapse("hide");
-        return false;
+    $("#index-btn").click(function () {
     });
 
-    $("#threats-btn").click(function () {
-        $("#threatsModal").modal("show");
-        $(".navbar-collapse.in").collapse("hide");
-        return false;
-    });
 
     $("#citizen-btn").click(function () {
         $("#citizenModal").modal("show");
