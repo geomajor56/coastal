@@ -11,7 +11,7 @@
     <title>Cape Cod Bay</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.4/cosmo/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-1.0.0-b1/leaflet.css"/>
     <link rel="stylesheet" href="assets/leaflet-plugins/Leaflet-NavBar/Leaflet.NavBar.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.css">
@@ -28,6 +28,114 @@
 
 </head>
 <body data-spy="scroll" data-target="#affix-nav">
+
+<!-- citizen modal -->
+<div class="modal fade" id="citizenModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Citizen Scientists</h4>
+            </div>
+            <div class="modal-body">
+
+                <h4>Volunteer “Citizen Scientists”
+                    <small>are a critical component of the water quality monitoring program. of
+                        Cape Cod Bay. At least 20 sites, from Provincetown to Plymouth, are sampled each week
+                        (June
+                        –
+                        October) during mid-ebb tide by volunteers. These sites are located further inshore in
+                        areas
+                        not
+                        accessible by boat. Data on water quality parameters (temperature, salinity, turbidity,
+                        dissolved
+                        oxygen, pH, and nutrients) are collected.
+                    </small>
+                </h4>
+                <h4>If you are interested in participating in the Cape Cod Bay Monitoring Program, please
+                    contact:</h4>
+                <address>
+                    <strong>Beth Larson</strong><br>
+                    Volunteer Coordinator, Cape Cod Bay Monitoring Program<br>
+                    Center for Coastal Studies<br>
+                    5 Holway Avenue<br>
+                    Provincetown, MA 02657<br>
+                    <a href="mailto:#">elarson@coastalstudies.org</a>
+                </address>
+                <!--<h3 align="center">Citizen Scientists</h3>-->
+
+                <table id="volunteer-table" data-fixed-columns="true" data-fixed-number="1"></table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- citizen modal end -->
+
+
+<!-- contact modal -->
+<div class="modal fade" id="form-content">
+    <div class="modal-dialog">
+        <div class="modal-content" id="contactModalContent">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title" align="center">Contact The Center for Coastal Studies</h3>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+
+                        <form role="form" class="contact" name="contact">
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="name" class="h4">Name</label>
+                                    <input type="text" class="form-control" name="name" placeholder="Enter name"
+                                           required data-error="You have a name, don't you?">
+
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="email" class="h4">Email</label>
+                                    <input type="email" class="form-control" name="email"
+                                           placeholder="Enter email"
+                                           required>
+
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="h4 ">Message</label>
+                                    <textarea name="message" class="form-control" rows="5"
+                                              placeholder="Enter your message" required></textarea>
+
+                                <div class="help-block with-errors"></div>
+                            </div>
+
+                            <div id="msgSubmit" class="h5 text-center hidden"></div>
+                            <div class="clearfix"></div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input class="btn btn-success" type="submit" value="Submit" id="submit">
+                <a href="#" class="btn btn-danger" data-dismiss="modal">Cancel</a>
+            </div>
+            <div id="thanks"><p><a data-toggle="modal" href="#form-content"></a></p></div>
+        </div>
+    </div>
+</div>
+
+<!-- end contact modal -->
+
 <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -37,36 +145,35 @@
                 <a href="#" class="navbar-icon pull-right visible-xs" id="sidebar-toggle-btn"><i
                         class="fa fa-search fa-lg white"></i></a>
             </div>
-            <a class="navbar-brand" href="#">Center For Coastal Studies</a>
+            <a class="navbar-brand" href="index.html">Center For Coastal Studies</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="about-btn"><i
                         class="fa fa-question-circle white"></i>&nbsp;&nbsp;About</a></li>
 
+                <li><a href="index.html" data-toggle="collapse" data-target=".navbar-collapse.in" id="index-btn"><i
+                        class="fa fa-map-o white"></i>&nbsp;&nbsp;Map</a></li>
+
                 <li><a href="threats.html" data-toggle="collapse" data-target=".navbar-collapse.in" id="threats-btn"><i
                         class="fa fa-flag-o white"></i>&nbsp;&nbsp;Threats to the Bay</a></li>
-
-                <li><a href="parameters.html" data-toggle="collapse" data-target=".navbar-collapse.in"><i
-                        class="fa fa-flask white"></i>&nbsp;&nbsp;Sample Parameters</a></li>
 
                 <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="citizen-btn">Citizen
                     Scientists</a></li>
 
                 <li><a href="#" data-toggle="modal" data-target="#form-content">Contact Us</a></li>
 
-
-                <li><a href="#" data-toggle="modal" data-target="#dataDisclaimer">Data Download Disclaimer</a></li>
+                <!--<li><a href="#" data-toggle="modal" data-target="#dataDisclaimer">Data Download Disclaimer</a></li>-->
 
             </ul>
 
         </div>
     </div>
 </div>
-    <div class="jumbotron">
-        <div class="container">
-            <h1>Sample Parameters</h1>
-            <p>Try something different instead of the same old lorem ipsum. Below you can find several alternatives.</p>
+<div class="jumbotron">
+    <div class="container">
+        <h1>Sample Parameters</h1>
+        <p>Try something different instead of the same old lorem ipsum. Below you can find several alternatives.</p>
 
     </div>
     <div class="row">
@@ -225,5 +332,5 @@
 <script src="http://code.highcharts.com/stock/highcharts-more.js"></script>
 <script src="http://code.highcharts.com/stock/modules/exporting.js"></script>
 
-
+<script src="assets/js/charts_table.js"></script>
 </html>

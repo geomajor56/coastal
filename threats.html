@@ -31,12 +31,15 @@
                 <a href="#" class="navbar-icon pull-right visible-xs" id="sidebar-toggle-btn"><i
                         class="fa fa-search fa-lg white"></i></a>
             </div>
-            <a class="navbar-brand" href="#">Center For Coastal Studies</a>
+            <a class="navbar-brand" href="index.html">Center For Coastal Studies</a>
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="about-btn"><i
                         class="fa fa-question-circle white"></i>&nbsp;&nbsp;About</a></li>
+
+                <li><a href="index.html" data-toggle="collapse" data-target=".navbar-collapse.in" id="index-btn"><i
+                        class="fa fa-map-o white"></i>&nbsp;&nbsp;Map</a></li>
 
                 <li><a href="threats.html" data-toggle="collapse" data-target=".navbar-collapse.in" id="threats-btn"><i
                         class="fa fa-flag-o white"></i>&nbsp;&nbsp;Threats to the Bay</a></li>
@@ -50,237 +53,241 @@
                 <li><a href="#" data-toggle="modal" data-target="#form-content">Contact Us</a></li>
 
 
-                <li><a href="#" data-toggle="modal" data-target="#dataDisclaimer">Data Download Disclaimer</a></li>
+                <!--<li><a href="#" data-toggle="modal" data-target="#dataDisclaimer">Data Download Disclaimer</a></li>-->
 
             </ul>
 
         </div>
     </div>
 </div>
-<div class="container">
 
-    <div class="jumbotron">
-        <div class="container">
-            <h1>Threats of the Bay</h1>
-            <p>Try something different instead of the same old lorem ipsum. Below you can find several alternatives.</p>
-            <p><a class="btn btn-success btn-lg">Learn more</a></p>
+<!-- citizen modal -->
+<div class="modal fade" id="citizenModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Citizen Scientists</h4>
+            </div>
+            <div class="modal-body">
+
+                <h4>Volunteer “Citizen Scientists”
+                    <small>are a critical component of the water quality monitoring program. of
+                        Cape Cod Bay. At least 20 sites, from Provincetown to Plymouth, are sampled each week
+                        (June
+                        –
+                        October) during mid-ebb tide by volunteers. These sites are located further inshore in
+                        areas
+                        not
+                        accessible by boat. Data on water quality parameters (temperature, salinity, turbidity,
+                        dissolved
+                        oxygen, pH, and nutrients) are collected.
+                    </small>
+                </h4>
+                <h4>If you are interested in participating in the Cape Cod Bay Monitoring Program, please
+                    contact:</h4>
+                <address>
+                    <strong>Beth Larson</strong><br>
+                    Volunteer Coordinator, Cape Cod Bay Monitoring Program<br>
+                    Center for Coastal Studies<br>
+                    5 Holway Avenue<br>
+                    Provincetown, MA 02657<br>
+                    <a href="mailto:#">elarson@coastalstudies.org</a>
+                </address>
+                <!--<h3 align="center">Citizen Scientists</h3>-->
+
+                <table id="volunteer-table" data-fixed-columns="true" data-fixed-number="1"></table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- citizen modal end -->
+
+
+<!-- contact modal -->
+<div class="modal fade" id="form-content">
+    <div class="modal-dialog">
+        <div class="modal-content" id="contactModalContent">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title" align="center">Contact The Center for Coastal Studies</h3>
+            </div>
+
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">
+
+                        <form role="form" class="contact" name="contact">
+                            <div class="row">
+                                <div class="form-group col-sm-6">
+                                    <label for="name" class="h4">Name</label>
+                                    <input type="text" class="form-control" name="name" placeholder="Enter name"
+                                           required data-error="You have a name, don't you?">
+
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                                <div class="form-group col-sm-6">
+                                    <label for="email" class="h4">Email</label>
+                                    <input type="email" class="form-control" name="email"
+                                           placeholder="Enter email"
+                                           required>
+
+                                    <div class="help-block with-errors"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="h4 ">Message</label>
+                                    <textarea name="message" class="form-control" rows="5"
+                                              placeholder="Enter your message" required></textarea>
+
+                                <div class="help-block with-errors"></div>
+                            </div>
+
+                            <div id="msgSubmit" class="h5 text-center hidden"></div>
+                            <div class="clearfix"></div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <input class="btn btn-success" type="submit" value="Submit" id="submit">
+                <a href="#" class="btn btn-danger" data-dismiss="modal">Cancel</a>
+            </div>
+            <div id="thanks"><p><a data-toggle="modal" href="#form-content"></a></p></div>
         </div>
     </div>
-    <div class="row">
-        <nav id="affix-nav" class="sidebar col-md-4 col-sm-4 hidden-xs">
-            <ul class="nav sidenav" data-spy="affix" data-offset-top="330">
-                <li class="active"><a href="#phosphates">Phosphates</a>
+</div>
 
-                </li>
-                <li><a href="#veggie">Veggie Lorem Ipsum</a>
-                    <ul class="nav">
-                        <li><a href="#coriander">Coriander</a></li>
-                        <li><a href="#kohlrabi">Kohlrabi</a></li>
-                        <li><a href="#amaranth">Amaranth</a></li>
-                        <li><a href="#soybean">Soybean</a></li>
-                    </ul>
-                </li>
-                <li><a href="#bacon">Bacon Lorem Ipsum</a>
-                    <ul class="nav">
-                        <li><a href="#meatball">Meatball</a></li>
-                        <li><a href="#prosciutto">Prosciutto</a></li>
-                        <li><a href="#brisket">Brisket</a></li>
-                        <li><a href="#steak">Steak</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-        <section id="content" class="col-md-8 col-sm-8 col-xs-12">
-            <article id="cupcake">
-                <h3>Phosphates</h3>
+<!-- end contact modal -->
 
-                <p>Phosphorus is an essential nutrient for all aquatic plants and algae. Only a very small amount is
-                    needed, however, so an excess of phosphorus can easily occur. Excess phosphorus is usually
-                    considered to be a pollutant because it can lead to eutrophication, a condition where an
-                    overabundance of nutrients, such as phosphorus, causes increased plant and algal growth.
-                    Eutrophication can lower the levels of dissolved oxygen in the water and can render the water
-                    uninhabitable by many aquatic organisms. Phosphorus is often the limiting factor that determines
-                    the level of eutrophication that occurs.</p>
+<div class="container">
+    <h2>Threats to the Bay and Sound</h2>
+    <p>Cape Cod Bay and Nantucket Sound are ecologically rich complexes of coastal and marine habitats. Beaches,
+        wetlands
+        and offshore waters are home to plant and animal communities that include commercially valuable species of
+        finfish
+        and shellfish, marine mammals, sea turtles and birds.
+        Cape Cod Bay is part of the much larger Gulf of Maine system that contains some of the world’s most productive
+        waters. While strong tides move water around in the Bay, it can take about a month for a full exchange of water
+        to
+        occur. Nantucket Sound is located at a confluence of the cold Gulf of Maine and the warm Gulf Stream. It is
+        protected from the Atlantic Ocean by Martha’s Vineyard and Nantucket Islands, and is shallower than the Bay.</p>
 
-                <p>Most phosphorus in surface water is present in the form of phosphates. There are four
-                    classifications of phosphates often referred to in environmental literature:</p>
+    <p>Cape Cod Bay and Nantucket Sound were designated as state ocean sanctuaries more than 40 years ago to “prohibit
+        activities that may significantly alter or endanger the ecology or appearance of the ocean, seabed or subsoil.”
+        This
+        designation recognized the vitality and importance of the Bay’s and the Sound’s resources to the state.</p>
 
-                <p><em>Orthophosphates</em> are the inorganic forms of phosphate These are the forms of
-                    phosphates used heavily in fertilizers and are often introduced to surface waters through runoff.
-                </p>
+    <h3>Pollution</h3>
+    <p>From a distance both Cape Cod Bay and Nantucket Sound appear healthy. However, according to the Cape Cod
+        Commission,
+        “Cape Cod has a water problem. The saltwater border that has defined our peninsula is being poisoned by
+        nitrogen.
+        About 80% of the nitrogen that enters Cape Cod’s watersheds is from septic systems. The conditions it creates
+        destroy animal habitat and result in frequent violations of water quality standards indicated in part by fish
+        kills
+        and diminished shellfisheries.” The impacts of this pollution need to be closely monitored.</p>
+    <p>Polluted runoff is another major problem impacting our coastal waters. This type of pollution is a result of
+        contaminants picked up in rainwater and melting snow which are eventually emptied into the bay. Examples of
+        possible
+        pollutants picked up in runoff include fertilizers and other lawn/garden chemicals, wastes from pets, salt from
+        roadways, and oil and gasoline leaked from automobiles. In many towns on the Cape this problem is compounded by
+        the
+        large parking lots located near or directly adjacent to harbors. Not only are the oil and gasoline associated
+        with
+        parked automobiles a problem, but these large parking lots are often the site of the disposal of snow (and the
+        associated salt used to treat the roads) cleared from roads during the winter.</p>
+    <h3>Eutrophication</h3>
+    <p>The consequences of pollution have already manifested in our coastal waters. In addition to the direct, toxic
+        effects of pollution, excessive nutrient input from both point and nonpoint sources leads to high levels of
+        plant
+        growth. This process, known as eutrophication, is occurring to some degree in Cape Cod Bay and Nantucket Sound
+        and
+        more noticeably in the coastal ponds and embayments that discharge into them. Eutrophication has been linked to
+        a
+        number of different harmful processes in coastal waters. Two symptoms of eutrophication that have been
+        extensively
+        documented are harmful algal blooms (HABs) and hypoxia.</p>
 
-
-                <p><em>Organically Bound Phosphates</em> are found in human and animal wastes or in
-                    decaying organic matter</p>m
-
-
-                <p><em>Condensed Phosphates</em> (also called polyphosphates), are sometimes added to
-                    water supplies and industrial processes to prevent the formation of scaling and to inhibit
-                    corrosion. This is the form of phosphate that was commonly found in detergents in the past.</p>
-
-
-                <p><em>Total Phosphates</em> are the sum of all three of the forms described above. This is the most
-                    commonly reported form of phosphate concentration.</p>
-
-
-                <p>Phosphates are added to surface waters by a variety of means. Humans add phosphates to water through
-                    industrial and agricultural wastes. Fertilizers contain high levels of phosphates and will enter
-                    the water by means of runoff and soil erosion.
-                    <blockquote class="blockquote.left">
-                <p>"I'm looking forward to this year's reunion and catching up with everyone."</p>
-                <p>
-                    <small>Michael Tyson</small>
-                </p>
-                </blockquote>
-                <p> In areas where land and vegetation have been
-                    disturbed, soil erosion will increase. This will lead to even more phosphates being washed out of
-                    the soil and into th Threats to the Bay and Sound
-                    Cape Cod Bay and Nantucket Sound are ecologically rich complexes of coastal and marine habitats.
-                    Beaches, wetlands and offshore waters are home to plant and animal communities that include
-                    commercially valuable species of finfish and shellfish, marine mammals, sea turtles and birds.
-                    Cape Cod Bay is part of the much larger Gulf of Maine system that contains some of the world’s most
-                    productive waters. While strong tides move water around in the Bay, it can take about a month for a
-                    full exchange of water to occur. Nantucket Sound is located at a confluence of the cold Gulf of
-                    Maine and the warm Gulf Stream. It is protected from the Atlantic Ocean by Martha’s Vineyard and
-                    Nantucket Islands, and is shallower than the Bay.
-
-                    Cape Cod Bay and Nantucket Sound were designated as state ocean sanctuaries more than 40 years ago
-                    to “prohibit activities that may significantly alter or endanger the ecology or appearance of the
-                    ocean, seabed or subsoil.” This designation recognized the vitality and importance of the Bay’s and
-                    the Sound’s resources to the state.
-
-                    Pollution
-                    From a distance both Cape Cod Bay and Nantucket Sound appear healthy. However, according to the Cape
-                    Cod Commission, “Cape Cod has a water problem. The saltwater border that has defined our peninsula
-                    is being poisoned by nitrogen. About 80% of the nitrogen that enters Cape Cod’s watersheds is from
-                    septic systems. The conditions it creates destroy animal habitat and result in frequent violations
-                    of water quality standards indicated in part by fish kills and diminished shellfisheries.” The
-                    impacts of this pollution need to be closely monitored.
-                    Polluted runoff is another major problem impacting our coastal waters. This type of pollution is a
-                    result of contaminants picked up in rainwater and melting snow which are eventually emptied into the
-                    bay. Examples of possible pollutants picked up in runoff include fertilizers and other lawn/garden
-                    chemicals, wastes from pets, salt from roadways, and oil and gasoline leaked from automobiles. In
-                    many towns on the Cape this problem is compounded by the large parking lots located near or directly
-                    adjacent to harbors. Not only are the oil and gasoline associated with parked automobiles a problem,
-                    but these large parking lots are often the site of the disposal of snow (and the associated salt
-                    used to treat the roads) cleared from roads during the winter.
-                    Eutrophication
-                    The consequences of pollution have already manifested in our coastal waters. In addition to the
-                    direct, toxic effects of pollution, excessive nutrient input from both point and nonpoint sources
-                    leads to high levels of plant growth. This process, known as eutrophication, is occurring to some
-                    degree in Cape Cod Bay and Nantucket Sound and more noticeably in the coastal ponds and embayments
-                    that discharge into them. Eutrophication has been linked to a number of different harmful processes
-                    in coastal waters. Two symptoms of eutrophication that have been extensively documented are harmful
-                    algal blooms (HABs) and hypoxia.
-
-                    Harmful Algal Blooms (HABs)
-                    Algal blooms occur primarily during the spring and summer in our coastal waters. During the spring,
-                    Phaeocystis blooms occur frequently in Cape Cod Bay. The negative impacts of a bloom of this
-                    phytoplankton are far reaching, affecting the entire food chain by out-competing other beneficial
-                    species of phytoplankton (Roberts 2003, Tang 2003), affecting zooplankton growth and production
-                    (Tang 2001, Turner et al. 2002), and being a nuisance to feeding right whales (Kelly et al. 1998). A
-                    more well-known species of phytoplankton resulting in HABs is Alexandrium sp., one of the species
-                    behind the phenomenon of red tides. Red tides have been linked to the deaths of fish, whales, and
-                    humans (Anderson 1994, Bushaw-Neston & Sellner 1999). Blooms of this species vary greatly from year
-                    to year. Due to its lifecycle of dormant cysts, Alexandrium blooms are likely to become a repetitive
-                    occurrence if conditions remain conducive, i.e. high nutrient input, stratification (Mcgillicuddy et
-                    al. 2003). Although there have been no documented deaths as a result of the recent blooms that have
-                    occurred in the Bay or the Sound, the effects are still felt by the loss of income of commercial
-                    fishermen from shellfish bed closures and impacts on conch fisheries.
-                    Hypoxia
-                    Closer inshore, the negative impacts of pollution are evident in the sediments. Sediments in and
-                    around harbors such as Rock Harbor and Wellfleet Harbor, which were once sandy, are now composed
-                    primarily of a silty, dark mud. If disturbed, these sediments release a distinct sulfurous odor
-                    indicative of areas of low oxygen. This odor comes from the production of hydrogen sulfide by
-                    bacteria which reside in low oxygen (hypoxic) sediments. Since most organisms are stressed by low
-                    oxygen levels, hypoxic waters are usually devoid of most life. While motile organisms such as fish
-                    can leave these areas, benthic organisms will be killed. Portions of the estuaries discharging into
-                    Nantucket Sound, for example the Three Bays complex in Barnstable, also have oxygen-depleted
-                    sediments. This had occurred in areas of Chesapeake Bay and the Gulf of Mexico, giving these areas
-                    the name “dead zones.” Although areas of low oxygen in the coastal waters of Cape Cod are not nearly
-                    as extensive as observed in these locations, these areas need to be monitored and remedied before
-                    the problem progresses.
-                    Habitat Destruction
-                    One of the most important, yet least studied habitats in our coastal waters are the eelgrass
-                    ecosystems. Eelgrass (Zostera marina) in Nantucket Sound is found predominately in the nearshore
-                    waters from Monomoy west to Hyannisport and the shore of Falmouth. It is found more extensively in
-                    shallow areas of Cape Cod Bay, along most of the shoreline and out on Billingsgate Shoal. In both
-                    the Bay and the Sound, eelgrass is fundamental in structuring the resident flora and fauna. Eelgrass
-                    systems are highly productive and extremely important biologically. They act as a refuge and nursery
-                    for juvenile fish and shellfish, many of which are commercially important species in this region and
-                    typically support a higher diversity and abundance of marine life compared to surrounding
-                    unvegetated areas (Heck et al. 1989). Seagrasses are equally important from a purely physical
-                    perspective in that they help to prevent erosion by stabilizing sediments with their extensive root
-                    systems as well as aid in filtering contaminants from the water column.
-                    Despite the obvious value of seagrass ecosystems, eelgrass beds in the Bay and the Sound are
-                    threatened by a number of anthropogenic perturbations. Declines in eelgrass habitat have been linked
-                    to physical disturbances (i.e., dredging, construction, shellfishing, propeller damage from
-                    boating), turbidity (i.e. topsoil runoff, activities that re-suspend sediments), and pollution
-                    (including eutrophication). There is evidence of the destruction off eelgrass habitats in the Bay
-                    and the Sound by all of these mechanisms making the health of this already fragile ecosystem even
-                    more tenuous.
-                    Overexploitation
-                    This region of Massachusetts was given the name of Cape Cod because of its abundance of codfish.
-                    Today these fish have virtually disappeared from the waters of the Bay. Other species found in the
-                    Bay and Sound, such as flounder, tautaug, sea bass, and striped bass have likewise suffered from
-                    overexploitation.
-                    With reference to some commercial shellfish species, overexploitation is tied directly to habitat
-                    destruction. The development of different methods of fishing to increase the catch of a declining
-                    stock has been disruptive. Hydraulic pumping for sea clams was once outlawed in the Bay. Over the
-                    past several decades, however, it has been re-implemented in an attempt to increase the harvesting
-                    of these clams.</p>
-
-                <section id="sweetjelly"><h3>Sweet jelly</h3>
-                    <p>AFFIX ON PAGE WITH NAVBAR
-                        Web pages normally contain a header and a footer section. And that’s where a judicious setting
-                        of the offsets and smart styling of the “affix-top” and “affix-bottom” classes play an important
-                        role.
-
-                        When a user starts scrolling a web page you often want the header section to disappear from
-                        view. You set a value for data-offset-top that is based on the outer height of the header
-                        section plus a little extra (e.g. 10px). That way the top of the page will first disappear from
-                        view and then – when the content section starts – the “affix” class is applied by the plugin and
-                        the affix-nav becomes fixed. The content section continues to disappear from view but the nav/ul
-                        stays visible in the window.
-
-                        If the web page contains a footer (and/or other content you don’t want reflected in the Affix)
-                        you set the data-offset-bottom to a value corresponding to the outer height of the ‘footer’ and
-                        a bit extra. Without it the affix-nav would get confused when it should jump to the last item in
-                        its list. If you set the value for the data-offset-bottom larger than this the nav/ul might well
-                        disappear on you before your scroll reaches the end of the page (caused by the change to an
-                        absolute CSS positioning). You can of course also remedy this with CSS rules for that
-                        “affix-bottom” phase.</p></section>
-                <section id="tiramisu"><h3>Tiramisu</h3>
-                    <p>Lemon .. applicake.</p></section>
-                <section id="pie"><h3>Pie</h3>
-                    <p>Sugar .. caramels.</p></section>
-            </article>
-            <br/>
-            <article id="veggie">
-                <h2><a href="http://veggieipsum.com/" target="_blank">Veggie Lorem Ipsum</a></h2>
-                <p>AFFIX ON PAGE WITH NAVBAR
-                    Web pages normally contain a header and a footer section. And that’s where a judicious setting of
-                    the offsets and smart styling of the “affix-top” and “affix-bottom” classes play an important role.
-
-                    When a user starts scrolling a web page you often want the header section to disappear from view.
-                    You set a value for data-offset-top that is based on the outer height of the header section plus a
-                    little extra (e.g. 10px). That way the top of the page will first disappear from view and then –
-                    when the content section starts – the “affix” class is applied by the plugin and the affix-nav
-                    becomes fixed. The content section continues to disappear from view but the nav/ul stays visible in
-                    the window.
-
-                    If the web page contains a footer (and/or other content you don’t want reflected in the Affix) you
-                    set the data-offset-bottom to a value corresponding to the outer height of the ‘footer’ and a bit
-                    extra. Without it the affix-nav would get confused when it should jump to the last item in its list.
-                    If you set the value for the data-offset-bottom larger than this the nav/ul might well disappear on
-                    you before your scroll reaches the end of the page (caused by the change to an absolute CSS
-                    positioning). You can of course also remedy this with CSS rules for that “affix-bottom” phase.</p>
-        </section>
-        </article>
-        </section>
-    </div><!-- end of row -->
-    <footer>
-    </footer>
+    <h3>Harmful Algal Blooms (HABs)</h3>
+    <p>Algal blooms occur primarily during the spring and summer in our coastal waters. During the spring, Phaeocystis
+        blooms occur frequently in Cape Cod Bay. The negative impacts of a bloom of this phytoplankton are far reaching,
+        affecting the entire food chain by out-competing other beneficial species of phytoplankton (Roberts 2003, Tang
+        2003), affecting zooplankton growth and production (Tang 2001, Turner et al. 2002), and being a nuisance to
+        feeding
+        right whales (Kelly et al. 1998). A more well-known species of phytoplankton resulting in HABs is Alexandrium
+        sp.,
+        one of the species behind the phenomenon of red tides. Red tides have been linked to the deaths of fish, whales,
+        and
+        humans (Anderson 1994, Bushaw-Neston & Sellner 1999). Blooms of this species vary greatly from year to year. Due
+        to
+        its lifecycle of dormant cysts, Alexandrium blooms are likely to become a repetitive occurrence if conditions
+        remain
+        conducive, i.e. high nutrient input, stratification (Mcgillicuddy et al. 2003). Although there have been no
+        documented deaths as a result of the recent blooms that have occurred in the Bay or the Sound, the effects are
+        still
+        felt by the loss of income of commercial fishermen from shellfish bed closures and impacts on conch
+        fisheries.</p>
+    <h3>Hypoxia</h3>
+    <p>Closer inshore, the negative impacts of pollution are evident in the sediments. Sediments in and around harbors
+        such
+        as Rock Harbor and Wellfleet Harbor, which were once sandy, are now composed primarily of a silty, dark mud. If
+        disturbed, these sediments release a distinct sulfurous odor indicative of areas of low oxygen. This odor comes
+        from
+        the production of hydrogen sulfide by bacteria which reside in low oxygen (hypoxic) sediments. Since most
+        organisms
+        are stressed by low oxygen levels, hypoxic waters are usually devoid of most life. While motile organisms such
+        as
+        fish can leave these areas, benthic organisms will be killed. Portions of the estuaries discharging into
+        Nantucket
+        Sound, for example the Three Bays complex in Barnstable, also have oxygen-depleted sediments. This had occurred
+        in
+        areas of Chesapeake Bay and the Gulf of Mexico, giving these areas the name “dead zones.” Although areas of low
+        oxygen in the coastal waters of Cape Cod are not nearly as extensive as observed in these locations, these areas
+        need to be monitored and remedied before the problem progresses.</p>
+    <h3>Habitat Destruction</h3>
+    <P>One of the most important, yet least studied habitats in our coastal waters are the eelgrass ecosystems. Eelgrass
+        (Zostera marina) in Nantucket Sound is found predominately in the nearshore waters from Monomoy west to
+        Hyannisport
+        and the shore of Falmouth. It is found more extensively in shallow areas of Cape Cod Bay, along most of the
+        shoreline and out on Billingsgate Shoal. In both the Bay and the Sound, eelgrass is fundamental in structuring
+        the
+        resident flora and fauna. Eelgrass systems are highly productive and extremely important biologically. They act
+        as a
+        refuge and nursery for juvenile fish and shellfish, many of which are commercially important species in this
+        region
+        and typically support a higher diversity and abundance of marine life compared to surrounding unvegetated areas
+        (Heck et al. 1989). Seagrasses are equally important from a purely physical perspective in that they help to
+        prevent
+        erosion by stabilizing sediments with their extensive root systems as well as aid in filtering contaminants from
+        the
+        water column.</P>
+    <p>Despite the obvious value of seagrass ecosystems, eelgrass beds in the Bay and the Sound are threatened by a
+        number
+        of anthropogenic perturbations. Declines in eelgrass habitat have been linked to physical disturbances (i.e.,
+        dredging, construction, shellfishing, propeller damage from boating), turbidity (i.e. topsoil runoff, activities
+        that re-suspend sediments), and pollution (including eutrophication). There is evidence of the destruction off
+        eelgrass habitats in the Bay and the Sound by all of these mechanisms making the health of this already fragile
+        ecosystem even more tenuous.</p>
+    <h3>Overexploitation</h3>
+    <p>This region of Massachusetts was given the name of Cape Cod because of its abundance of codfish. Today these fish
+        have virtually disappeared from the waters of the Bay. Other species found in the Bay and Sound, such as
+        flounder,
+        tautaug, sea bass, and striped bass have likewise suffered from overexploitation.
+        With reference to some commercial shellfish species, overexploitation is tied directly to habitat destruction.
+        The
+        development of different methods of fishing to increase the catch of a declining stock has been disruptive.
+        Hydraulic pumping for sea clams was once outlawed in the Bay. Over the past several decades, however, it has
+        been
+        re-implemented in an attempt to increase the harvesting of these clams.</p>
 </div><!-- end of container -->
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -314,6 +321,8 @@
 <script src="http://code.highcharts.com/stock/highstock.js"></script>
 <script src="http://code.highcharts.com/stock/highcharts-more.js"></script>
 <script src="http://code.highcharts.com/stock/modules/exporting.js"></script>
+
+<script src="assets/js/charts_table.js"></script>
 
 
 </html>
