@@ -5,7 +5,7 @@
 var map, featureList, stationSearch = [], this_station, this_station_name;
 $(document).ready(function () {
 
-    //$("#dataDisclaimer").modal("show");
+    $("#dataDisclaimer").modal("show");
 
 
     //if ($.cookie("pop") === null) {
@@ -63,6 +63,29 @@ $(document).ready(function () {
         }]
     });
 
+    $.getJSON('assets/php/get_funding.php ', function () {
+    });
+
+
+    $('#funding-table').bootstrapTable({
+        method: 'get',
+        url: 'assets/php/funding_table.json',
+        cache: false,
+        refresh: true,
+        striped: true,
+        height: 300,
+        search: false,
+        //showRefresh: true,
+        minimumCountColumns: 2,
+        clickToSelect: false,
+        columns: [{
+            field: 'funder',
+            title: 'Contributors and  Supporters',
+            align: 'left',
+            sortable: 'true'
+
+        }]
+    });
 
     $("#about-btn").click(function () {
         $("#aboutModal").modal("show");
@@ -70,7 +93,23 @@ $(document).ready(function () {
         return false;
     });
 
-    $("#index-btn").click(function () {
+    $("#params-btn").click(function () {
+        $("#parametersModal").modal("show");
+        $(".navbar-collapse.in").collapse("hide");
+        return false;
+    });
+
+    $("#threats-btn").click(function () {
+        $("#threatsModal").modal("show");
+        $(".navbar-collapse.in").collapse("hide");
+        return false;
+    });
+
+
+    $("#funding-btn").click(function () {
+        $("#fundingModal").modal("show");
+        $(".navbar-collapse.in").collapse("hide");
+        return false;
     });
 
 
@@ -94,7 +133,7 @@ $(document).ready(function () {
 
 
     //data request form functions
- $("input#submitRequest").click(function () {
+    $("input#submitRequest").click(function () {
         $.ajax({
             type: "POST",
             url: "./assets/php/data_request_form.php",
