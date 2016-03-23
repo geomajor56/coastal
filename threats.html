@@ -8,11 +8,17 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Threats To The Bay</title>
+    <title>Cape Cod Bay</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.4/cosmo/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/threats.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-1.0.0-b1/leaflet.css"/>
+    <link rel="stylesheet" href="assets/leaflet-plugins/Leaflet-NavBar/Leaflet.NavBar.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.8.1/bootstrap-table.min.css">
+    <link rel="stylesheet" href="assets/css/parameters.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css">
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/validator/4.0.5/validator.js"></script>-->
+
 
     <link rel="apple-touch-icon" sizes="76x76" href="assets/img/favicon-76.png">
     <link rel="apple-touch-icon" sizes="120x120" href="assets/img/favicon-120.png">
@@ -22,44 +28,6 @@
 
 </head>
 <body data-spy="scroll" data-target="#affix-nav">
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <div class="navbar-icon-container">
-                <a href="#" class="navbar-icon pull-right visible-xs" id="nav-btn"><i
-                        class="fa fa-bars fa-lg white"></i></a>
-                <a href="#" class="navbar-icon pull-right visible-xs" id="sidebar-toggle-btn"><i
-                        class="fa fa-search fa-lg white"></i></a>
-            </div>
-            <a class="navbar-brand" href="index.html">Center For Coastal Studies</a>
-        </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="about-btn"><i
-                        class="fa fa-question-circle white"></i>&nbsp;&nbsp;About</a></li>
-
-                <li><a href="index.html" data-toggle="collapse" data-target=".navbar-collapse.in" id="index-btn"><i
-                        class="fa fa-map-o white"></i>&nbsp;&nbsp;Map</a></li>
-
-                <li><a href="threats.html" data-toggle="collapse" data-target=".navbar-collapse.in" id="threats-btn"><i
-                        class="fa fa-flag-o white"></i>&nbsp;&nbsp;Threats to the Bay</a></li>
-
-                <li><a href="parameters.html" data-toggle="collapse" data-target=".navbar-collapse.in"><i
-                        class="fa fa-flask white"></i>&nbsp;&nbsp;Sample Parameters</a></li>
-
-                <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="citizen-btn">Citizen
-                    Scientists</a></li>
-
-                <li><a href="#" data-toggle="modal" data-target="#form-content">Contact Us</a></li>
-
-
-                <!--<li><a href="#" data-toggle="modal" data-target="#dataDisclaimer">Data Download Disclaimer</a></li>-->
-
-            </ul>
-
-        </div>
-    </div>
-</div>
 
 <!-- citizen modal -->
 <div class="modal fade" id="citizenModal" tabindex="-1" role="dialog">
@@ -168,126 +136,141 @@
 
 <!-- end contact modal -->
 
-<div class="container">
-    <h2>Threats to the Bay and Sound</h2>
-    <p>Cape Cod Bay and Nantucket Sound are ecologically rich complexes of coastal and marine habitats. Beaches,
-        wetlands
-        and offshore waters are home to plant and animal communities that include commercially valuable species of
-        finfish
-        and shellfish, marine mammals, sea turtles and birds.
-        Cape Cod Bay is part of the much larger Gulf of Maine system that contains some of the world’s most productive
-        waters. While strong tides move water around in the Bay, it can take about a month for a full exchange of water
-        to
-        occur. Nantucket Sound is located at a confluence of the cold Gulf of Maine and the warm Gulf Stream. It is
-        protected from the Atlantic Ocean by Martha’s Vineyard and Nantucket Islands, and is shallower than the Bay.</p>
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="navbar-icon-container">
+                <a href="#" class="navbar-icon pull-right visible-xs" id="nav-btn"><i
+                        class="fa fa-bars fa-lg white"></i></a>
+                <a href="#" class="navbar-icon pull-right visible-xs" id="sidebar-toggle-btn"><i
+                        class="fa fa-search fa-lg white"></i></a>
+            </div>
+            <a class="navbar-brand" href="index.html">Center For Coastal Studies</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="about-btn"><i
+                        class="fa fa-question-circle white"></i>&nbsp;&nbsp;About</a></li>
 
-    <p>Cape Cod Bay and Nantucket Sound were designated as state ocean sanctuaries more than 40 years ago to “prohibit
-        activities that may significantly alter or endanger the ecology or appearance of the ocean, seabed or subsoil.”
-        This
-        designation recognized the vitality and importance of the Bay’s and the Sound’s resources to the state.</p>
+                <li><a href="index.html" data-toggle="collapse" data-target=".navbar-collapse.in" id="index-btn"><i
+                        class="fa fa-map-o white"></i>&nbsp;&nbsp;Map</a></li>
 
-    <h3>Pollution</h3>
-    <p>From a distance both Cape Cod Bay and Nantucket Sound appear healthy. However, according to the Cape Cod
-        Commission,
-        “Cape Cod has a water problem. The saltwater border that has defined our peninsula is being poisoned by
-        nitrogen.
-        About 80% of the nitrogen that enters Cape Cod’s watersheds is from septic systems. The conditions it creates
-        destroy animal habitat and result in frequent violations of water quality standards indicated in part by fish
-        kills
-        and diminished shellfisheries.” The impacts of this pollution need to be closely monitored.</p>
-    <p>Polluted runoff is another major problem impacting our coastal waters. This type of pollution is a result of
-        contaminants picked up in rainwater and melting snow which are eventually emptied into the bay. Examples of
-        possible
-        pollutants picked up in runoff include fertilizers and other lawn/garden chemicals, wastes from pets, salt from
-        roadways, and oil and gasoline leaked from automobiles. In many towns on the Cape this problem is compounded by
-        the
-        large parking lots located near or directly adjacent to harbors. Not only are the oil and gasoline associated
-        with
-        parked automobiles a problem, but these large parking lots are often the site of the disposal of snow (and the
-        associated salt used to treat the roads) cleared from roads during the winter.</p>
-    <h3>Eutrophication</h3>
-    <p>The consequences of pollution have already manifested in our coastal waters. In addition to the direct, toxic
-        effects of pollution, excessive nutrient input from both point and nonpoint sources leads to high levels of
-        plant
-        growth. This process, known as eutrophication, is occurring to some degree in Cape Cod Bay and Nantucket Sound
-        and
-        more noticeably in the coastal ponds and embayments that discharge into them. Eutrophication has been linked to
-        a
-        number of different harmful processes in coastal waters. Two symptoms of eutrophication that have been
-        extensively
-        documented are harmful algal blooms (HABs) and hypoxia.</p>
+                <li><a href="threats.html" data-toggle="collapse" data-target=".navbar-collapse.in" id="threats-btn"><i
+                        class="fa fa-flag-o white"></i>&nbsp;&nbsp;Threats to the Bay</a></li>
 
-    <h3>Harmful Algal Blooms (HABs)</h3>
-    <p>Algal blooms occur primarily during the spring and summer in our coastal waters. During the spring, Phaeocystis
-        blooms occur frequently in Cape Cod Bay. The negative impacts of a bloom of this phytoplankton are far reaching,
-        affecting the entire food chain by out-competing other beneficial species of phytoplankton (Roberts 2003, Tang
-        2003), affecting zooplankton growth and production (Tang 2001, Turner et al. 2002), and being a nuisance to
-        feeding
-        right whales (Kelly et al. 1998). A more well-known species of phytoplankton resulting in HABs is Alexandrium
-        sp.,
-        one of the species behind the phenomenon of red tides. Red tides have been linked to the deaths of fish, whales,
-        and
-        humans (Anderson 1994, Bushaw-Neston & Sellner 1999). Blooms of this species vary greatly from year to year. Due
-        to
-        its lifecycle of dormant cysts, Alexandrium blooms are likely to become a repetitive occurrence if conditions
-        remain
-        conducive, i.e. high nutrient input, stratification (Mcgillicuddy et al. 2003). Although there have been no
-        documented deaths as a result of the recent blooms that have occurred in the Bay or the Sound, the effects are
-        still
-        felt by the loss of income of commercial fishermen from shellfish bed closures and impacts on conch
-        fisheries.</p>
-    <h3>Hypoxia</h3>
-    <p>Closer inshore, the negative impacts of pollution are evident in the sediments. Sediments in and around harbors
-        such
-        as Rock Harbor and Wellfleet Harbor, which were once sandy, are now composed primarily of a silty, dark mud. If
-        disturbed, these sediments release a distinct sulfurous odor indicative of areas of low oxygen. This odor comes
-        from
-        the production of hydrogen sulfide by bacteria which reside in low oxygen (hypoxic) sediments. Since most
-        organisms
-        are stressed by low oxygen levels, hypoxic waters are usually devoid of most life. While motile organisms such
-        as
-        fish can leave these areas, benthic organisms will be killed. Portions of the estuaries discharging into
-        Nantucket
-        Sound, for example the Three Bays complex in Barnstable, also have oxygen-depleted sediments. This had occurred
-        in
-        areas of Chesapeake Bay and the Gulf of Mexico, giving these areas the name “dead zones.” Although areas of low
-        oxygen in the coastal waters of Cape Cod are not nearly as extensive as observed in these locations, these areas
-        need to be monitored and remedied before the problem progresses.</p>
-    <h3>Habitat Destruction</h3>
-    <P>One of the most important, yet least studied habitats in our coastal waters are the eelgrass ecosystems. Eelgrass
-        (Zostera marina) in Nantucket Sound is found predominately in the nearshore waters from Monomoy west to
-        Hyannisport
-        and the shore of Falmouth. It is found more extensively in shallow areas of Cape Cod Bay, along most of the
-        shoreline and out on Billingsgate Shoal. In both the Bay and the Sound, eelgrass is fundamental in structuring
-        the
-        resident flora and fauna. Eelgrass systems are highly productive and extremely important biologically. They act
-        as a
-        refuge and nursery for juvenile fish and shellfish, many of which are commercially important species in this
-        region
-        and typically support a higher diversity and abundance of marine life compared to surrounding unvegetated areas
-        (Heck et al. 1989). Seagrasses are equally important from a purely physical perspective in that they help to
-        prevent
-        erosion by stabilizing sediments with their extensive root systems as well as aid in filtering contaminants from
-        the
-        water column.</P>
-    <p>Despite the obvious value of seagrass ecosystems, eelgrass beds in the Bay and the Sound are threatened by a
-        number
-        of anthropogenic perturbations. Declines in eelgrass habitat have been linked to physical disturbances (i.e.,
-        dredging, construction, shellfishing, propeller damage from boating), turbidity (i.e. topsoil runoff, activities
-        that re-suspend sediments), and pollution (including eutrophication). There is evidence of the destruction off
-        eelgrass habitats in the Bay and the Sound by all of these mechanisms making the health of this already fragile
-        ecosystem even more tenuous.</p>
-    <h3>Overexploitation</h3>
-    <p>This region of Massachusetts was given the name of Cape Cod because of its abundance of codfish. Today these fish
-        have virtually disappeared from the waters of the Bay. Other species found in the Bay and Sound, such as
-        flounder,
-        tautaug, sea bass, and striped bass have likewise suffered from overexploitation.
-        With reference to some commercial shellfish species, overexploitation is tied directly to habitat destruction.
-        The
-        development of different methods of fishing to increase the catch of a declining stock has been disruptive.
-        Hydraulic pumping for sea clams was once outlawed in the Bay. Over the past several decades, however, it has
-        been
-        re-implemented in an attempt to increase the harvesting of these clams.</p>
+                <li><a href="#" data-toggle="collapse" data-target=".navbar-collapse.in" id="citizen-btn">Citizen
+                    Scientists</a></li>
+
+                <li><a href="#" data-toggle="modal" data-target="#form-content">Contact Us</a></li>
+
+                <!--<li><a href="#" data-toggle="modal" data-target="#dataDisclaimer">Data Download Disclaimer</a></li>-->
+
+            </ul>
+
+        </div>
+    </div>
+</div>
+<div class="jumbotron">
+    <div class="container">
+        <h1>Threats to the Bay and Sound</h1>
+        <p>Cape Cod Bay and Nantucket Sound are ecologically rich complexes of coastal and marine habitats. Beaches,
+            wetlands and offshore waters are home to plant and animal communities that include commercially valuable
+            species of finfish and shellfish, marine mammals, sea turtles and birds.
+            Cape Cod Bay is part of the much larger Gulf of Maine system that contains some of the world’s most
+            productive waters. While strong tides move water around in the Bay, it can take about a month for a full
+            exchange of water to occur. Nantucket Sound is located at a confluence of the cold Gulf of Maine and the
+            warm Gulf Stream. It is protected from the Atlantic Ocean by Martha’s Vineyard and Nantucket Islands, and is
+            shallower than the Bay.</p>
+
+        <p>Cape Cod Bay and Nantucket Sound were designated as state ocean sanctuaries more than 40 years ago to
+            “prohibit activities that may significantly alter or endanger the ecology or appearance of the ocean, seabed
+            or subsoil.” This designation recognized the vitality and importance of the Bay’s and the Sound’s resources
+            to the state.</p>
+    </div>
+</div>
+<div class="row">
+    <nav id="affix-nav" class="sidebar col-md-2 col-sm-2 hidden-xs">
+        <ul class="nav sidenav" data-spy="affix" data-offset-top="330">
+            <li class="active"><a href="#pollution">Pollution</a></li>
+            <li><a href="#eutrophication">Eutrophication</a></li>
+            <li><a href="#hab">Harmful Algal Blooms (HABs)</a></li>
+            <li><a href="#hypoxia">Hypoxia</a></li>
+            <li><a href="#habitat">Habitat Destruction</a></li>
+            <li><a href="#exploit">Overexploitation</a></li>
+        </ul>
+    </nav>
+    <section id="content" class="col-md-8 col-sm-8 col-xs-12">
+        <article id="cupcake">
+            <h3>Pollution</h3>
+
+            <p>From a distance both Cape Cod Bay and Nantucket Sound appear healthy. However, according to the Cape Cod
+                Commission, “Cape Cod has a water problem. The saltwater border that has defined our peninsula is being
+                poisoned by nitrogen. About 80% of the nitrogen that enters Cape Cod’s watersheds is from septic
+                systems. The conditions it creates destroy animal habitat and result in frequent violations of water
+                quality standards indicated in part by fish kills and diminished shellfisheries.” The impacts of this
+                pollution need to be closely monitored.</p>
+
+            <p>Polluted runoff is another major problem impacting our coastal waters. This type of pollution is a result
+                of contaminants picked up in rainwater and melting snow which are eventually emptied into the bay.
+                Examples of possible pollutants picked up in runoff include fertilizers and other lawn/garden chemicals,
+                wastes from pets, salt from roadways, and oil and gasoline leaked from automobiles. In many towns on the
+                Cape this problem is compounded by the large parking lots located near or directly adjacent to harbors.
+                Not only are the oil and gasoline associated with parked automobiles a problem, but these large parking
+                lots are often the site of the disposal of snow (and the associated salt used to treat the roads)
+                cleared from roads during the winter.</p>
+
+
+            <section id="sweetjelly"><h3>Sweet jelly</h3>
+                <p>AFFIX ON PAGE WITH NAVBAR
+                    Web pages normally contain a header and a footer section. And that’s where a judicious setting
+                    of the offsets and smart styling of the “affix-top” and “affix-bottom” classes play an important
+                    role.
+
+                    When a user starts scrolling a web page you often want the header section to disappear from
+                    view. You set a value for data-offset-top that is based on the outer height of the header
+                    section plus a little extra (e.g. 10px). That way the top of the page will first disappear from
+                    view and then – when the content section starts – the “affix” class is applied by the plugin and
+                    the affix-nav becomes fixed. The content section continues to disappear from view but the nav/ul
+                    stays visible in the window.
+
+                    If the web page contains a footer (and/or other content you don’t want reflected in the Affix)
+                    you set the data-offset-bottom to a value corresponding to the outer height of the ‘footer’ and
+                    a bit extra. Without it the affix-nav would get confused when it should jump to the last item in
+                    its list. If you set the value for the data-offset-bottom larger than this the nav/ul might well
+                    disappear on you before your scroll reaches the end of the page (caused by the change to an
+                    absolute CSS positioning). You can of course also remedy this with CSS rules for that
+                    “affix-bottom” phase.</p></section>
+            <section id="tiramisu"><h3>Tiramisu</h3>
+                <p>Lemon .. applicake.</p></section>
+            <section id="pie"><h3>Pie</h3>
+                <p>Sugar .. caramels.</p></section>
+        </article>
+        <br/>
+        <article id="veggie">
+            <h2><a href="http://veggieipsum.com/" target="_blank">Veggie Lorem Ipsum</a></h2>
+            <p>AFFIX ON PAGE WITH NAVBAR
+                Web pages normally contain a header and a footer section. And that’s where a judicious setting of
+                the offsets and smart styling of the “affix-top” and “affix-bottom” classes play an important role.
+
+                When a user starts scrolling a web page you often want the header section to disappear from view.
+                You set a value for data-offset-top that is based on the outer height of the header section plus a
+                little extra (e.g. 10px). That way the top of the page will first disappear from view and then –
+                when the content section starts – the “affix” class is applied by the plugin and the affix-nav
+                becomes fixed. The content section continues to disappear from view but the nav/ul stays visible in
+                the window.
+
+                If the web page contains a footer (and/or other content you don’t want reflected in the Affix) you
+                set the data-offset-bottom to a value corresponding to the outer height of the ‘footer’ and a bit
+                extra. Without it the affix-nav would get confused when it should jump to the last item in its list.
+                If you set the value for the data-offset-bottom larger than this the nav/ul might well disappear on
+                you before your scroll reaches the end of the page (caused by the change to an absolute CSS
+                positioning). You can of course also remedy this with CSS rules for that “affix-bottom” phase.</p>
+    </section>
+    </article>
+    </section>
+</div><!-- end of row -->
+<footer>
+</footer>
 </div><!-- end of container -->
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -323,6 +306,4 @@
 <script src="http://code.highcharts.com/stock/modules/exporting.js"></script>
 
 <script src="assets/js/charts_table.js"></script>
-
-
-</html>
+</html></html>

@@ -3,57 +3,15 @@
  */
 
 var map, featureList, stationSearch = [], this_station, this_station_name;
-
-
-//start bootstrap tour  http://bootstraptour.com/
-var tour = new Tour();
-tour.addSteps([
-    {
-        element: "#container1 .highcharts-series-group",
-        title: "Click and Drag",
-        content: "Click anywhere within chart and drag left or right to zoom in",
-        placement: 'top'
-    },
-    {
-        element: "#container1 .highcharts-legend",
-        title: "Toggle Parameters",
-        content: "Click on any parameter to toggle on and off",
-        placement: 'bottom'
-    },
-    {
-        element: ".highcharts-range-selector-buttons",
-        title: "Range Selector",
-        content: "Click on zoom range to view that data",
-        placement: 'bottom'
-    },
-    {
-        element: ".highcharts-input-group",
-        title: "Date Range",
-        content: "Enter any valid date range",
-        placement: 'bottom'
-    },
-    {
-        element: ".highcharts-navigator",
-        title: 'Navigator Slide Bar',
-        content: 'Drag slidebar to desired time period',
-        placement: 'bottom'
-    }
-]);
-
 $(document).ready(function () {
 
+    //$("#dataDisclaimer").modal("show");
 
 
-
-//end bootstrap tour
-
-    $("#dataDisclaimer").modal("show");
-
-
-//if ($.cookie("pop") === null) {
-//    $("#splashModal").modal("show");
-//    $.cookie("pop", "2");
-//}
+    //if ($.cookie("pop") === null) {
+    //    $("#splashModal").modal("show");
+    //    $.cookie("pop", "2");
+    //}
 
     $(window).resize(function () {
         sizeLayerControl();
@@ -105,29 +63,27 @@ $(document).ready(function () {
         }]
     });
 
-    $.getJSON('assets/php/get_funding.php ', function () {
-    });
 
-
-    $('#funding-table').bootstrapTable({
+    $('#funder-table').bootstrapTable({
         method: 'get',
-        url: 'assets/php/funding_table.json',
+        url: 'assets/php/funder_table.json',
         cache: false,
         refresh: true,
         striped: true,
-        height: 300,
+        height: 200,
         search: false,
         //showRefresh: true,
         minimumCountColumns: 2,
         clickToSelect: false,
         columns: [{
             field: 'funder',
-            title: 'Contributors and  Supporters',
+            title: 'Contributer Supporter',
             align: 'left',
             sortable: 'true'
 
         }]
     });
+
 
     $("#about-btn").click(function () {
         $("#aboutModal").modal("show");
@@ -135,23 +91,7 @@ $(document).ready(function () {
         return false;
     });
 
-    $("#params-btn").click(function () {
-        $("#parametersModal").modal("show");
-        $(".navbar-collapse.in").collapse("hide");
-        return false;
-    });
-
-    $("#threats-btn").click(function () {
-        $("#threatsModal").modal("show");
-        $(".navbar-collapse.in").collapse("hide");
-        return false;
-    });
-
-
-    $("#funding-btn").click(function () {
-        $("#fundingModal").modal("show");
-        $(".navbar-collapse.in").collapse("hide");
-        return false;
+    $("#index-btn").click(function () {
     });
 
 
@@ -174,7 +114,7 @@ $(document).ready(function () {
     });
 
 
-//data request form functions
+    //data request form functions
     $("input#submitRequest").click(function () {
         $.ajax({
             type: "POST",
@@ -352,8 +292,6 @@ $(document).ready(function () {
 
 
     $("#chart-btn").click(function () {
-
-
         $('#tc').hide();
         $('#cc').show();
         var temperature = [], salinity = [], dissolved_oxygen = [], ph = [],
@@ -1018,20 +956,11 @@ $(document).ready(function () {
                     }]
 
                 });
-                tour.init(true);
-                tour.start(true);
-
             }
-
-
         });
 
-
         $('#dataModal').modal("show");
-
-
     });
-
 
     function sizeLayerControl() {
         $(".leaflet-control-layers").css("max-height", $("#map").height() - 50);
@@ -1158,20 +1087,6 @@ $(document).ready(function () {
     });
     L.control.navbar().addTo(map);
 
-
-   //L.control.coordinates().addTo(map);
-
-    L.control.coordinates({
-			position:"topright",
-			decimals:6,
-			decimalSeperator:".",
-			labelTemplateLat:"Latitude: {y}",
-			labelTemplateLng:"Longitude: {x}"
-		}).addTo(map);
-
-
-
-
     /* Filter sidebar feature list to only show features in current map bounds */
     map.on("moveend", function (e) {
         syncSidebar();
@@ -1296,5 +1211,4 @@ $(document).ready(function () {
     });
 
 
-})
-;
+});
